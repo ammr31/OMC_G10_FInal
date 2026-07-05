@@ -38,5 +38,21 @@ namespace OMC_G10_Final
             // Hide the current MainPage
             this.Hide();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox1.Text = "ON";
+                checkBox1.BackColor = Color.Green; 
+                checkBox1.ForeColor = Color.White;
+            }
+            else
+            {
+                checkBox1.Text = "OFF";
+                checkBox1.BackColor = Color.LightGray;
+                checkBox1.ForeColor = Color.Black;
+            }
+        }
     }
 }
