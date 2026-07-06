@@ -136,10 +136,10 @@
             btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
             btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.Location = new Point(324, 481);
+            btnMedicine.Location = new Point(333, 483);
             btnMedicine.Name = "btnMedicine";
             btnMedicine.Shape = AntdUI.TShape.Round;
-            btnMedicine.Size = new Size(275, 79);
+            btnMedicine.Size = new Size(264, 79);
             btnMedicine.TabIndex = 10;
             btnMedicine.Text = "Medicine";
             // 
@@ -157,7 +157,7 @@
             btnDailyNeeds.Location = new Point(634, 481);
             btnDailyNeeds.Name = "btnDailyNeeds";
             btnDailyNeeds.Shape = AntdUI.TShape.Round;
-            btnDailyNeeds.Size = new Size(275, 79);
+            btnDailyNeeds.Size = new Size(264, 79);
             btnDailyNeeds.TabIndex = 11;
             btnDailyNeeds.Text = "Daily Needs";
             // 
@@ -239,7 +239,7 @@
             // 
             label5.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(245, 247, 231);
-            label5.Location = new Point(634, 300);
+            label5.Location = new Point(640, 300);
             label5.Name = "label5";
             label5.Size = new Size(183, 38);
             label5.TabIndex = 12;
