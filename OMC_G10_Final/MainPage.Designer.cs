@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             bottomNavigationBar1 = new BottomNavigationBar();
             btnPageHearing = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
@@ -62,7 +62,7 @@
             // 
             // btnPageHearing
             // 
-            btnPageHearing.CustomizableEdges = customizableEdges13;
+            btnPageHearing.CustomizableEdges = customizableEdges1;
             btnPageHearing.DisabledState.BorderColor = Color.DarkGray;
             btnPageHearing.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPageHearing.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -79,7 +79,7 @@
             btnPageHearing.ImageSize = new Size(150, 150);
             btnPageHearing.Location = new Point(645, 207);
             btnPageHearing.Name = "btnPageHearing";
-            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnPageHearing.Size = new Size(192, 109);
             btnPageHearing.TabIndex = 5;
             btnPageHearing.Click += btnPageHearing_Click_1;
@@ -106,10 +106,10 @@
             TogglesSwitchDeaf.CheckedState.InnerBorderColor = Color.White;
             TogglesSwitchDeaf.CheckedState.InnerBorderRadius = 20;
             TogglesSwitchDeaf.CheckedState.InnerColor = Color.White;
-            TogglesSwitchDeaf.CustomizableEdges = customizableEdges15;
+            TogglesSwitchDeaf.CustomizableEdges = customizableEdges3;
             TogglesSwitchDeaf.Location = new Point(657, 29);
             TogglesSwitchDeaf.Name = "TogglesSwitchDeaf";
-            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TogglesSwitchDeaf.Size = new Size(130, 51);
             TogglesSwitchDeaf.TabIndex = 7;
             TogglesSwitchDeaf.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -153,7 +153,7 @@
             // 
             // btnPageMobility
             // 
-            btnPageMobility.CustomizableEdges = customizableEdges17;
+            btnPageMobility.CustomizableEdges = customizableEdges5;
             btnPageMobility.DisabledState.BorderColor = Color.DarkGray;
             btnPageMobility.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPageMobility.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -170,7 +170,7 @@
             btnPageMobility.ImageSize = new Size(170, 170);
             btnPageMobility.Location = new Point(353, 207);
             btnPageMobility.Name = "btnPageMobility";
-            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnPageMobility.Size = new Size(192, 109);
             btnPageMobility.TabIndex = 4;
             btnPageMobility.Click += btnPageMobility_Click_1;
