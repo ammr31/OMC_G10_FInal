@@ -28,67 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
-            btnPageMobility = new Button();
-            btnPageHearing = new Button();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            bottomNavigationBar1 = new BottomNavigationBar();
+            btnPageHearing = new Guna.UI2.WinForms.Guna2Button();
+            panel1 = new Panel();
+            TogglesSwitchDeaf = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             pictureBox1 = new PictureBox();
-            chkOn = new CheckBox();
-            bottomNavigationBar2 = new BottomNavigationBar();
+            label2 = new Label();
+            label1 = new Label();
+            btnPageMobility = new Guna.UI2.WinForms.Guna2Button();
+            label3 = new Label();
+            label4 = new Label();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnPageMobility
+            // bottomNavigationBar1
             // 
-            btnPageMobility.Location = new Point(360, 260);
-            btnPageMobility.Name = "btnPageMobility";
-            btnPageMobility.Size = new Size(240, 111);
-            btnPageMobility.TabIndex = 0;
-            btnPageMobility.Text = "Mobility";
-            btnPageMobility.UseVisualStyleBackColor = true;
-            btnPageMobility.Click += btnPageMobility_Click;
+            bottomNavigationBar1.AutoSize = true;
+            bottomNavigationBar1.Dock = DockStyle.Bottom;
+            bottomNavigationBar1.Location = new Point(0, 619);
+            bottomNavigationBar1.Name = "bottomNavigationBar1";
+            bottomNavigationBar1.Size = new Size(1200, 106);
+            bottomNavigationBar1.TabIndex = 3;
             // 
             // btnPageHearing
             // 
-            btnPageHearing.Location = new Point(600, 260);
+            btnPageHearing.CustomizableEdges = customizableEdges7;
+            btnPageHearing.DisabledState.BorderColor = Color.DarkGray;
+            btnPageHearing.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnPageHearing.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnPageHearing.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnPageHearing.FillColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.FocusedColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.Font = new Font("Segoe UI", 9F);
+            btnPageHearing.ForeColor = Color.White;
+            btnPageHearing.HoverState.BorderColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.HoverState.CustomBorderColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.HoverState.FillColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.HoverState.ForeColor = Color.FromArgb(107, 78, 57);
+            btnPageHearing.Image = Properties.Resources.deafness;
+            btnPageHearing.ImageSize = new Size(150, 150);
+            btnPageHearing.Location = new Point(645, 207);
             btnPageHearing.Name = "btnPageHearing";
-            btnPageHearing.Size = new Size(240, 111);
-            btnPageHearing.TabIndex = 1;
-            btnPageHearing.Text = "Hearing";
-            btnPageHearing.UseVisualStyleBackColor = true;
-            btnPageHearing.Click += btnPageHearing_Click;
+            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnPageHearing.Size = new Size(192, 109);
+            btnPageHearing.TabIndex = 5;
+            btnPageHearing.Click += btnPageHearing_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(245, 247, 231);
+            panel1.Controls.Add(TogglesSwitchDeaf);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(38, 27);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(811, 114);
+            panel1.TabIndex = 6;
+            // 
+            // TogglesSwitchDeaf
+            // 
+            TogglesSwitchDeaf.Animated = true;
+            TogglesSwitchDeaf.AutoRoundedCorners = true;
+            TogglesSwitchDeaf.CheckedState.BorderColor = Color.FromArgb(138, 167, 66);
+            TogglesSwitchDeaf.CheckedState.BorderRadius = 24;
+            TogglesSwitchDeaf.CheckedState.FillColor = Color.FromArgb(138, 167, 66);
+            TogglesSwitchDeaf.CheckedState.InnerBorderColor = Color.White;
+            TogglesSwitchDeaf.CheckedState.InnerBorderRadius = 20;
+            TogglesSwitchDeaf.CheckedState.InnerColor = Color.White;
+            TogglesSwitchDeaf.CustomizableEdges = customizableEdges9;
+            TogglesSwitchDeaf.Location = new Point(657, 29);
+            TogglesSwitchDeaf.Name = "TogglesSwitchDeaf";
+            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            TogglesSwitchDeaf.Size = new Size(130, 51);
+            TogglesSwitchDeaf.TabIndex = 7;
+            TogglesSwitchDeaf.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            TogglesSwitchDeaf.UncheckedState.BorderRadius = 24;
+            TogglesSwitchDeaf.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            TogglesSwitchDeaf.UncheckedState.InnerBorderColor = Color.White;
+            TogglesSwitchDeaf.UncheckedState.InnerBorderRadius = 20;
+            TogglesSwitchDeaf.UncheckedState.InnerColor = Color.White;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 21);
+            pictureBox1.Image = Properties.Resources.hearing_inverted;
+            pictureBox1.Location = new Point(170, 74);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(492, 70);
+            pictureBox1.Size = new Size(55, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
+            pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // chkOn
+            // label2
             // 
-            chkOn.Appearance = Appearance.Button;
-            chkOn.BackColor = Color.LightGray;
-            chkOn.FlatStyle = FlatStyle.Flat;
-            chkOn.Location = new Point(416, 39);
-            chkOn.Name = "chkOn";
-            chkOn.Size = new Size(73, 35);
-            chkOn.TabIndex = 3;
-            chkOn.Text = "OFF";
-            chkOn.TextAlign = ContentAlignment.MiddleCenter;
-            chkOn.UseVisualStyleBackColor = false;
-            chkOn.CheckedChanged += checkBox1_CheckedChanged;
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(107, 78, 57);
+            label2.Location = new Point(14, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(161, 25);
+            label2.TabIndex = 7;
+            label2.Text = "Deaf Friendly";
             // 
-            // bottomNavigationBar2
+            // label1
             // 
-            bottomNavigationBar2.AutoSize = true;
-            bottomNavigationBar2.Dock = DockStyle.Bottom;
-            bottomNavigationBar2.Location = new Point(0, 619);
-            bottomNavigationBar2.Name = "bottomNavigationBar2";
-            bottomNavigationBar2.Size = new Size(1200, 106);
-            bottomNavigationBar2.TabIndex = 4;
+            label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(107, 78, 57);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(669, 71);
+            label1.TabIndex = 7;
+            label1.Text = "Accessibility Mode";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnPageMobility
+            // 
+            btnPageMobility.CustomizableEdges = customizableEdges11;
+            btnPageMobility.DisabledState.BorderColor = Color.DarkGray;
+            btnPageMobility.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnPageMobility.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnPageMobility.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnPageMobility.FillColor = Color.FromArgb(107, 78, 57);
+            btnPageMobility.FocusedColor = Color.FromArgb(107, 78, 57);
+            btnPageMobility.Font = new Font("Segoe UI", 9F);
+            btnPageMobility.ForeColor = Color.FromArgb(245, 247, 231);
+            btnPageMobility.HoverState.BorderColor = Color.FromArgb(148, 104, 80);
+            btnPageMobility.HoverState.CustomBorderColor = Color.FromArgb(107, 78, 57);
+            btnPageMobility.HoverState.FillColor = Color.FromArgb(107, 78, 57);
+            btnPageMobility.HoverState.ForeColor = Color.FromArgb(107, 78, 57);
+            btnPageMobility.Image = Properties.Resources.wheelchair2;
+            btnPageMobility.ImageSize = new Size(170, 170);
+            btnPageMobility.Location = new Point(353, 207);
+            btnPageMobility.Name = "btnPageMobility";
+            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnPageMobility.Size = new Size(192, 109);
+            btnPageMobility.TabIndex = 4;
+            btnPageMobility.Click += btnPageMobility_Click_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Verdana", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(245, 247, 231);
+            label3.Location = new Point(353, 319);
+            label3.Name = "label3";
+            label3.Size = new Size(186, 45);
+            label3.TabIndex = 7;
+            label3.Text = "Mobility";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Verdana", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(245, 247, 231);
+            label4.Location = new Point(651, 319);
+            label4.Name = "label4";
+            label4.Size = new Size(184, 45);
+            label4.TabIndex = 8;
+            label4.Text = "Hearing";
             // 
             // MainPage
             // 
@@ -96,26 +200,33 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar2);
-            Controls.Add(chkOn);
-            Controls.Add(pictureBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(panel1);
             Controls.Add(btnPageHearing);
             Controls.Add(btnPageMobility);
+            Controls.Add(bottomNavigationBar1);
             Name = "MainPage";
             Text = "MainPage";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnPageMobility;
-        private Button btnPageHearing;
+        private Button btn1;
         private BottomNavigationBar bottomNavigationBar1;
-        private PictureBox pictureBox1;
         private CheckBox checkBox1;
-        private CheckBox chkOn;
-        private BottomNavigationBar bottomNavigationBar2;
+        private Guna.UI2.WinForms.Guna2Button btnPageHearing;
+        private Panel panel1;
+        private Label label1;
+        private Label label2;
+        private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnPageMobility;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch TogglesSwitchDeaf;
+        private Label label3;
+        private Label label4;
     }
 }

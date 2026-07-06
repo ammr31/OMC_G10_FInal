@@ -15,7 +15,9 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-        private void btnHomePage_Click(object sender, EventArgs e)
+
+
+        private void btnHomePage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -33,7 +35,7 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnLikedPage_Click(object sender, EventArgs e)
+        private void btnLikedPage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -51,7 +53,7 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnCartPage_Click(object sender, EventArgs e)
+        private void btnCartPage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -69,7 +71,7 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnProfilePage_Click(object sender, EventArgs e)
+        private void btnProfilePage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
