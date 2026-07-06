@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             bottomNavigationBar1 = new BottomNavigationBar();
             btnPageHearing = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
@@ -44,6 +44,9 @@
             btnPageMobility = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
+            btnMedicine = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -59,7 +62,7 @@
             // 
             // btnPageHearing
             // 
-            btnPageHearing.CustomizableEdges = customizableEdges1;
+            btnPageHearing.CustomizableEdges = customizableEdges13;
             btnPageHearing.DisabledState.BorderColor = Color.DarkGray;
             btnPageHearing.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPageHearing.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -76,7 +79,7 @@
             btnPageHearing.ImageSize = new Size(150, 150);
             btnPageHearing.Location = new Point(645, 207);
             btnPageHearing.Name = "btnPageHearing";
-            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnPageHearing.Size = new Size(192, 109);
             btnPageHearing.TabIndex = 5;
             btnPageHearing.Click += btnPageHearing_Click_1;
@@ -103,10 +106,10 @@
             TogglesSwitchDeaf.CheckedState.InnerBorderColor = Color.White;
             TogglesSwitchDeaf.CheckedState.InnerBorderRadius = 20;
             TogglesSwitchDeaf.CheckedState.InnerColor = Color.White;
-            TogglesSwitchDeaf.CustomizableEdges = customizableEdges3;
+            TogglesSwitchDeaf.CustomizableEdges = customizableEdges15;
             TogglesSwitchDeaf.Location = new Point(657, 29);
             TogglesSwitchDeaf.Name = "TogglesSwitchDeaf";
-            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges16;
             TogglesSwitchDeaf.Size = new Size(130, 51);
             TogglesSwitchDeaf.TabIndex = 7;
             TogglesSwitchDeaf.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -150,7 +153,7 @@
             // 
             // btnPageMobility
             // 
-            btnPageMobility.CustomizableEdges = customizableEdges5;
+            btnPageMobility.CustomizableEdges = customizableEdges17;
             btnPageMobility.DisabledState.BorderColor = Color.DarkGray;
             btnPageMobility.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPageMobility.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -167,7 +170,7 @@
             btnPageMobility.ImageSize = new Size(170, 170);
             btnPageMobility.Location = new Point(353, 207);
             btnPageMobility.Name = "btnPageMobility";
-            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnPageMobility.Size = new Size(192, 109);
             btnPageMobility.TabIndex = 4;
             btnPageMobility.Click += btnPageMobility_Click_1;
@@ -194,12 +197,52 @@
             label4.TabIndex = 8;
             label4.Text = "Hearing";
             // 
+            // label5
+            // 
+            label5.BackColor = Color.FromArgb(245, 247, 231);
+            label5.BorderStyle = BorderStyle.Fixed3D;
+            label5.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(107, 78, 57);
+            label5.Location = new Point(481, 389);
+            label5.Name = "label5";
+            label5.Size = new Size(255, 46);
+            label5.TabIndex = 9;
+            label5.Text = "CATEGORY";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnMedicine
+            // 
+            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Location = new Point(353, 481);
+            btnMedicine.Name = "btnMedicine";
+            btnMedicine.Size = new Size(207, 52);
+            btnMedicine.TabIndex = 10;
+            btnMedicine.Text = "Medicine";
+            btnMedicine.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 220, 248);
+            button1.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(107, 78, 57);
+            button1.Location = new Point(634, 481);
+            button1.Name = "button1";
+            button1.Size = new Size(215, 52);
+            button1.TabIndex = 11;
+            button1.Text = "Daily Needs";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(button1);
+            Controls.Add(btnMedicine);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(panel1);
@@ -228,5 +271,8 @@
         private Guna.UI2.WinForms.Guna2ToggleSwitch TogglesSwitchDeaf;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private Button btnMedicine;
+        private Button button1;
     }
 }
