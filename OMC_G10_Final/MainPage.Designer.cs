@@ -40,10 +40,10 @@
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
             label4 = new AntdUI.Label();
-            label5 = new AntdUI.Label();
             panel1 = new AntdUI.Panel();
-            btnCall = new AntdUI.Button();
             btnMessage = new AntdUI.Button();
+            btnCall = new AntdUI.Button();
+            label5 = new AntdUI.Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -134,13 +134,13 @@
             btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
             btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
             btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnMedicine.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.Location = new Point(325, 495);
+            btnMedicine.Location = new Point(333, 483);
             btnMedicine.Name = "btnMedicine";
             btnMedicine.Shape = AntdUI.TShape.Round;
-            btnMedicine.Size = new Size(272, 81);
-            btnMedicine.TabIndex = 4;
+            btnMedicine.Size = new Size(264, 79);
+            btnMedicine.TabIndex = 10;
             btnMedicine.Text = "Medicine";
             // 
             // btnDailyNeeds
@@ -152,13 +152,13 @@
             btnDailyNeeds.DefaultBack = Color.FromArgb(255, 220, 248);
             btnDailyNeeds.DefaultBorderColor = Color.FromArgb(107, 78, 57);
             btnDailyNeeds.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnDailyNeeds.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDailyNeeds.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDailyNeeds.ForeColor = Color.FromArgb(107, 78, 57);
-            btnDailyNeeds.Location = new Point(603, 495);
+            btnDailyNeeds.Location = new Point(634, 481);
             btnDailyNeeds.Name = "btnDailyNeeds";
             btnDailyNeeds.Shape = AntdUI.TShape.Round;
-            btnDailyNeeds.Size = new Size(272, 81);
-            btnDailyNeeds.TabIndex = 5;
+            btnDailyNeeds.Size = new Size(264, 79);
+            btnDailyNeeds.TabIndex = 11;
             btnDailyNeeds.Text = "Daily Needs";
             // 
             // pictureBox1
@@ -192,17 +192,6 @@
             label4.Text = "MOBILITY ";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
-            // 
-            label5.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(245, 247, 231);
-            label5.Location = new Point(633, 300);
-            label5.Name = "label5";
-            label5.Size = new Size(197, 38);
-            label5.TabIndex = 9;
-            label5.Text = "HEARING";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             panel1.Back = Color.FromArgb(245, 247, 231);
@@ -215,21 +204,6 @@
             panel1.Size = new Size(269, 123);
             panel1.TabIndex = 10;
             panel1.Text = "panel1";
-            // 
-            // btnCall
-            // 
-            btnCall.BackActive = Color.FromArgb(245, 247, 231);
-            btnCall.BackColor = Color.FromArgb(245, 247, 231);
-            btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
-            btnCall.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
-            btnCall.Icon = Properties.Resources.telephone_call;
-            btnCall.IconRatio = 1F;
-            btnCall.IconSize = new Size(70, 70);
-            btnCall.Location = new Point(3, 3);
-            btnCall.Name = "btnCall";
-            btnCall.Size = new Size(123, 117);
-            btnCall.TabIndex = 11;
-            btnCall.Text = "button1";
             // 
             // btnMessage
             // 
@@ -246,42 +220,31 @@
             btnMessage.TabIndex = 12;
             btnMessage.Text = "button2";
             // 
+            // btnCall
+            // 
+            btnCall.BackActive = Color.FromArgb(245, 247, 231);
+            btnCall.BackColor = Color.FromArgb(245, 247, 231);
+            btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
+            btnCall.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnCall.Icon = Properties.Resources.telephone_call;
+            btnCall.IconRatio = 1F;
+            btnCall.IconSize = new Size(70, 70);
+            btnCall.Location = new Point(3, 3);
+            btnCall.Name = "btnCall";
+            btnCall.Size = new Size(123, 117);
+            btnCall.TabIndex = 11;
+            btnCall.Text = "button1";
+            // 
             // label5
             // 
-            label5.BackColor = Color.FromArgb(245, 247, 231);
-            label5.BorderStyle = BorderStyle.Fixed3D;
-            label5.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(107, 78, 57);
-            label5.Location = new Point(481, 389);
+            label5.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(245, 247, 231);
+            label5.Location = new Point(640, 300);
             label5.Name = "label5";
-            label5.Size = new Size(255, 46);
-            label5.TabIndex = 9;
-            label5.Text = "CATEGORY";
+            label5.Size = new Size(183, 38);
+            label5.TabIndex = 12;
+            label5.Text = "HEARING";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnMedicine
-            // 
-            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
-            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.Location = new Point(353, 481);
-            btnMedicine.Name = "btnMedicine";
-            btnMedicine.Size = new Size(207, 52);
-            btnMedicine.TabIndex = 10;
-            btnMedicine.Text = "Medicine";
-            btnMedicine.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(255, 220, 248);
-            button1.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(107, 78, 57);
-            button1.Location = new Point(634, 481);
-            button1.Name = "button1";
-            button1.Size = new Size(215, 52);
-            button1.TabIndex = 11;
-            button1.Text = "Daily Needs";
-            button1.UseVisualStyleBackColor = false;
             // 
             // MainPage
             // 
@@ -289,8 +252,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(panel1);
             Controls.Add(label5);
+            Controls.Add(panel1);
             Controls.Add(label4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
@@ -326,10 +289,10 @@
         private AntdUI.Button btnDailyNeeds;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
-        private AntdUI.Label label5;
         private AntdUI.Panel panel1;
         private AntdUI.Label label4;
         private AntdUI.Button btnCall;
         private AntdUI.Button btnMessage;
+        private AntdUI.Label label5;
     }
 }
