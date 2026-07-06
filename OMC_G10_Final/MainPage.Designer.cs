@@ -246,6 +246,43 @@
             btnMessage.TabIndex = 12;
             btnMessage.Text = "button2";
             // 
+            // label5
+            // 
+            label5.BackColor = Color.FromArgb(245, 247, 231);
+            label5.BorderStyle = BorderStyle.Fixed3D;
+            label5.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(107, 78, 57);
+            label5.Location = new Point(481, 389);
+            label5.Name = "label5";
+            label5.Size = new Size(255, 46);
+            label5.TabIndex = 9;
+            label5.Text = "CATEGORY";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnMedicine
+            // 
+            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Location = new Point(353, 481);
+            btnMedicine.Name = "btnMedicine";
+            btnMedicine.Size = new Size(207, 52);
+            btnMedicine.TabIndex = 10;
+            btnMedicine.Text = "Medicine";
+            btnMedicine.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 220, 248);
+            button1.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(107, 78, 57);
+            button1.Location = new Point(634, 481);
+            button1.Name = "button1";
+            button1.Size = new Size(215, 52);
+            button1.TabIndex = 11;
+            button1.Text = "Daily Needs";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
