@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class LikedPage
+    partial class RecentPage
     {
         /// <summary>
         /// Required designer variable.

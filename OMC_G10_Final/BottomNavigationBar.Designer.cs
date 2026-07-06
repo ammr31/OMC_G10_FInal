@@ -39,7 +39,7 @@
             panel1 = new Panel();
             btnProfilePage = new Guna.UI2.WinForms.Guna2Button();
             btnCartPage = new Guna.UI2.WinForms.Guna2Button();
-            btnLikedPage = new Guna.UI2.WinForms.Guna2Button();
+            btnRecentPage = new Guna.UI2.WinForms.Guna2Button();
             btnHomePage = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,7 +48,7 @@
             // 
             panel1.Controls.Add(btnProfilePage);
             panel1.Controls.Add(btnCartPage);
-            panel1.Controls.Add(btnLikedPage);
+            panel1.Controls.Add(btnRecentPage);
             panel1.Controls.Add(btnHomePage);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 29);
@@ -100,27 +100,27 @@
             btnCartPage.TabIndex = 10;
             btnCartPage.Click += btnCartPage_Click_1;
             // 
-            // btnLikedPage
+            // btnRecentPage
             // 
-            btnLikedPage.CustomBorderColor = Color.Black;
-            btnLikedPage.CustomBorderThickness = new Padding(5, 0, 5, 5);
-            btnLikedPage.CustomizableEdges = customizableEdges5;
-            btnLikedPage.DisabledState.BorderColor = Color.DarkGray;
-            btnLikedPage.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLikedPage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLikedPage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLikedPage.Dock = DockStyle.Left;
-            btnLikedPage.FillColor = Color.FromArgb(255, 220, 248);
-            btnLikedPage.Font = new Font("Segoe UI", 9F);
-            btnLikedPage.ForeColor = Color.Black;
-            btnLikedPage.Image = Properties.Resources.heart;
-            btnLikedPage.ImageSize = new Size(70, 70);
-            btnLikedPage.Location = new Point(300, 0);
-            btnLikedPage.Name = "btnLikedPage";
-            btnLikedPage.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLikedPage.Size = new Size(300, 106);
-            btnLikedPage.TabIndex = 9;
-            btnLikedPage.Click += btnLikedPage_Click_1;
+            btnRecentPage.CustomBorderColor = Color.Black;
+            btnRecentPage.CustomBorderThickness = new Padding(5, 0, 5, 5);
+            btnRecentPage.CustomizableEdges = customizableEdges5;
+            btnRecentPage.DisabledState.BorderColor = Color.DarkGray;
+            btnRecentPage.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRecentPage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRecentPage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRecentPage.Dock = DockStyle.Left;
+            btnRecentPage.FillColor = Color.FromArgb(255, 220, 248);
+            btnRecentPage.Font = new Font("Segoe UI", 9F);
+            btnRecentPage.ForeColor = Color.Black;
+            btnRecentPage.Image = Properties.Resources.recent;
+            btnRecentPage.ImageSize = new Size(70, 70);
+            btnRecentPage.Location = new Point(300, 0);
+            btnRecentPage.Name = "btnRecentPage";
+            btnRecentPage.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnRecentPage.Size = new Size(300, 106);
+            btnRecentPage.TabIndex = 9;
+            btnRecentPage.Click += btnRecentPage_Click;
             // 
             // btnHomePage
             // 
@@ -162,6 +162,6 @@
         private Guna.UI2.WinForms.Guna2Button btnHomePage;
         private Guna.UI2.WinForms.Guna2Button btnProfilePage;
         private Guna.UI2.WinForms.Guna2Button btnCartPage;
-        private Guna.UI2.WinForms.Guna2Button btnLikedPage;
+        private Guna.UI2.WinForms.Guna2Button btnRecentPage;
     }
 }
