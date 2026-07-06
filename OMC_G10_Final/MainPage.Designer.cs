@@ -33,6 +33,7 @@
             btnPageHearing = new Button();
             pictureBox1 = new PictureBox();
             chkOn = new CheckBox();
+            bottomNavigationBar2 = new BottomNavigationBar();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -80,12 +81,22 @@
             chkOn.UseVisualStyleBackColor = false;
             chkOn.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // bottomNavigationBar2
+            // 
+            bottomNavigationBar2.AutoSize = true;
+            bottomNavigationBar2.Dock = DockStyle.Bottom;
+            bottomNavigationBar2.Location = new Point(0, 619);
+            bottomNavigationBar2.Name = "bottomNavigationBar2";
+            bottomNavigationBar2.Size = new Size(1200, 106);
+            bottomNavigationBar2.TabIndex = 4;
+            // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(bottomNavigationBar2);
             Controls.Add(chkOn);
             Controls.Add(pictureBox1);
             Controls.Add(btnPageHearing);
@@ -94,6 +105,7 @@
             Text = "MainPage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -104,5 +116,6 @@
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
         private CheckBox chkOn;
+        private BottomNavigationBar bottomNavigationBar2;
     }
 }
