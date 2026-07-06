@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace OMC_G10_Final
 {
-    public partial class LikedPage : Form
+    public partial class RecentPage : Form
     {
-        public LikedPage()
+        public RecentPage()
         {
             InitializeComponent();
         }
