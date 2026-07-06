@@ -16,7 +16,6 @@ namespace OMC_G10_Final
         }
 
 
-
         private void btnHomePage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -35,7 +34,24 @@ namespace OMC_G10_Final
             }
         }
 
+        private void btnRecentPage_Click(object sender, EventArgs e)
+        {
 
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is RecentPage)
+            {
+                return;
+            }
+
+            RecentPage newForm = new RecentPage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Prevents the application from terminating
+            }
+        }
 
         private void btnCartPage_Click_1(object sender, EventArgs e)
         {
@@ -55,8 +71,9 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnProfilePage_Click_1(object sender, EventArgs e)
+        private void btnProfilePage_Click(object sender, EventArgs e)
         {
+
             Form? currentForm = this.FindForm();
 
             if (currentForm is ProfilePage)
@@ -65,24 +82,6 @@ namespace OMC_G10_Final
             }
 
             ProfilePage newForm = new ProfilePage();
-            newForm.Show();
-
-            if (currentForm != null)
-            {
-                currentForm.Hide(); // Prevents the application from terminating
-            }
-        }
-
-        private void btnRecentPage_Click(object sender, EventArgs e)
-        {
-            Form? currentForm = this.FindForm();
-
-            if (currentForm is RecentPage)
-            {
-                return;
-            }
-
-            RecentPage newForm = new RecentPage();
             newForm.Show();
 
             if (currentForm != null)

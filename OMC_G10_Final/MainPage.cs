@@ -55,5 +55,6 @@ namespace OMC_G10_Final
             // Hide the current MainPage
             this.Hide();
         }
+
     }
 }

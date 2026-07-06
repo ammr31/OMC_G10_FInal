@@ -15,11 +15,10 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-     
-        private void btnLogo_Click(object sender, EventArgs e)
+        private void btnEnter_Click(object sender, EventArgs e)
         {
-            MainPage mainPage = new MainPage();
-            mainPage.Show();
+            MainPage newForm  = new MainPage();
+            newForm.Show();
             this.Hide();
         }
     }
