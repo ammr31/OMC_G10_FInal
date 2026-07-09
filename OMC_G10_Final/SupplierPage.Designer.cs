@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class Supplier
+    partial class SupplierPage
     {
         /// <summary>
         /// Required designer variable.
@@ -75,7 +75,7 @@
             // 
             btnSubmit.BackColor = Color.FromArgb(255, 192, 192);
             btnSubmit.FlatStyle = FlatStyle.Popup;
-            btnSubmit.Font = new Font("Verdana", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnSubmit.Font = new Font("Verdana", 15F, FontStyle.Bold);
             btnSubmit.Location = new Point(85, 362);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(328, 83);
@@ -156,7 +156,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 20F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(128, 64, 0);
+            label1.ForeColor = Color.FromArgb(128, 64, 64);
             label1.Location = new Point(46, 51);
             label1.Name = "label1";
             label1.Size = new Size(399, 41);
@@ -184,7 +184,7 @@
             btnSave.BackColor = Color.FromArgb(255, 192, 192);
             btnSave.CausesValidation = false;
             btnSave.FlatStyle = FlatStyle.Popup;
-            btnSave.Font = new Font("Verdana", 13.8F, FontStyle.Italic);
+            btnSave.Font = new Font("Verdana", 15F, FontStyle.Bold);
             btnSave.Location = new Point(92, 322);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(328, 83);
@@ -231,14 +231,14 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 20F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(128, 64, 0);
+            label2.ForeColor = Color.FromArgb(128, 64, 64);
             label2.Location = new Point(54, 51);
             label2.Name = "label2";
             label2.Size = new Size(392, 41);
             label2.TabIndex = 1;
             label2.Text = "RESTOCK PRODUCT";
             // 
-            // Supplier
+            // SupplierPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -246,8 +246,8 @@
             ClientSize = new Size(1200, 725);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Name = "Supplier";
-            Text = "Supplier";
+            Name = "SupplierPage";
+            Text = "SupplierPage";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();

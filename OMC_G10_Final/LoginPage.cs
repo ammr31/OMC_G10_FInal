@@ -8,21 +8,11 @@ using System.Windows.Forms;
 
 namespace OMC_G10_Final
 {
-    public partial class Supplier : Form
+    public partial class LoginPage : Form
     {
-        public Supplier()
+        public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
