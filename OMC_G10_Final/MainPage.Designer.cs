@@ -150,27 +150,50 @@
             // 
             // btnPageMobility
             // 
-            btnPageMobility.CustomizableEdges = customizableEdges11;
-            btnPageMobility.DisabledState.BorderColor = Color.DarkGray;
-            btnPageMobility.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnPageMobility.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnPageMobility.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnPageMobility.FillColor = Color.FromArgb(107, 78, 57);
-            btnPageMobility.FocusedColor = Color.FromArgb(107, 78, 57);
-            btnPageMobility.Font = new Font("Segoe UI", 9F);
-            btnPageMobility.ForeColor = Color.FromArgb(245, 247, 231);
-            btnPageMobility.HoverState.BorderColor = Color.FromArgb(148, 104, 80);
-            btnPageMobility.HoverState.CustomBorderColor = Color.FromArgb(107, 78, 57);
-            btnPageMobility.HoverState.FillColor = Color.FromArgb(107, 78, 57);
-            btnPageMobility.HoverState.ForeColor = Color.FromArgb(107, 78, 57);
-            btnPageMobility.Image = Properties.Resources.wheelchair2;
-            btnPageMobility.ImageSize = new Size(170, 170);
-            btnPageMobility.Location = new Point(353, 207);
-            btnPageMobility.Name = "btnPageMobility";
-            btnPageMobility.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnPageMobility.Size = new Size(192, 109);
-            btnPageMobility.TabIndex = 4;
-            btnPageMobility.Click += btnPageMobility_Click_1;
+            btnMedicine.BackActive = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackHover = Color.FromArgb(222, 158, 209);
+            btnMedicine.BorderWidth = 3F;
+            btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Location = new Point(333, 483);
+            btnMedicine.Name = "btnMedicine";
+            btnMedicine.Shape = AntdUI.TShape.Round;
+            btnMedicine.Size = new Size(264, 79);
+            btnMedicine.TabIndex = 10;
+            btnMedicine.Text = "Medicine";
+            btnMedicine.Click += btnMedicine_Click;
+            // 
+            // btnDailyNeeds
+            // 
+            btnDailyNeeds.BackActive = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.BackColor = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.BackHover = Color.FromArgb(222, 158, 209);
+            btnDailyNeeds.BorderWidth = 3F;
+            btnDailyNeeds.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnDailyNeeds.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
+            btnDailyNeeds.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDailyNeeds.ForeColor = Color.FromArgb(107, 78, 57);
+            btnDailyNeeds.Location = new Point(634, 481);
+            btnDailyNeeds.Name = "btnDailyNeeds";
+            btnDailyNeeds.Shape = AntdUI.TShape.Round;
+            btnDailyNeeds.Size = new Size(264, 79);
+            btnDailyNeeds.TabIndex = 11;
+            btnDailyNeeds.Text = "Daily Needs";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.wheelchair2;
+            pictureBox1.Location = new Point(385, 174);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(135, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // label3
             // 
