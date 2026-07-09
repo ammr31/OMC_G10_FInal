@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
             btnEnter = new AntdUI.Button();
             SuspendLayout();
             // 
             // btnEnter
             // 
             btnEnter.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
-            btnEnter.Icon = Properties.Resources.carecart;
+            btnEnter.Icon = (Image)resources.GetObject("btnEnter.Icon");
             btnEnter.IconRatio = 1F;
             btnEnter.IconSize = new Size(400, 400);
-            btnEnter.Location = new Point(356, 95);
+            btnEnter.Location = new Point(246, 64);
             btnEnter.Name = "btnEnter";
             btnEnter.Shape = AntdUI.TShape.Circle;
-            btnEnter.Size = new Size(575, 507);
+            btnEnter.Size = new Size(745, 499);
             btnEnter.TabIndex = 0;
-            btnEnter.Text = "button1";
             btnEnter.Click += btnEnter_Click;
             // 
             // StartScreen
