@@ -36,6 +36,9 @@
             // 
             btnLogo.AutoSize = true;
             btnLogo.BackgroundImageLayout = ImageLayout.Zoom;
+            btnLogo.FlatAppearance.BorderSize = 0;
+            btnLogo.FlatAppearance.MouseDownBackColor = Color.FromArgb(108, 117, 82);
+            btnLogo.FlatAppearance.MouseOverBackColor = Color.FromArgb(108, 117, 82);
             btnLogo.FlatStyle = FlatStyle.Flat;
             btnLogo.Image = (Image)resources.GetObject("btnLogo.Image");
             btnLogo.Location = new Point(326, 141);
