@@ -28,144 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            bottomNavigationBar1 = new BottomNavigationBar();
-            btnPageHearing = new Guna.UI2.WinForms.Guna2Button();
-            panel1 = new Panel();
-            TogglesSwitchDeaf = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
+            bottomNavigationBar2 = new BottomNavigationBar();
+            panel3 = new AntdUI.Panel();
+            SwitchAccessibility = new AntdUI.Switch();
             label1 = new Label();
-            btnPageMobility = new Guna.UI2.WinForms.Guna2Button();
-            label3 = new Label();
-            label4 = new Label();
-            panel1.SuspendLayout();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
+            btnCall = new AntdUI.Button();
+            pictureBox3 = new PictureBox();
+            label5 = new AntdUI.Label();
+            pictureBox1 = new PictureBox();
+            label4 = new AntdUI.Label();
+            label3 = new AntdUI.Label();
+            btnDailyNeeds = new AntdUI.Button();
+            btnMedicine = new AntdUI.Button();
+            label6 = new Label();
+            pictureBox4 = new PictureBox();
+            panel2 = new Panel();
+            btnMessage = new AntdUI.Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panelchat = new Panel();
+            flowlayoutchat = new FlowLayoutPanel();
+            btnsend = new AntdUI.Button();
+            txtchatinput = new TextBox();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            panelchat.SuspendLayout();
             SuspendLayout();
             // 
-            // bottomNavigationBar1
+            // bottomNavigationBar2
             // 
-            bottomNavigationBar1.AutoSize = true;
-            bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 619);
-            bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 106);
-            bottomNavigationBar1.TabIndex = 3;
+            bottomNavigationBar2.AutoSize = true;
+            bottomNavigationBar2.Dock = DockStyle.Bottom;
+            bottomNavigationBar2.Location = new Point(0, 619);
+            bottomNavigationBar2.Name = "bottomNavigationBar2";
+            bottomNavigationBar2.Size = new Size(1200, 106);
+            bottomNavigationBar2.TabIndex = 0;
             // 
-            // btnPageHearing
+            // panel3
             // 
-            btnPageHearing.CustomizableEdges = customizableEdges7;
-            btnPageHearing.DisabledState.BorderColor = Color.DarkGray;
-            btnPageHearing.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnPageHearing.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnPageHearing.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnPageHearing.FillColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.FocusedColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.Font = new Font("Segoe UI", 9F);
-            btnPageHearing.ForeColor = Color.White;
-            btnPageHearing.HoverState.BorderColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.HoverState.CustomBorderColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.HoverState.FillColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.HoverState.ForeColor = Color.FromArgb(107, 78, 57);
-            btnPageHearing.Image = Properties.Resources.deafness;
-            btnPageHearing.ImageSize = new Size(150, 150);
-            btnPageHearing.Location = new Point(645, 207);
-            btnPageHearing.Name = "btnPageHearing";
-            btnPageHearing.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnPageHearing.Size = new Size(192, 109);
-            btnPageHearing.TabIndex = 5;
-            btnPageHearing.Click += btnPageHearing_Click_1;
+            panel3.Back = Color.FromArgb(245, 247, 231);
+            panel3.BackColor = Color.FromArgb(245, 247, 231);
+            panel3.Controls.Add(SwitchAccessibility);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(label2);
+            panel3.Location = new Point(23, 33);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(793, 123);
+            panel3.TabIndex = 10;
+            panel3.Text = "panel3";
             // 
-            // panel1
+            // SwitchAccessibility
             // 
-            panel1.BackColor = Color.FromArgb(245, 247, 231);
-            panel1.Controls.Add(TogglesSwitchDeaf);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(38, 27);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(811, 114);
-            panel1.TabIndex = 6;
-            // 
-            // TogglesSwitchDeaf
-            // 
-            TogglesSwitchDeaf.Animated = true;
-            TogglesSwitchDeaf.AutoRoundedCorners = true;
-            TogglesSwitchDeaf.CheckedState.BorderColor = Color.FromArgb(138, 167, 66);
-            TogglesSwitchDeaf.CheckedState.BorderRadius = 24;
-            TogglesSwitchDeaf.CheckedState.FillColor = Color.FromArgb(138, 167, 66);
-            TogglesSwitchDeaf.CheckedState.InnerBorderColor = Color.White;
-            TogglesSwitchDeaf.CheckedState.InnerBorderRadius = 20;
-            TogglesSwitchDeaf.CheckedState.InnerColor = Color.White;
-            TogglesSwitchDeaf.CustomizableEdges = customizableEdges9;
-            TogglesSwitchDeaf.Location = new Point(657, 29);
-            TogglesSwitchDeaf.Name = "TogglesSwitchDeaf";
-            TogglesSwitchDeaf.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TogglesSwitchDeaf.Size = new Size(130, 51);
-            TogglesSwitchDeaf.TabIndex = 7;
-            TogglesSwitchDeaf.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            TogglesSwitchDeaf.UncheckedState.BorderRadius = 24;
-            TogglesSwitchDeaf.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            TogglesSwitchDeaf.UncheckedState.InnerBorderColor = Color.White;
-            TogglesSwitchDeaf.UncheckedState.InnerBorderRadius = 20;
-            TogglesSwitchDeaf.UncheckedState.InnerColor = Color.White;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.hearing_inverted;
-            pictureBox1.Location = new Point(170, 74);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(55, 40);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(107, 78, 57);
-            label2.Location = new Point(14, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(161, 25);
-            label2.TabIndex = 7;
-            label2.Text = "Deaf Friendly";
+            SwitchAccessibility.Fill = Color.FromArgb(138, 167, 66);
+            SwitchAccessibility.FillHover = Color.Green;
+            SwitchAccessibility.Location = new Point(650, 33);
+            SwitchAccessibility.Name = "SwitchAccessibility";
+            SwitchAccessibility.Size = new Size(125, 58);
+            SwitchAccessibility.TabIndex = 2;
+            SwitchAccessibility.CheckedChanged += SwitchAccessibility_CheckedChanged;
             // 
             // label1
             // 
             label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(107, 78, 57);
-            label1.Location = new Point(0, 0);
+            label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(669, 71);
-            label1.TabIndex = 7;
+            label1.Size = new Size(667, 78);
+            label1.TabIndex = 0;
             label1.Text = "Accessibility Mode";
-            label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnPageMobility
+            // pictureBox2
             // 
-            btnMedicine.BackActive = Color.FromArgb(255, 220, 248);
-            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
-            btnMedicine.BackHover = Color.FromArgb(222, 158, 209);
-            btnMedicine.BorderWidth = 3F;
-            btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.Location = new Point(333, 483);
-            btnMedicine.Name = "btnMedicine";
-            btnMedicine.Shape = AntdUI.TShape.Round;
-            btnMedicine.Size = new Size(264, 79);
-            btnMedicine.TabIndex = 10;
-            btnMedicine.Text = "Medicine";
-            btnMedicine.Click += btnMedicine_Click;
+            pictureBox2.Image = Properties.Resources.hearing_inverted;
+            pictureBox2.Location = new Point(273, 66);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(60, 57);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(107, 78, 57);
+            label2.Location = new Point(47, 78);
+            label2.Name = "label2";
+            label2.Size = new Size(664, 45);
+            label2.TabIndex = 1;
+            label2.Text = "Deaf friendly ";
+            // 
+            // btnCall
+            // 
+            btnCall.BackActive = Color.FromArgb(245, 247, 231);
+            btnCall.BackColor = Color.FromArgb(245, 247, 231);
+            btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
+            btnCall.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnCall.Icon = Properties.Resources.telephone_call;
+            btnCall.IconRatio = 1F;
+            btnCall.IconSize = new Size(70, 70);
+            btnCall.Location = new Point(3, 3);
+            btnCall.Name = "btnCall";
+            btnCall.Size = new Size(134, 117);
+            btnCall.TabIndex = 11;
+            btnCall.Text = "button1";
+            btnCall.Click += btnCall_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.deafness;
+            pictureBox3.Location = new Point(352, 16);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(135, 120);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 29;
+            pictureBox3.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(245, 247, 231);
+            label5.Location = new Point(323, 142);
+            label5.Name = "label5";
+            label5.Size = new Size(183, 38);
+            label5.TabIndex = 33;
+            label5.Text = "HEARING";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.wheelchair2;
+            pictureBox1.Location = new Point(74, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(135, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(245, 247, 231);
+            label4.Location = new Point(49, 142);
+            label4.Name = "label4";
+            label4.Size = new Size(183, 38);
+            label4.TabIndex = 30;
+            label4.Text = "MOBILITY ";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.FromArgb(245, 247, 231);
+            label3.Font = new Font("Verdana", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(107, 78, 57);
+            label3.Location = new Point(161, 215);
+            label3.Name = "label3";
+            label3.Size = new Size(252, 92);
+            label3.TabIndex = 27;
+            label3.Text = "Category";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnDailyNeeds
             // 
@@ -178,62 +205,170 @@
             btnDailyNeeds.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
             btnDailyNeeds.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDailyNeeds.ForeColor = Color.FromArgb(107, 78, 57);
-            btnDailyNeeds.Location = new Point(634, 481);
+            btnDailyNeeds.Location = new Point(301, 311);
             btnDailyNeeds.Name = "btnDailyNeeds";
             btnDailyNeeds.Shape = AntdUI.TShape.Round;
             btnDailyNeeds.Size = new Size(264, 79);
-            btnDailyNeeds.TabIndex = 11;
+            btnDailyNeeds.TabIndex = 32;
             btnDailyNeeds.Text = "Daily Needs";
+            btnDailyNeeds.Click += btnDailyNeeds_Click_1;
             // 
-            // pictureBox1
+            // btnMedicine
             // 
-            pictureBox1.Image = Properties.Resources.wheelchair2;
-            pictureBox1.Location = new Point(385, 174);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            btnMedicine.BackActive = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackHover = Color.FromArgb(222, 158, 209);
+            btnMedicine.BorderWidth = 3F;
+            btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Location = new Point(0, 313);
+            btnMedicine.Name = "btnMedicine";
+            btnMedicine.Shape = AntdUI.TShape.Round;
+            btnMedicine.Size = new Size(264, 79);
+            btnMedicine.TabIndex = 31;
+            btnMedicine.Text = "Medicine";
+            btnMedicine.Click += btnMedicine_Click_1;
             // 
-            // label3
+            // label6
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(245, 247, 231);
-            label3.Location = new Point(353, 319);
-            label3.Name = "label3";
-            label3.Size = new Size(186, 45);
-            label3.TabIndex = 7;
-            label3.Text = "Mobility";
+            label6.AutoSize = true;
+            label6.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(100, 353);
+            label6.Name = "label6";
+            label6.Size = new Size(1069, 36);
+            label6.TabIndex = 34;
+            label6.Text = " Please contact our 24/7 CareCart Support at +60 12-3456789";
+            label6.Visible = false;
             // 
-            // label4
+            // pictureBox4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(245, 247, 231);
-            label4.Location = new Point(651, 319);
-            label4.Name = "label4";
-            label4.Size = new Size(184, 45);
-            label4.TabIndex = 8;
-            label4.Text = "Hearing";
+            pictureBox4.Image = Properties.Resources.telephone_call;
+            pictureBox4.Location = new Point(23, 334);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(94, 75);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 35;
+            pictureBox4.TabStop = false;
+            pictureBox4.Visible = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(btnMedicine);
+            panel2.Controls.Add(btnDailyNeeds);
+            panel2.Location = new Point(321, 177);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(566, 401);
+            panel2.TabIndex = 36;
+            // 
+            // btnMessage
+            // 
+            btnMessage.BackActive = Color.FromArgb(245, 247, 231);
+            btnMessage.BackColor = Color.FromArgb(245, 247, 231);
+            btnMessage.DefaultBack = Color.FromArgb(245, 247, 231);
+            btnMessage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnMessage.Icon = Properties.Resources.bubble_chat;
+            btnMessage.IconRatio = 1F;
+            btnMessage.IconSize = new Size(80, 80);
+            btnMessage.Location = new Point(143, 3);
+            btnMessage.Name = "btnMessage";
+            btnMessage.Size = new Size(140, 117);
+            btnMessage.TabIndex = 12;
+            btnMessage.Text = "button2";
+            btnMessage.Click += btnMessage_Click_1;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.FromArgb(245, 247, 231);
+            flowLayoutPanel1.Controls.Add(btnCall);
+            flowLayoutPanel1.Controls.Add(btnMessage);
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(903, 33);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(283, 123);
+            flowLayoutPanel1.TabIndex = 37;
+            // 
+            // panelchat
+            // 
+            panelchat.AutoScroll = true;
+            panelchat.BackColor = Color.FromArgb(245, 247, 231);
+            panelchat.BorderStyle = BorderStyle.FixedSingle;
+            panelchat.Controls.Add(flowlayoutchat);
+            panelchat.Controls.Add(btnsend);
+            panelchat.Controls.Add(txtchatinput);
+            panelchat.Location = new Point(903, 177);
+            panelchat.Name = "panelchat";
+            panelchat.Size = new Size(285, 398);
+            panelchat.TabIndex = 38;
+            panelchat.Visible = false;
+            // 
+            // flowlayoutchat
+            // 
+            flowlayoutchat.AutoScroll = true;
+            flowlayoutchat.BackColor = Color.White;
+            flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
+            flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            flowlayoutchat.Location = new Point(20, 17);
+            flowlayoutchat.Name = "flowlayoutchat";
+            flowlayoutchat.Size = new Size(246, 282);
+            flowlayoutchat.TabIndex = 3;
+            // 
+            // btnsend
+            // 
+            btnsend.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnsend.Icon = Properties.Resources.send;
+            btnsend.IconRatio = 1F;
+            btnsend.IconSize = new Size(40, 40);
+            btnsend.Location = new Point(209, 311);
+            btnsend.Name = "btnsend";
+            btnsend.Size = new Size(73, 68);
+            btnsend.TabIndex = 2;
+            btnsend.Text = "button1";
+            btnsend.Click += btnsend_Click;
+            // 
+            // txtchatinput
+            // 
+            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(20, 313);
+            txtchatinput.Multiline = true;
+            txtchatinput.Name = "txtchatinput";
+            txtchatinput.Size = new Size(183, 66);
+            txtchatinput.TabIndex = 1;
+            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(panel1);
-            Controls.Add(btnPageHearing);
-            Controls.Add(btnPageMobility);
-            Controls.Add(bottomNavigationBar1);
+            Controls.Add(panelchat);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(panel2);
+            Controls.Add(pictureBox4);
+            Controls.Add(label6);
+            Controls.Add(panel3);
+            Controls.Add(bottomNavigationBar2);
             Name = "MainPage";
             Text = "MainPage";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel2.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            panelchat.ResumeLayout(false);
+            panelchat.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,14 +377,28 @@
         private Button btn1;
         private BottomNavigationBar bottomNavigationBar1;
         private CheckBox checkBox1;
-        private Guna.UI2.WinForms.Guna2Button btnPageHearing;
-        private Panel panel1;
+        private BottomNavigationBar bottomNavigationBar2;
+        private AntdUI.Panel panel3;
+        private AntdUI.Switch SwitchAccessibility;
         private Label label1;
+        private PictureBox pictureBox2;
         private Label label2;
+        private AntdUI.Button btnCall;
+        private PictureBox pictureBox3;
+        private AntdUI.Label label5;
         private PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnPageMobility;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch TogglesSwitchDeaf;
-        private Label label3;
-        private Label label4;
+        private AntdUI.Label label4;
+        private AntdUI.Label label3;
+        private AntdUI.Button btnDailyNeeds;
+        private AntdUI.Button btnMedicine;
+        private Label label6;
+        private PictureBox pictureBox4;
+        private Panel panel2;
+        private AntdUI.Button btnMessage;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panelchat;
+        private AntdUI.Button btnsend;
+        private TextBox txtchatinput;
+        private FlowLayoutPanel flowlayoutchat;
     }
 }

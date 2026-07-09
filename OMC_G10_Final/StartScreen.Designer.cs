@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class RecentPage
+    partial class StartScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
+            btnEnter = new AntdUI.Button();
             SuspendLayout();
             // 
-            // bottomNavigationBar1
+            // btnEnter
             // 
-            bottomNavigationBar1.AutoSize = true;
-            bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 619);
-            bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 106);
-            bottomNavigationBar1.TabIndex = 0;
+            btnEnter.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnEnter.Icon = (Image)resources.GetObject("btnEnter.Icon");
+            btnEnter.IconRatio = 1F;
+            btnEnter.IconSize = new Size(400, 400);
+            btnEnter.Location = new Point(246, 64);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Shape = AntdUI.TShape.Circle;
+            btnEnter.Size = new Size(745, 499);
+            btnEnter.TabIndex = 0;
+            btnEnter.Click += btnEnter_Click;
             // 
-            // RecentPage
+            // StartScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(108, 117, 82);
+            BackColor = Color.FromArgb(106, 116, 83);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar1);
-            Name = "RecentPage";
-            Text = "RecentPage";
+            Controls.Add(btnEnter);
+            Name = "StartScreen";
+            Text = "Form1";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private BottomNavigationBar bottomNavigationBar1;
+        private AntdUI.Button btnEnter;
     }
 }

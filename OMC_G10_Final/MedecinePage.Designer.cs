@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class HearingPage
+    partial class MedecinePage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,41 @@
         private void InitializeComponent()
         {
             bottomNavigationBar1 = new BottomNavigationBar();
+            bottomNavigationBar2 = new BottomNavigationBar();
             SuspendLayout();
             // 
             // bottomNavigationBar1
             // 
             bottomNavigationBar1.AutoSize = true;
             bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 619);
+            bottomNavigationBar1.Location = new Point(0, 590);
             bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 106);
+            bottomNavigationBar1.Size = new Size(1200, 135);
             bottomNavigationBar1.TabIndex = 0;
             // 
-            // HearingPage
+            // bottomNavigationBar2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            bottomNavigationBar2.AutoSize = true;
+            bottomNavigationBar2.Dock = DockStyle.Bottom;
+            bottomNavigationBar2.Location = new Point(0, 619);
+            bottomNavigationBar2.Name = "bottomNavigationBar2";
+            bottomNavigationBar2.Size = new Size(1200, 106);
+            bottomNavigationBar2.TabIndex = 0;
+            // 
+            // MedecinePage
+            // 
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar1);
-            Name = "HearingPage";
-            Text = "HearingPage";
+            Controls.Add(bottomNavigationBar2);
+            Name = "MedecinePage";
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
 
         private BottomNavigationBar bottomNavigationBar1;
+        private BottomNavigationBar bottomNavigationBar2;
     }
 }
