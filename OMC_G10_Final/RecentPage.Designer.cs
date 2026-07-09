@@ -28,29 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bottomNavigationBar1 = new BottomNavigationBar();
             SuspendLayout();
             // 
-            // bottomNavigationBar1
-            // 
-            bottomNavigationBar1.AutoSize = true;
-            bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 619);
-            bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 106);
-            bottomNavigationBar1.TabIndex = 0;
-            // 
-            // LikedPage
+            // RecentPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar1);
-            Name = "LikedPage";
-            Text = "LikedPage";
+            Name = "RecentPage";
+            Text = "RecentPage";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
