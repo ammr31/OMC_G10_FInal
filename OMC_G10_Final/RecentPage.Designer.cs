@@ -40,15 +40,15 @@
             bottomNavigationBar1.Size = new Size(1200, 106);
             bottomNavigationBar1.TabIndex = 0;
             // 
-            // LikedPage
+            // RecentPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
             Controls.Add(bottomNavigationBar1);
-            Name = "LikedPage";
-            Text = "LikedPage";
+            Name = "RecentPage";
+            Text = "RecentPage";
             ResumeLayout(false);
             PerformLayout();
         }
