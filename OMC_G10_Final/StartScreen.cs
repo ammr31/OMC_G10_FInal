@@ -17,9 +17,14 @@ namespace OMC_G10_Final
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            MainPage newForm  = new MainPage();
+            MainPage newForm = new MainPage();
             newForm.Show();
             this.Hide();
+        }
+
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
