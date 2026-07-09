@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bottomNavigationBar1 = new BottomNavigationBar();
             SuspendLayout();
             // 
             // bottomNavigationBar1
@@ -50,7 +49,6 @@
             Name = "RecentPage";
             Text = "RecentPage";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
