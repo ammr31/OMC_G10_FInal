@@ -7,53 +7,40 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                checkBox1.Text = "ON";
-                checkBox1.BackColor = Color.Green;
-                checkBox1.ForeColor = Color.White;
-            }
-            else
-            {
-                checkBox1.Text = "OFF";
-                checkBox1.BackColor = Color.LightGray;
-                checkBox1.ForeColor = Color.Black;
-            }
-        }
-
-        private void btnPageMobility_Click_1(object sender, EventArgs e)
+        private void btnMedicine_Click(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is MobilityPage)
+            if (currentForm is MedecinePage)
             {
                 return;
             }
-            // Open the Mobility Form
-            MobilityPage newForm = new MobilityPage();
+
+            MedecinePage newForm = new MedecinePage();
             newForm.Show();
 
-            // Hide the current MainPage so it doesn't stay visible behind it
-            this.Hide();
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
         }
 
-        private void btnPageHearing_Click_1(object sender, EventArgs e)
+        private void btnDailyNeeds_Click(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is HearingPage)
+            if (currentForm is DailyNeedsPage)
             {
                 return;
             }
-            // Open the Hearing Form (Assuming your form class is named HearingForm)
-            HearingPage newForm = new HearingPage();
+
+            DailyNeedsPage newForm = new DailyNeedsPage();
             newForm.Show();
 
-            // Hide the current MainPage
-            this.Hide();
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
         }
 
     }
