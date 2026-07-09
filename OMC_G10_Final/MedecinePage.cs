@@ -8,11 +8,13 @@ using System.Windows.Forms;
 
 namespace OMC_G10_Final
 {
-    public partial class MobilityPage : Form
+    public partial class MedecinePage : Form
     {
-        public MobilityPage()
+        public MedecinePage()
         {
             InitializeComponent();
         }
+
+
     }
 }
