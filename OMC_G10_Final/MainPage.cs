@@ -14,38 +14,12 @@ namespace OMC_G10_Final
 
         private void btnMedicine_Click(object sender, EventArgs e)
         {
-            Form? currentForm = this.FindForm();
 
-            if (currentForm is MedecinePage)
-            {
-                return;
-            }
-
-            MedecinePage newForm = new MedecinePage();
-            newForm.Show();
-
-            if (currentForm != null)
-            {
-                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
-            }
         }
 
         private void btnDailyNeeds_Click(object sender, EventArgs e)
         {
-            Form? currentForm = this.FindForm();
 
-            if (currentForm is DailyNeedsPage)
-            {
-                return;
-            }
-
-            DailyNeedsPage newForm = new DailyNeedsPage();
-            newForm.Show();
-
-            if (currentForm != null)
-            {
-                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
-            }
         }
 
         private void btnCall_Click(object sender, EventArgs e)
@@ -191,18 +165,56 @@ namespace OMC_G10_Final
             if (panelchat.Visible == false)
             {
                 panelchat.Visible = true;    // show the chat UI
+                btnMessage.Icon =  Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
 
                 txtchatinput.Focus();
             }
             else
             {
                 panelchat.Visible = false;
+                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\bubble-chat.png");
             }
 
             // Optional: greet the user when chat opens, only once
             if (flowlayoutchat.Controls.Count == 0)
             {
                 AddMessage("Hi! How can I help you today?", isUser: false);
+            }
+        }
+
+        private void btnMedicine_Click_1(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is MedecinePage)
+            {
+                return;
+            }
+
+            MedecinePage newForm = new MedecinePage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
+        private void btnDailyNeeds_Click_1(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is DailyNeedsPage)
+            {
+                return;
+            }
+
+            DailyNeedsPage newForm = new DailyNeedsPage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
             }
         }
     }
