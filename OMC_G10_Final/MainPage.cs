@@ -165,7 +165,9 @@ namespace OMC_G10_Final
             if (panelchat.Visible == false)
             {
                 panelchat.Visible = true;    // show the chat UI
-                btnMessage.Icon =  Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
+                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
+
+
 
                 txtchatinput.Focus();
             }
@@ -173,6 +175,8 @@ namespace OMC_G10_Final
             {
                 panelchat.Visible = false;
                 btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\bubble-chat.png");
+
+
             }
 
             // Optional: greet the user when chat opens, only once
