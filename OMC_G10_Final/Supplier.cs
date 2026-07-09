@@ -8,18 +8,21 @@ using System.Windows.Forms;
 
 namespace OMC_G10_Final
 {
-    public partial class StartScreen : Form
+    public partial class Supplier : Form
     {
-        public StartScreen()
+        public Supplier()
         {
             InitializeComponent();
         }
 
-        private void btnEnter_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            MainPage newForm  = new MainPage();
-            newForm.Show();
-            this.Hide();
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

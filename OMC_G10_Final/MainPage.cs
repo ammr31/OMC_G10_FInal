@@ -1,5 +1,10 @@
+using OMC_G10_Final.Properties;
+using static AntdUI.Table;
+using Timer = System.Windows.Forms.Timer;
+
 namespace OMC_G10_Final
 {
+
     public partial class MainPage : Form
     {
         public MainPage()
@@ -7,53 +12,198 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void btnMedicine_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is MedecinePage)
             {
-                checkBox1.Text = "ON";
-                checkBox1.BackColor = Color.Green;
-                checkBox1.ForeColor = Color.White;
+                return;
+            }
+
+            MedecinePage newForm = new MedecinePage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
+        private void btnDailyNeeds_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is DailyNeedsPage)
+            {
+                return;
+            }
+
+            DailyNeedsPage newForm = new DailyNeedsPage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
+        private void btnCall_Click(object sender, EventArgs e)
+        {
+            if (panel2.Visible == true)
+            {
+                panel2.Visible = false;
+                pictureBox4.Visible = true;
+                label6.Visible = true;
+                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
+
             }
             else
             {
-                checkBox1.Text = "OFF";
-                checkBox1.BackColor = Color.LightGray;
-                checkBox1.ForeColor = Color.Black;
+                panel2.Visible = true;
+                pictureBox4.Visible = false;
+                label6.Visible = false;
+                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
+
             }
         }
 
-        private void btnPageMobility_Click_1(object sender, EventArgs e)
+
+
+        private void SwitchAccessibility_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
         {
-            Form? currentForm = this.FindForm();
-
-            if (currentForm is MobilityPage)
+            if (e.Value) // or e.Checked, depending on AntdUI's actual property name
             {
-                return;
-            }
-            // Open the Mobility Form
-            MobilityPage newForm = new MobilityPage();
-            newForm.Show();
+                btnCall.Enabled = false;
+                btnCall.Visible = false;
+                panel2.Visible = true;
+                pictureBox4.Visible = false;
+                label6.Visible = false;
+                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
 
-            // Hide the current MainPage so it doesn't stay visible behind it
-            this.Hide();
+            }
+            else
+            {
+                btnCall.Enabled = true;
+                btnCall.Visible = true;
+            }
+
+            if (panelchat.Visible == false)
+            {
+                panelchat.Visible = true;    // show the chat UI
+
+                txtchatinput.Focus();
+            }
+            else
+            {
+                panelchat.Visible = false;
+            }
+
+            // Optional: greet the user when chat opens, only once
+            if (flowlayoutchat.Controls.Count == 0)
+            {
+                AddMessage("Hi! How can I help you today?", isUser: false);
+            }
         }
 
-        private void btnPageHearing_Click_1(object sender, EventArgs e)
+
+
+        private void AddMessage(string text, bool isUser)
         {
-            Form? currentForm = this.FindForm();
-
-            if (currentForm is HearingPage)
+            Label bubble = new Label
             {
-                return;
-            }
-            // Open the Hearing Form (Assuming your form class is named HearingForm)
-            HearingPage newForm = new HearingPage();
-            newForm.Show();
+                Text = text,
+                AutoSize = true,
+                MaximumSize = new Size(250, 0),
+                Padding = new Padding(10),
+                BackColor = isUser ? Color.FromArgb(230, 200, 210) : Color.FromArgb(220, 220, 220),
+                Font = new Font("Segoe UI", 10),
+                Margin = new Padding(5)
+            };
 
-            // Hide the current MainPage
-            this.Hide();
+            // Align right for user, left for bot
+            FlowLayoutPanel wrapper = new FlowLayoutPanel
+            {
+                FlowDirection = isUser ? FlowDirection.RightToLeft : FlowDirection.LeftToRight,
+                AutoSize = true,
+                Dock = DockStyle.Top,
+                WrapContents = false
+            };
+            wrapper.Controls.Add(bubble);
+
+            flowlayoutchat.Controls.Add(wrapper); // flowLayoutChat = your scrollable FlowLayoutPanel
+            flowlayoutchat.ScrollControlIntoView(wrapper); // auto-scroll to newest message
+        }
+
+        private void btnsend_Click(object sender, EventArgs e)
+        {
+            string userText = txtchatinput.Text.Trim();
+            if (string.IsNullOrEmpty(userText)) return;
+
+            AddMessage(userText, isUser: true);
+            txtchatinput.Clear();
+
+            string reply = GetAutoReply(userText);
+
+            // Optional: small delay to feel more natural
+            Timer replyDelay = new Timer { Interval = 600 };
+            replyDelay.Tick += (s, args) =>
+            {
+                AddMessage(reply, isUser: false);
+                replyDelay.Stop();
+                replyDelay.Dispose();
+            };
+            replyDelay.Start();
+        }
+        private string GetAutoReply(string input)
+        {
+            string msg = input.ToLower();
+
+            if (msg.Contains("hello") || msg.Contains("hi"))
+                return "Hi there! How can I help you today?";
+
+            if (msg.Contains("medicine") || msg.Contains("medication"))
+                return "You can check your medicine schedule under the Medicine tab.";
+
+            if (msg.Contains("daily needs"))
+                return "Head to the Daily Needs section to view your list.";
+
+            if (msg.Contains("help"))
+                return "I can help with Mobility, Hearing, Medicine, or Daily Needs. What do you need?";
+
+            if (msg.Contains("thank"))
+                return "You're welcome! Let me know if there's anything else.";
+
+            return "Sorry, I didn't quite understand that. Could you rephrase?";
+        }
+
+        private void txtchatinput_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // stops the "ding" sound / newline
+                btnsend_Click(sender, e);
+            }
+        }
+
+        private void btnMessage_Click_1(object sender, EventArgs e)
+        {
+            if (panelchat.Visible == false)
+            {
+                panelchat.Visible = true;    // show the chat UI
+
+                txtchatinput.Focus();
+            }
+            else
+            {
+                panelchat.Visible = false;
+            }
+
+            // Optional: greet the user when chat opens, only once
+            if (flowlayoutchat.Controls.Count == 0)
+            {
+                AddMessage("Hi! How can I help you today?", isUser: false);
+            }
         }
     }
 }

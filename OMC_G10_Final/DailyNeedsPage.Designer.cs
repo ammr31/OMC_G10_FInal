@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class LikedPage
+    partial class DailyNeedsPage
     {
         /// <summary>
         /// Required designer variable.
@@ -40,15 +40,15 @@
             bottomNavigationBar1.Size = new Size(1200, 106);
             bottomNavigationBar1.TabIndex = 0;
             // 
-            // LikedPage
+            // HearingPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
             Controls.Add(bottomNavigationBar1);
-            Name = "LikedPage";
-            Text = "LikedPage";
+            Name = "HearingPage";
+            Text = "HearingPage";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace OMC_G10_Final
 {
-    public partial class HearingPage : Form
+    public partial class DailyNeedsPage : Form
     {
-        public HearingPage()
+        public DailyNeedsPage()
         {
             InitializeComponent();
         }

@@ -16,7 +16,6 @@ namespace OMC_G10_Final
         }
 
 
-
         private void btnHomePage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -35,16 +34,17 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnLikedPage_Click_1(object sender, EventArgs e)
+        private void btnRecentPage_Click(object sender, EventArgs e)
         {
+
             Form? currentForm = this.FindForm();
 
-            if (currentForm is LikedPage)
+            if (currentForm is RecentPage)
             {
                 return;
             }
 
-            LikedPage newForm = new LikedPage();
+            RecentPage newForm = new RecentPage();
             newForm.Show();
 
             if (currentForm != null)
@@ -71,8 +71,9 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnProfilePage_Click_1(object sender, EventArgs e)
+        private void btnProfilePage_Click(object sender, EventArgs e)
         {
+
             Form? currentForm = this.FindForm();
 
             if (currentForm is ProfilePage)

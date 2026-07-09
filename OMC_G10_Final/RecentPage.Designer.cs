@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class MobilityPage
+    partial class RecentPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bottomNavigationBar1 = new BottomNavigationBar();
             SuspendLayout();
             // 
-            // bottomNavigationBar1
-            // 
-            bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 590);
-            bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 135);
-            bottomNavigationBar1.TabIndex = 0;
-            // 
-            // MobilityForm
+            // RecentPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar1);
-            Name = "MobilityForm";
-            Text = "MobilityForm";
+            Name = "RecentPage";
+            Text = "RecentPage";
             ResumeLayout(false);
         }
 

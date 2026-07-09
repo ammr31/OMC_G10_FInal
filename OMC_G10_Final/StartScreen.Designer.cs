@@ -28,45 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
-            btnLogo = new Button();
+            btnEnter = new AntdUI.Button();
             SuspendLayout();
             // 
-            // btnLogo
+            // btnEnter
             // 
-            btnLogo.AutoSize = true;
-            btnLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            btnLogo.FlatAppearance.BorderSize = 0;
-            btnLogo.FlatAppearance.MouseDownBackColor = Color.FromArgb(108, 117, 82);
-            btnLogo.FlatAppearance.MouseOverBackColor = Color.FromArgb(108, 117, 82);
-            btnLogo.FlatStyle = FlatStyle.Flat;
-            btnLogo.Image = (Image)resources.GetObject("btnLogo.Image");
-            btnLogo.Location = new Point(326, 141);
-            btnLogo.Name = "btnLogo";
-            btnLogo.Size = new Size(521, 455);
-            btnLogo.TabIndex = 0;
-            btnLogo.UseVisualStyleBackColor = true;
-            btnLogo.Click += btnLogo_Click;
+            btnEnter.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnEnter.Icon = Properties.Resources.carecart;
+            btnEnter.IconRatio = 1F;
+            btnEnter.IconSize = new Size(400, 400);
+            btnEnter.Location = new Point(356, 95);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Shape = AntdUI.TShape.Circle;
+            btnEnter.Size = new Size(575, 507);
+            btnEnter.TabIndex = 0;
+            btnEnter.Text = "button1";
+            btnEnter.Click += btnEnter_Click;
             // 
             // StartScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(108, 117, 82);
-            BackgroundImageLayout = ImageLayout.Center;
+            BackColor = Color.FromArgb(106, 116, 83);
             ClientSize = new Size(1200, 725);
-            Controls.Add(btnLogo);
-            ForeColor = Color.FromArgb(108, 117, 82);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Controls.Add(btnEnter);
             Name = "StartScreen";
-            Text = "StartScreen";
-            TransparencyKey = Color.Transparent;
+            Text = "Form1";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Button btnLogo;
+        private AntdUI.Button btnEnter;
     }
 }

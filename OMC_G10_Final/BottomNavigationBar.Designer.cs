@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            btnProfilePage = new Guna.UI2.WinForms.Guna2Button();
-            btnCartPage = new Guna.UI2.WinForms.Guna2Button();
-            btnLikedPage = new Guna.UI2.WinForms.Guna2Button();
-            btnHomePage = new Guna.UI2.WinForms.Guna2Button();
+            btnProfilePage = new AntdUI.Button();
+            btnCartPage = new AntdUI.Button();
+            btnRecentPage = new AntdUI.Button();
+            btnHomePage = new AntdUI.Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +40,7 @@
             // 
             panel1.Controls.Add(btnProfilePage);
             panel1.Controls.Add(btnCartPage);
-            panel1.Controls.Add(btnLikedPage);
+            panel1.Controls.Add(btnRecentPage);
             panel1.Controls.Add(btnHomePage);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 29);
@@ -58,90 +50,79 @@
             // 
             // btnProfilePage
             // 
-            btnProfilePage.CustomBorderColor = Color.Black;
-            btnProfilePage.CustomBorderThickness = new Padding(5, 0, 0, 5);
-            btnProfilePage.CustomizableEdges = customizableEdges1;
-            btnProfilePage.DisabledState.BorderColor = Color.DarkGray;
-            btnProfilePage.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnProfilePage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnProfilePage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnProfilePage.BackHover = Color.FromArgb(250, 157, 231);
+            btnProfilePage.BorderWidth = 3F;
+            btnProfilePage.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnProfilePage.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnProfilePage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
             btnProfilePage.Dock = DockStyle.Left;
-            btnProfilePage.FillColor = Color.FromArgb(255, 220, 248);
-            btnProfilePage.Font = new Font("Segoe UI", 9F);
-            btnProfilePage.ForeColor = Color.Black;
-            btnProfilePage.Image = Properties.Resources.profile;
-            btnProfilePage.ImageSize = new Size(70, 70);
+            btnProfilePage.Icon = Properties.Resources.profile;
+            btnProfilePage.IconPosition = AntdUI.TAlignMini.None;
+            btnProfilePage.IconRatio = 1F;
+            btnProfilePage.IconSize = new Size(70, 70);
             btnProfilePage.Location = new Point(900, 0);
             btnProfilePage.Name = "btnProfilePage";
-            btnProfilePage.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnProfilePage.Size = new Size(300, 106);
-            btnProfilePage.TabIndex = 11;
-            btnProfilePage.Click += btnProfilePage_Click_1;
+            btnProfilePage.TabIndex = 15;
+            btnProfilePage.Text = "button4";
+            btnProfilePage.Click += btnProfilePage_Click;
             // 
             // btnCartPage
             // 
-            btnCartPage.CustomBorderColor = Color.Black;
-            btnCartPage.CustomBorderThickness = new Padding(5, 0, 5, 5);
-            btnCartPage.CustomizableEdges = customizableEdges3;
-            btnCartPage.DisabledState.BorderColor = Color.DarkGray;
-            btnCartPage.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCartPage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCartPage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCartPage.BackHover = Color.FromArgb(250, 157, 231);
+            btnCartPage.BorderWidth = 3F;
+            btnCartPage.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnCartPage.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnCartPage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
             btnCartPage.Dock = DockStyle.Left;
-            btnCartPage.FillColor = Color.FromArgb(255, 220, 248);
-            btnCartPage.Font = new Font("Segoe UI", 9F);
-            btnCartPage.ForeColor = Color.Black;
-            btnCartPage.Image = Properties.Resources.shopping_cart;
-            btnCartPage.ImageSize = new Size(70, 70);
+            btnCartPage.Icon = Properties.Resources.shopping_cart;
+            btnCartPage.IconPosition = AntdUI.TAlignMini.None;
+            btnCartPage.IconRatio = 1F;
+            btnCartPage.IconSize = new Size(70, 70);
             btnCartPage.Location = new Point(600, 0);
             btnCartPage.Name = "btnCartPage";
-            btnCartPage.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCartPage.Size = new Size(300, 106);
-            btnCartPage.TabIndex = 10;
+            btnCartPage.TabIndex = 14;
+            btnCartPage.Text = "button3";
             btnCartPage.Click += btnCartPage_Click_1;
             // 
-            // btnLikedPage
+            // btnRecentPage
             // 
-            btnLikedPage.CustomBorderColor = Color.Black;
-            btnLikedPage.CustomBorderThickness = new Padding(5, 0, 5, 5);
-            btnLikedPage.CustomizableEdges = customizableEdges5;
-            btnLikedPage.DisabledState.BorderColor = Color.DarkGray;
-            btnLikedPage.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLikedPage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLikedPage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLikedPage.Dock = DockStyle.Left;
-            btnLikedPage.FillColor = Color.FromArgb(255, 220, 248);
-            btnLikedPage.Font = new Font("Segoe UI", 9F);
-            btnLikedPage.ForeColor = Color.Black;
-            btnLikedPage.Image = Properties.Resources.heart;
-            btnLikedPage.ImageSize = new Size(70, 70);
-            btnLikedPage.Location = new Point(300, 0);
-            btnLikedPage.Name = "btnLikedPage";
-            btnLikedPage.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLikedPage.Size = new Size(300, 106);
-            btnLikedPage.TabIndex = 9;
-            btnLikedPage.Click += btnLikedPage_Click_1;
+            btnRecentPage.BackHover = Color.FromArgb(250, 157, 231);
+            btnRecentPage.BorderWidth = 3F;
+            btnRecentPage.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnRecentPage.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnRecentPage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnRecentPage.Dock = DockStyle.Left;
+            btnRecentPage.Icon = Properties.Resources.recent;
+            btnRecentPage.IconPosition = AntdUI.TAlignMini.None;
+            btnRecentPage.IconRatio = 1F;
+            btnRecentPage.IconSize = new Size(70, 70);
+            btnRecentPage.Location = new Point(300, 0);
+            btnRecentPage.Name = "btnRecentPage";
+            btnRecentPage.Size = new Size(300, 106);
+            btnRecentPage.TabIndex = 13;
+            btnRecentPage.Text = "button2";
+            btnRecentPage.Click += btnRecentPage_Click;
             // 
             // btnHomePage
             // 
-            btnHomePage.CustomBorderColor = Color.Black;
-            btnHomePage.CustomBorderThickness = new Padding(0, 0, 5, 5);
-            btnHomePage.CustomizableEdges = customizableEdges7;
-            btnHomePage.DisabledState.BorderColor = Color.DarkGray;
-            btnHomePage.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnHomePage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnHomePage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHomePage.BackExtend = "0";
+            btnHomePage.BackHover = Color.FromArgb(250, 157, 231);
+            btnHomePage.BorderWidth = 3F;
+            btnHomePage.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnHomePage.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnHomePage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
             btnHomePage.Dock = DockStyle.Left;
-            btnHomePage.FillColor = Color.FromArgb(255, 220, 248);
-            btnHomePage.Font = new Font("Segoe UI", 9F);
-            btnHomePage.ForeColor = Color.Black;
-            btnHomePage.Image = Properties.Resources.home;
-            btnHomePage.ImageSize = new Size(70, 70);
+            btnHomePage.Icon = Properties.Resources.home;
+            btnHomePage.IconPosition = AntdUI.TAlignMini.None;
+            btnHomePage.IconRatio = 1F;
+            btnHomePage.IconSize = new Size(70, 70);
             btnHomePage.Location = new Point(0, 0);
             btnHomePage.Name = "btnHomePage";
-            btnHomePage.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnHomePage.Size = new Size(300, 106);
-            btnHomePage.TabIndex = 8;
+            btnHomePage.TabIndex = 12;
+            btnHomePage.Text = "button1";
             btnHomePage.Click += btnHomePage_Click_1;
             // 
             // BottomNavigationBar
@@ -159,9 +140,9 @@
         #endregion
 
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button btnHomePage;
-        private Guna.UI2.WinForms.Guna2Button btnProfilePage;
-        private Guna.UI2.WinForms.Guna2Button btnCartPage;
-        private Guna.UI2.WinForms.Guna2Button btnLikedPage;
+        private AntdUI.Button btnHomePage;
+        private AntdUI.Button btnProfilePage;
+        private AntdUI.Button btnCartPage;
+        private AntdUI.Button btnRecentPage;
     }
 }
