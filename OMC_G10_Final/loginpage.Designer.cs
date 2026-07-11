@@ -31,8 +31,8 @@
             pictureBox1 = new PictureBox();
             label1 = new AntdUI.Label();
             label2 = new AntdUI.Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtEmail = new TextBox();
+            txtPassword = new TextBox();
             btnlogin = new AntdUI.Button();
             btnregister = new AntdUI.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -50,33 +50,37 @@
             // 
             // label1
             // 
-            label1.Location = new Point(413, 408);
+            label1.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            label1.Location = new Point(316, 414);
             label1.Name = "label1";
-            label1.Size = new Size(94, 29);
+            label1.Size = new Size(114, 43);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "E-Mail :";
             // 
             // label2
             // 
-            label2.Location = new Point(407, 463);
+            label2.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            label2.Location = new Point(316, 463);
             label2.Name = "label2";
-            label2.Size = new Size(94, 29);
+            label2.Size = new Size(185, 48);
             label2.TabIndex = 2;
-            label2.Text = "label2";
+            label2.Text = "Password :";
             // 
-            // textBox1
+            // txtEmail
             // 
-            textBox1.Location = new Point(522, 416);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 3;
+            txtEmail.Location = new Point(524, 414);
+            txtEmail.Multiline = true;
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(296, 43);
+            txtEmail.TabIndex = 3;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(524, 471);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 4;
+            txtPassword.Location = new Point(524, 471);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(296, 40);
+            txtPassword.TabIndex = 4;
             // 
             // btnlogin
             // 
@@ -89,7 +93,7 @@
             btnlogin.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
             btnlogin.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnlogin.ForeColor = Color.FromArgb(107, 78, 57);
-            btnlogin.Location = new Point(345, 575);
+            btnlogin.Location = new Point(340, 565);
             btnlogin.Name = "btnlogin";
             btnlogin.Shape = AntdUI.TShape.Round;
             btnlogin.Size = new Size(264, 79);
@@ -124,8 +128,8 @@
             ClientSize = new Size(1200, 725);
             Controls.Add(btnregister);
             Controls.Add(btnlogin);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtEmail);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -141,8 +145,8 @@
         private PictureBox pictureBox1;
         private AntdUI.Label label1;
         private AntdUI.Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtEmail;
+        private TextBox txtPassword;
         private AntdUI.Button btnlogin;
         private AntdUI.Button btnregister;
     }
