@@ -32,6 +32,7 @@ namespace OMC_G10_Final
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pageHeader1 = new AntdUI.PageHeader();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -186,10 +187,28 @@ namespace OMC_G10_Final
             label1.TabIndex = 0;
             label1.Text = "REGISTRATION FORM";
             // 
+            // pageHeader1
+            // 
+            pageHeader1.Font = new Font("Verdana", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pageHeader1.ForeColor = Color.FromArgb(245, 247, 231);
+            pageHeader1.Icon = Properties.Resources.profilepink1;
+            pageHeader1.IconRatio = 1F;
+            pageHeader1.IconSvg = "";
+            pageHeader1.Location = new Point(12, 12);
+            pageHeader1.Name = "pageHeader1";
+            pageHeader1.ShowBack = true;
+            pageHeader1.Size = new Size(92, 74);
+            pageHeader1.TabIndex = 41;
+            pageHeader1.Text = "Back";
+            pageHeader1.UseForeColorDrawIcons = true;
+            pageHeader1.UseSystemStyleColor = true;
+            pageHeader1.BackClick += pageHeader1_BackClick;
+            // 
             // RegistrationForm
             // 
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(pageHeader1);
             Controls.Add(groupBox1);
             Name = "RegistrationForm";
             Text = "RegistrationForm";
@@ -213,6 +232,7 @@ namespace OMC_G10_Final
         private TextBox txtBusinessContactNum;
         private TextBox txtBusinessAddress;
         private TextBox txtBusinessRegistrationNumberSSM;
+        private AntdUI.PageHeader pageHeader1;
         private TextBox txtBusinessname;
 
         private void btnSubmitRegistration_Click(object sender, EventArgs e)
@@ -279,6 +299,22 @@ namespace OMC_G10_Final
                     box.ShowDialog();
                 }
             }
+        }
+
+        private void pageHeader1_BackClick(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is loginpage)
+            {
+                return;
+            }
+            // Open the Mobility Form
+            loginpage newForm = new loginpage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
         }
     }
 }

@@ -51,5 +51,21 @@ namespace OMC_G10_Final
                 currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
             }
         }
+
+        private void pageHeader1_BackClick(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is MainPage)
+            {
+                return;
+            }
+            // Open the Mobility Form
+            MainPage newForm = new MainPage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
+        }
     }
 }
