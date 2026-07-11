@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 
@@ -15,7 +16,7 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-        private void btnlogin_Click(object sender, EventArgs e)
+        private void btnlogin_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -33,7 +34,7 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnregister_Click(object sender, EventArgs e)
+        private void btnregister_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 

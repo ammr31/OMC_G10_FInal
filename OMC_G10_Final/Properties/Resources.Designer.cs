@@ -193,6 +193,26 @@ namespace OMC_G10_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profilepink {
+            get {
+                object obj = ResourceManager.GetObject("profilepink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profilepink1 {
+            get {
+                object obj = ResourceManager.GetObject("profilepink1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recent {
             get {
                 object obj = ResourceManager.GetObject("recent", resourceCulture);

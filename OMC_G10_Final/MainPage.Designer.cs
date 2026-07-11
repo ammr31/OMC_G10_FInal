@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             bottomNavigationBar2 = new BottomNavigationBar();
-            panel3 = new AntdUI.Panel();
-            SwitchAccessibility = new AntdUI.Switch();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
-            label2 = new Label();
-            btnCall = new AntdUI.Button();
             pictureBox3 = new PictureBox();
             label5 = new AntdUI.Label();
             pictureBox1 = new PictureBox();
@@ -46,19 +40,26 @@
             btnDailyNeeds = new AntdUI.ButtonShadow();
             btnMedicine = new AntdUI.ButtonShadow();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnCall = new AntdUI.ButtonShadow();
+            btnMessage = new AntdUI.ButtonShadow();
             panelchat = new Panel();
             lstQuestion = new ListBox();
             flowlayoutchat = new FlowLayoutPanel();
-            btnsend = new AntdUI.Button();
             txtchatinput = new TextBox();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            btnsend = new AntdUI.Button();
+            label2 = new Label();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
+            SwitchAccessibility = new AntdUI.Switch();
+            panel3 = new AntdUI.Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panelchat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // bottomNavigationBar2
@@ -69,76 +70,6 @@
             bottomNavigationBar2.Name = "bottomNavigationBar2";
             bottomNavigationBar2.Size = new Size(1200, 106);
             bottomNavigationBar2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.Back = Color.FromArgb(245, 247, 231);
-            panel3.BackColor = Color.FromArgb(245, 247, 231);
-            panel3.Controls.Add(SwitchAccessibility);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(label2);
-            panel3.Location = new Point(23, 33);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(793, 123);
-            panel3.TabIndex = 10;
-            panel3.Text = "panel3";
-            // 
-            // SwitchAccessibility
-            // 
-            SwitchAccessibility.Fill = Color.FromArgb(138, 167, 66);
-            SwitchAccessibility.FillHover = Color.Green;
-            SwitchAccessibility.Location = new Point(650, 33);
-            SwitchAccessibility.Name = "SwitchAccessibility";
-            SwitchAccessibility.Size = new Size(125, 58);
-            SwitchAccessibility.TabIndex = 2;
-            SwitchAccessibility.CheckedChanged += SwitchAccessibility_CheckedChanged;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(107, 78, 57);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(667, 78);
-            label1.TabIndex = 0;
-            label1.Text = "Accessibility Mode";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.hearing_inverted;
-            pictureBox2.Location = new Point(273, 66);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(60, 57);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(107, 78, 57);
-            label2.Location = new Point(47, 78);
-            label2.Name = "label2";
-            label2.Size = new Size(664, 45);
-            label2.TabIndex = 1;
-            label2.Text = "Deaf friendly ";
-            // 
-            // btnCall
-            // 
-            btnCall.BackActive = Color.FromArgb(245, 247, 231);
-            btnCall.BackColor = Color.FromArgb(245, 247, 231);
-            btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
-            btnCall.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
-            btnCall.Icon = Properties.Resources.telephone_call;
-            btnCall.IconRatio = 1F;
-            btnCall.IconSize = new Size(70, 70);
-            btnCall.Location = new Point(3, 3);
-            btnCall.Name = "btnCall";
-            btnCall.Size = new Size(134, 117);
-            btnCall.TabIndex = 11;
-            btnCall.Text = "button1";
-            btnCall.Click += btnCall_Click;
             // 
             // pictureBox3
             // 
@@ -156,6 +87,11 @@
             label5.ForeColor = Color.FromArgb(245, 247, 231);
             label5.Location = new Point(323, 142);
             label5.Name = "label5";
+            label5.Shadow = 1;
+            label5.ShadowColor = SystemColors.ActiveCaptionText;
+            label5.ShadowOffsetX = 4;
+            label5.ShadowOffsetY = 4;
+            label5.ShadowOpacity = 0.4F;
             label5.Size = new Size(183, 38);
             label5.TabIndex = 33;
             label5.Text = "HEARING";
@@ -177,6 +113,11 @@
             label4.ForeColor = Color.FromArgb(245, 247, 231);
             label4.Location = new Point(49, 142);
             label4.Name = "label4";
+            label4.Shadow = 1;
+            label4.ShadowColor = SystemColors.ActiveCaptionText;
+            label4.ShadowOffsetX = 4;
+            label4.ShadowOffsetY = 4;
+            label4.ShadowOpacity = 0.4F;
             label4.Size = new Size(183, 38);
             label4.TabIndex = 30;
             label4.Text = "MOBILITY ";
@@ -274,7 +215,7 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(245, 247, 231);
+            flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Controls.Add(btnCall);
             flowLayoutPanel1.Controls.Add(btnMessage);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
@@ -283,6 +224,38 @@
             flowLayoutPanel1.Size = new Size(283, 123);
             flowLayoutPanel1.TabIndex = 37;
             // 
+            // btnCall
+            // 
+            btnCall.BackHover = SystemColors.ActiveBorder;
+            btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
+            btnCall.Icon = Properties.Resources.telephone_call;
+            btnCall.IconRatio = 1F;
+            btnCall.IconSize = new Size(70, 70);
+            btnCall.Location = new Point(3, 3);
+            btnCall.Name = "btnCall";
+            btnCall.ShadowOffsetX = 4;
+            btnCall.ShadowOffsetY = 4;
+            btnCall.ShadowOpacity = 0.4F;
+            btnCall.Size = new Size(134, 117);
+            btnCall.TabIndex = 39;
+            btnCall.Click += btnCall_Click_1;
+            // 
+            // btnMessage
+            // 
+            btnMessage.BackHover = SystemColors.ActiveBorder;
+            btnMessage.DefaultBack = Color.FromArgb(245, 247, 231);
+            btnMessage.Icon = Properties.Resources.bubble_chat;
+            btnMessage.IconRatio = 1F;
+            btnMessage.IconSize = new Size(70, 70);
+            btnMessage.Location = new Point(143, 3);
+            btnMessage.Name = "btnMessage";
+            btnMessage.ShadowOffsetX = 4;
+            btnMessage.ShadowOffsetY = 4;
+            btnMessage.ShadowOpacity = 0.4F;
+            btnMessage.Size = new Size(134, 117);
+            btnMessage.TabIndex = 40;
+            btnMessage.Click += btnMessage_Click;
+            // 
             // panelchat
             // 
             panelchat.AutoScroll = true;
@@ -290,7 +263,6 @@
             panelchat.BorderStyle = BorderStyle.FixedSingle;
             panelchat.Controls.Add(lstQuestion);
             panelchat.Controls.Add(flowlayoutchat);
-            panelchat.Controls.Add(btnsend);
             panelchat.Controls.Add(txtchatinput);
             panelchat.Location = new Point(814, 177);
             panelchat.Name = "panelchat";
@@ -313,6 +285,8 @@
             flowlayoutchat.AutoScroll = true;
             flowlayoutchat.BackColor = Color.White;
             flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
+            flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            flowlayoutchat.Location = new Point(19, 15);
             flowlayoutchat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             flowlayoutchat.Location = new Point(20, 17);
             flowlayoutchat.Margin = new Padding(3, 3, 10, 3);
@@ -328,6 +302,11 @@
             txtchatinput.Multiline = true;
             txtchatinput.Name = "txtchatinput";
             txtchatinput.Size = new Size(261, 40);
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(19, 310);
+            txtchatinput.Multiline = true;
+            txtchatinput.Name = "txtchatinput";
+            txtchatinput.Size = new Size(183, 66);
             txtchatinput.TabIndex = 1;
             txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
@@ -337,14 +316,44 @@
             btnsend.Icon = Properties.Resources.send;
             btnsend.IconRatio = 1F;
             btnsend.IconSize = new Size(40, 40);
-            btnsend.Location = new Point(287, 321);
+            btnsend.Location = new Point(208, 310);
             btnsend.Name = "btnsend";
             btnsend.Size = new Size(67, 68);
             btnsend.TabIndex = 2;
             btnsend.Text = "button1";
             btnsend.Click += btnsend_Click;
             // 
-            // txtchatinput
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(107, 78, 57);
+            label2.Location = new Point(47, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(664, 45);
+            label2.TabIndex = 1;
+            label2.Text = "Deaf friendly ";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.hearing_inverted;
+            pictureBox2.Location = new Point(273, 61);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(60, 57);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(107, 78, 57);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(667, 78);
+            label1.TabIndex = 0;
+            label1.Text = "Accessibility Mode";
+            // 
+            // SwitchAccessibility
             // 
             // label1
             // 
@@ -384,6 +393,14 @@
             panel3.Size = new Size(793, 123);
             panel3.TabIndex = 10;
             panel3.Text = "panel3";
+            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(20, 340);
+            txtchatinput.Multiline = true;
+            txtchatinput.Name = "txtchatinput";
+            txtchatinput.Size = new Size(261, 40);
+            txtchatinput.TabIndex = 1;
+            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
             // MainPage
             // 
@@ -409,6 +426,8 @@
             flowLayoutPanel1.ResumeLayout(false);
             panelchat.ResumeLayout(false);
             panelchat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -418,12 +437,6 @@
         private BottomNavigationBar bottomNavigationBar1;
         private CheckBox checkBox1;
         private BottomNavigationBar bottomNavigationBar2;
-        private AntdUI.Panel panel3;
-        private AntdUI.Switch SwitchAccessibility;
-        private Label label1;
-        private PictureBox pictureBox2;
-        private Label label2;
-        private AntdUI.Button btnCall;
         private PictureBox pictureBox3;
         private AntdUI.Label label5;
         private PictureBox pictureBox1;
@@ -432,12 +445,18 @@
         private Label label6;
         private PictureBox pictureBox4;
         private Panel panel2;
-        private AntdUI.Button btnMessage;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panelchat;
         private AntdUI.Button btnsend;
         private TextBox txtchatinput;
         private FlowLayoutPanel flowlayoutchat;
+        private Label label2;
+        private PictureBox pictureBox2;
+        private Label label1;
+        private AntdUI.Switch SwitchAccessibility;
+        private AntdUI.Panel panel3;
+        private AntdUI.ButtonShadow btnCall;
+        private AntdUI.ButtonShadow btnMessage;
         private ListBox lstQuestion;
         private AntdUI.ButtonShadow btnDailyNeeds;
         private AntdUI.ButtonShadow btnMedicine;
