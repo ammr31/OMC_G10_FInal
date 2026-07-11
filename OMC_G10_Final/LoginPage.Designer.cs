@@ -1,6 +1,6 @@
 ﻿namespace OMC_G10_Final
 {
-    partial class LoginPage
+    partial class LogInPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,129 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txtPassword = new Label();
-            txtEmail = new TextBox();
-            txtEmailPassword = new TextBox();
             pictureBox1 = new PictureBox();
-            btnlogin = new AntdUI.Button();
-            btnregister = new AntdUI.Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label1 = new AntdUI.Label();
+            label2 = new AntdUI.Label();
+            btnLogIn = new AntdUI.Button();
+            btnRegister = new AntdUI.Button();
+            btnBack = new AntdUI.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.Info;
-            label1.Location = new Point(374, 392);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 31);
-            label1.TabIndex = 1;
-            label1.Text = "E-MAIL :";
-            // 
-            // txtPassword
-            // 
-            txtPassword.AutoSize = true;
-            txtPassword.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            txtPassword.ForeColor = SystemColors.Info;
-            txtPassword.Location = new Point(314, 444);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(205, 31);
-            txtPassword.TabIndex = 2;
-            txtPassword.Text = "PASSWORD : ";
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(560, 392);
-            txtEmail.Multiline = true;
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(320, 41);
-            txtEmail.TabIndex = 3;
-            // 
-            // txtEmailPassword
-            // 
-            txtEmailPassword.Location = new Point(560, 444);
-            txtEmailPassword.Multiline = true;
-            txtEmailPassword.Name = "txtEmailPassword";
-            txtEmailPassword.Size = new Size(320, 41);
-            txtEmailPassword.TabIndex = 4;
-            // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.carecart;
-            pictureBox1.Location = new Point(422, 12);
+            pictureBox1.Image = Properties.Resources.carecart1;
+            pictureBox1.Location = new Point(391, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(403, 347);
+            pictureBox1.Size = new Size(455, 394);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
+            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // btnlogin
+            // textBox1
             // 
-            btnlogin.BackActive = Color.FromArgb(255, 220, 248);
-            btnlogin.BackColor = Color.FromArgb(255, 220, 248);
-            btnlogin.BackHover = Color.FromArgb(222, 158, 209);
-            btnlogin.BorderWidth = 3F;
-            btnlogin.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnlogin.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnlogin.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnlogin.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnlogin.ForeColor = Color.FromArgb(107, 78, 57);
-            btnlogin.Location = new Point(314, 523);
-            btnlogin.Name = "btnlogin";
-            btnlogin.Shape = AntdUI.TShape.Round;
-            btnlogin.Size = new Size(264, 79);
-            btnlogin.TabIndex = 32;
-            btnlogin.Text = "Log In";
-            btnlogin.Click += btnlogin_Click;
+            textBox1.Location = new Point(545, 438);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(318, 27);
+            textBox1.TabIndex = 1;
             // 
-            // btnregister
+            // textBox2
             // 
-            btnregister.BackActive = Color.FromArgb(255, 220, 248);
-            btnregister.BackColor = Color.FromArgb(255, 220, 248);
-            btnregister.BackHover = Color.FromArgb(222, 158, 209);
-            btnregister.BorderWidth = 3F;
-            btnregister.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnregister.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnregister.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnregister.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnregister.ForeColor = Color.FromArgb(107, 78, 57);
-            btnregister.Location = new Point(616, 523);
-            btnregister.Name = "btnregister";
-            btnregister.Shape = AntdUI.TShape.Round;
-            btnregister.Size = new Size(264, 79);
-            btnregister.TabIndex = 33;
-            btnregister.Text = "Register";
-            btnregister.Click += btnregister_Click;
+            textBox2.Location = new Point(545, 493);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(318, 27);
+            textBox2.TabIndex = 2;
             // 
-            // LoginPage
+            // label1
+            // 
+            label1.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(445, 438);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 29);
+            label1.TabIndex = 3;
+            label1.Text = "Email :";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(400, 493);
+            label2.Name = "label2";
+            label2.Size = new Size(139, 29);
+            label2.TabIndex = 4;
+            label2.Text = "Password :";
+            // 
+            // btnLogIn
+            // 
+            btnLogIn.BackActive = Color.FromArgb(255, 220, 248);
+            btnLogIn.BackColor = Color.FromArgb(255, 220, 248);
+            btnLogIn.BackHover = Color.FromArgb(222, 158, 209);
+            btnLogIn.BorderWidth = 3F;
+            btnLogIn.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnLogIn.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnLogIn.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
+            btnLogIn.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogIn.ForeColor = Color.FromArgb(107, 78, 57);
+            btnLogIn.Location = new Point(358, 551);
+            btnLogIn.Name = "btnLogIn";
+            btnLogIn.Shape = AntdUI.TShape.Round;
+            btnLogIn.Size = new Size(264, 79);
+            btnLogIn.TabIndex = 32;
+            btnLogIn.Text = "Log In";
+            btnLogIn.Click += btnLogIn_Click;
+            // 
+            // btnRegister
+            // 
+            btnRegister.BackActive = Color.FromArgb(255, 220, 248);
+            btnRegister.BackColor = Color.FromArgb(255, 220, 248);
+            btnRegister.BackHover = Color.FromArgb(222, 158, 209);
+            btnRegister.BorderWidth = 3F;
+            btnRegister.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnRegister.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnRegister.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
+            btnRegister.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.ForeColor = Color.FromArgb(107, 78, 57);
+            btnRegister.Location = new Point(628, 551);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Shape = AntdUI.TShape.Round;
+            btnRegister.Size = new Size(264, 79);
+            btnRegister.TabIndex = 33;
+            btnRegister.Text = "Register";
+            btnRegister.Click += btnRegister_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.BorderWidth = 4F;
+            btnBack.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnBack.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnBack.Icon = Properties.Resources.back;
+            btnBack.IconRatio = 1F;
+            btnBack.IconSize = new Size(60, 60);
+            btnBack.Location = new Point(0, 0);
+            btnBack.Name = "btnBack";
+            btnBack.Shape = AntdUI.TShape.Circle;
+            btnBack.Size = new Size(110, 102);
+            btnBack.TabIndex = 34;
+            btnBack.Click += btnBack_Click;
+            // 
+            // LogInPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(btnregister);
-            Controls.Add(btnlogin);
-            Controls.Add(pictureBox1);
-            Controls.Add(txtEmailPassword);
-            Controls.Add(txtEmail);
-            Controls.Add(txtPassword);
+            Controls.Add(btnBack);
+            Controls.Add(btnRegister);
+            Controls.Add(btnLogIn);
+            Controls.Add(label2);
             Controls.Add(label1);
-            Name = "LoginPage";
-            Text = "LoginPage";
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(pictureBox1);
+            Name = "LogInPage";
+            Text = "LogInPage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
-        private Label txtPassword;
-        private TextBox txtEmail;
-        private TextBox txtEmailPassword;
+
         private PictureBox pictureBox1;
-        private AntdUI.Button btnlogin;
-        private AntdUI.Button btnregister;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private AntdUI.Label label1;
+        private AntdUI.Label label2;
+        private AntdUI.Button btnLogIn;
+        private AntdUI.Button btnRegister;
+        private AntdUI.Button btnBack;
     }
 }

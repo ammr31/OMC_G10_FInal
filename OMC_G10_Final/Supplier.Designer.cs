@@ -151,7 +151,6 @@
             label3.Size = new Size(179, 20);
             label3.TabIndex = 1;
             label3.Text = "Update Product Image : ";
-            label3.Click += label3_Click;
             // 
             // label1
             // 
@@ -163,7 +162,6 @@
             label1.Size = new Size(399, 41);
             label1.TabIndex = 0;
             label1.Text = "ADD NEW PRODUCT";
-            label1.Click += label1_Click;
             // 
             // groupBox2
             // 
