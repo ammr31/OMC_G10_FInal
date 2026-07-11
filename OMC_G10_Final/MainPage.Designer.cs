@@ -43,10 +43,11 @@
             btnCall = new AntdUI.ButtonShadow();
             btnMessage = new AntdUI.ButtonShadow();
             panelchat = new Panel();
+            btnsend = new AntdUI.Button();
             lstQuestion = new ListBox();
             flowlayoutchat = new FlowLayoutPanel();
             txtchatinput = new TextBox();
-            btnsend = new AntdUI.Button();
+            btnnakdeletesbbhilang = new AntdUI.Button();
             label2 = new Label();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -191,6 +192,7 @@
             btnDailyNeeds.Size = new Size(264, 79);
             btnDailyNeeds.TabIndex = 39;
             btnDailyNeeds.Text = "Daily Needs";
+            btnDailyNeeds.Click += btnDailyNeeds_Click;
             // 
             // btnMedicine
             // 
@@ -212,6 +214,7 @@
             btnMedicine.Size = new Size(264, 79);
             btnMedicine.TabIndex = 38;
             btnMedicine.Text = "Medicine";
+            btnMedicine.Click += btnMedicine_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -261,14 +264,26 @@
             panelchat.AutoScroll = true;
             panelchat.BackColor = Color.FromArgb(245, 247, 231);
             panelchat.BorderStyle = BorderStyle.FixedSingle;
+            panelchat.Controls.Add(btnsend);
             panelchat.Controls.Add(lstQuestion);
             panelchat.Controls.Add(flowlayoutchat);
             panelchat.Controls.Add(txtchatinput);
-            panelchat.Location = new Point(814, 177);
+            panelchat.Location = new Point(812, 169);
             panelchat.Name = "panelchat";
             panelchat.Size = new Size(374, 398);
             panelchat.TabIndex = 38;
             panelchat.Visible = false;
+            // 
+            // btnsend
+            // 
+            btnsend.Icon = Properties.Resources.send;
+            btnsend.IconRatio = 1F;
+            btnsend.IconSize = new Size(50, 50);
+            btnsend.Location = new Point(287, 319);
+            btnsend.Name = "btnsend";
+            btnsend.Size = new Size(82, 74);
+            btnsend.TabIndex = 39;
+            btnsend.Click += btnsend_Click_1;
             // 
             // lstQuestion
             // 
@@ -285,8 +300,6 @@
             flowlayoutchat.AutoScroll = true;
             flowlayoutchat.BackColor = Color.White;
             flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
-            flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            flowlayoutchat.Location = new Point(19, 15);
             flowlayoutchat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             flowlayoutchat.Location = new Point(20, 17);
             flowlayoutchat.Margin = new Padding(3, 3, 10, 3);
@@ -302,26 +315,20 @@
             txtchatinput.Multiline = true;
             txtchatinput.Name = "txtchatinput";
             txtchatinput.Size = new Size(261, 40);
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(19, 310);
-            txtchatinput.Multiline = true;
-            txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(183, 66);
             txtchatinput.TabIndex = 1;
             txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
-            // btnsend
+            // btnnakdeletesbbhilang
             // 
-            btnsend.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
-            btnsend.Icon = Properties.Resources.send;
-            btnsend.IconRatio = 1F;
-            btnsend.IconSize = new Size(40, 40);
-            btnsend.Location = new Point(208, 310);
-            btnsend.Name = "btnsend";
-            btnsend.Size = new Size(67, 68);
-            btnsend.TabIndex = 2;
-            btnsend.Text = "button1";
-            btnsend.Click += btnsend_Click;
+            btnnakdeletesbbhilang.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnnakdeletesbbhilang.Icon = Properties.Resources.send;
+            btnnakdeletesbbhilang.IconRatio = 1F;
+            btnnakdeletesbbhilang.IconSize = new Size(40, 40);
+            btnnakdeletesbbhilang.Location = new Point(208, 310);
+            btnnakdeletesbbhilang.Name = "btnnakdeletesbbhilang";
+            btnnakdeletesbbhilang.Size = new Size(100, 100);
+            btnnakdeletesbbhilang.TabIndex = 2;
+            btnnakdeletesbbhilang.Text = "button1";
             // 
             // label2
             // 
@@ -342,18 +349,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(107, 78, 57);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(667, 78);
-            label1.TabIndex = 0;
-            label1.Text = "Accessibility Mode";
-            // 
-            // SwitchAccessibility
             // 
             // label1
             // 
@@ -393,14 +388,6 @@
             panel3.Size = new Size(793, 123);
             panel3.TabIndex = 10;
             panel3.Text = "panel3";
-            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(20, 340);
-            txtchatinput.Multiline = true;
-            txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(261, 40);
-            txtchatinput.TabIndex = 1;
-            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
             // MainPage
             // 
@@ -447,7 +434,7 @@
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panelchat;
-        private AntdUI.Button btnsend;
+        private AntdUI.Button btnnakdeletesbbhilang;
         private TextBox txtchatinput;
         private FlowLayoutPanel flowlayoutchat;
         private Label label2;
@@ -460,5 +447,6 @@
         private ListBox lstQuestion;
         private AntdUI.ButtonShadow btnDailyNeeds;
         private AntdUI.ButtonShadow btnMedicine;
+        private AntdUI.Button btnsend;
     }
 }
