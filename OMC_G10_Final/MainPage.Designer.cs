@@ -48,6 +48,7 @@
             btnMessage = new AntdUI.Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panelchat = new Panel();
+            lstQuestion = new ListBox();
             flowlayoutchat = new FlowLayoutPanel();
             btnsend = new AntdUI.Button();
             txtchatinput = new TextBox();
@@ -298,23 +299,36 @@
             panelchat.AutoScroll = true;
             panelchat.BackColor = Color.FromArgb(245, 247, 231);
             panelchat.BorderStyle = BorderStyle.FixedSingle;
+            panelchat.Controls.Add(lstQuestion);
             panelchat.Controls.Add(flowlayoutchat);
             panelchat.Controls.Add(btnsend);
             panelchat.Controls.Add(txtchatinput);
-            panelchat.Location = new Point(903, 177);
+            panelchat.Location = new Point(814, 177);
             panelchat.Name = "panelchat";
-            panelchat.Size = new Size(285, 398);
+            panelchat.Size = new Size(374, 398);
             panelchat.TabIndex = 38;
             panelchat.Visible = false;
             // 
+            // lstQuestion
+            // 
+            lstQuestion.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstQuestion.FormattingEnabled = true;
+            lstQuestion.Location = new Point(20, 251);
+            lstQuestion.Name = "lstQuestion";
+            lstQuestion.Size = new Size(334, 64);
+            lstQuestion.TabIndex = 34;
+            lstQuestion.SelectedIndexChanged += lstQuestion_SelectedIndexChanged;
+            // 
             // flowlayoutchat
             // 
+            flowlayoutchat.AutoScroll = true;
             flowlayoutchat.BackColor = Color.White;
             flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
-            flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            flowlayoutchat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             flowlayoutchat.Location = new Point(20, 17);
+            flowlayoutchat.Margin = new Padding(3, 3, 10, 3);
             flowlayoutchat.Name = "flowlayoutchat";
-            flowlayoutchat.Size = new Size(246, 282);
+            flowlayoutchat.Size = new Size(334, 214);
             flowlayoutchat.TabIndex = 3;
             // 
             // btnsend
@@ -323,9 +337,9 @@
             btnsend.Icon = Properties.Resources.send;
             btnsend.IconRatio = 1F;
             btnsend.IconSize = new Size(40, 40);
-            btnsend.Location = new Point(209, 311);
+            btnsend.Location = new Point(287, 321);
             btnsend.Name = "btnsend";
-            btnsend.Size = new Size(73, 68);
+            btnsend.Size = new Size(67, 68);
             btnsend.TabIndex = 2;
             btnsend.Text = "button1";
             btnsend.Click += btnsend_Click;
@@ -333,11 +347,11 @@
             // txtchatinput
             // 
             txtchatinput.BorderStyle = BorderStyle.FixedSingle;
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(20, 313);
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(20, 340);
             txtchatinput.Multiline = true;
             txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(183, 66);
+            txtchatinput.Size = new Size(261, 40);
             txtchatinput.TabIndex = 1;
             txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
@@ -357,6 +371,7 @@
             Controls.Add(bottomNavigationBar2);
             Name = "MainPage";
             Text = "MainPage";
+            Load += MainPage_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -397,5 +412,6 @@
         private AntdUI.Button btnsend;
         private TextBox txtchatinput;
         private FlowLayoutPanel flowlayoutchat;
+        private ListBox lstQuestion;
     }
 }
