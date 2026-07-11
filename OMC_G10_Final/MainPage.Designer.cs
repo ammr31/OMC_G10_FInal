@@ -129,6 +129,7 @@
             // 
             btnCall.BackActive = Color.FromArgb(245, 247, 231);
             btnCall.BackColor = Color.FromArgb(245, 247, 231);
+            btnCall.BackHover = SystemColors.ActiveBorder;
             btnCall.DefaultBack = Color.FromArgb(245, 247, 231);
             btnCall.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
             btnCall.Icon = Properties.Resources.telephone_call;
@@ -273,6 +274,7 @@
             // 
             btnMessage.BackActive = Color.FromArgb(245, 247, 231);
             btnMessage.BackColor = Color.FromArgb(245, 247, 231);
+            btnMessage.BackHover = SystemColors.ActiveBorder;
             btnMessage.DefaultBack = Color.FromArgb(245, 247, 231);
             btnMessage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
             btnMessage.Icon = Properties.Resources.bubble_chat;
