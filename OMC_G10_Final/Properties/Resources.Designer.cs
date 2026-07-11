@@ -63,6 +63,16 @@ namespace OMC_G10_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bubble_chat {
             get {
                 object obj = ResourceManager.GetObject("bubble-chat", resourceCulture);
@@ -76,6 +86,16 @@ namespace OMC_G10_Final.Properties {
         internal static System.Drawing.Bitmap carecart {
             get {
                 object obj = ResourceManager.GetObject("carecart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carecart1 {
+            get {
+                object obj = ResourceManager.GetObject("carecart1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -136,7 +136,7 @@
             btnCall.IconSize = new Size(70, 70);
             btnCall.Location = new Point(3, 3);
             btnCall.Name = "btnCall";
-            btnCall.Size = new Size(123, 117);
+            btnCall.Size = new Size(134, 117);
             btnCall.TabIndex = 11;
             btnCall.Text = "button1";
             btnCall.Click += btnCall_Click;
@@ -212,6 +212,7 @@
             btnDailyNeeds.Size = new Size(264, 79);
             btnDailyNeeds.TabIndex = 32;
             btnDailyNeeds.Text = "Daily Needs";
+            btnDailyNeeds.Click += btnDailyNeeds_Click_1;
             // 
             // btnMedicine
             // 
@@ -230,6 +231,7 @@
             btnMedicine.Size = new Size(264, 79);
             btnMedicine.TabIndex = 31;
             btnMedicine.Text = "Medicine";
+            btnMedicine.Click += btnMedicine_Click_1;
             // 
             // label6
             // 
@@ -276,9 +278,9 @@
             btnMessage.Icon = Properties.Resources.bubble_chat;
             btnMessage.IconRatio = 1F;
             btnMessage.IconSize = new Size(80, 80);
-            btnMessage.Location = new Point(132, 3);
+            btnMessage.Location = new Point(143, 3);
             btnMessage.Name = "btnMessage";
-            btnMessage.Size = new Size(123, 117);
+            btnMessage.Size = new Size(140, 117);
             btnMessage.TabIndex = 12;
             btnMessage.Text = "button2";
             btnMessage.Click += btnMessage_Click_1;
@@ -291,7 +293,7 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(903, 33);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(250, 123);
+            flowLayoutPanel1.Size = new Size(283, 123);
             flowLayoutPanel1.TabIndex = 37;
             // 
             // panelchat
