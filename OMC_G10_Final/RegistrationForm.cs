@@ -68,6 +68,7 @@ namespace OMC_G10_Final
             btnSubmitRegistration.TabIndex = 13;
             btnSubmitRegistration.Text = "SUBMIT";
             btnSubmitRegistration.UseVisualStyleBackColor = false;
+            btnSubmitRegistration.Click += btnSubmitRegistration_Click;
             // 
             // txtLicenceNum
             // 
@@ -213,5 +214,21 @@ namespace OMC_G10_Final
         private TextBox txtBusinessAddress;
         private TextBox txtBusinessRegistrationNumberSSM;
         private TextBox txtBusinessname;
+
+        private void btnSubmitRegistration_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is ProfilePage)
+            {
+                return;
+            }
+            // Open the Mobility Form
+            ProfilePage newForm = new ProfilePage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
+        }
     }
 }

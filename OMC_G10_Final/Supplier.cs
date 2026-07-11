@@ -15,13 +15,41 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnlogin_Click(object sender, EventArgs e)
         {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is ProfilePage)
+            {
+                return;
+            }
+
+            ProfilePage newForm = new ProfilePage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Prevents the application from terminating
+            }
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnregister_Click(object sender, EventArgs e)
         {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is RegistrationForm)
+            {
+                return;
+            }
+
+            RegistrationForm newForm = new RegistrationForm();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Prevents the application from terminating
+            }
 
         }
     }

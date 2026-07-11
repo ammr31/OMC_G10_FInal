@@ -76,12 +76,12 @@ namespace OMC_G10_Final
 
             Form? currentForm = this.FindForm();
 
-            if (currentForm is ProfilePage)
+            if (currentForm is LoginPage)
             {
                 return;
             }
 
-            ProfilePage newForm = new ProfilePage();
+            LoginPage newForm = new LoginPage();
             newForm.Show();
 
             if (currentForm != null)

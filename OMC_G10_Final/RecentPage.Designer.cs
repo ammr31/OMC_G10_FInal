@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            bottomNavigationBar2 = new BottomNavigationBar();
             SuspendLayout();
             // 
-            // bottomNavigationBar1
+            // bottomNavigationBar2
             // 
-            bottomNavigationBar1.AutoSize = true;
-            bottomNavigationBar1.Dock = DockStyle.Bottom;
-            bottomNavigationBar1.Location = new Point(0, 619);
-            bottomNavigationBar1.Name = "bottomNavigationBar1";
-            bottomNavigationBar1.Size = new Size(1200, 106);
-            bottomNavigationBar1.TabIndex = 0;
+            bottomNavigationBar2.AutoSize = true;
+            bottomNavigationBar2.Dock = DockStyle.Bottom;
+            bottomNavigationBar2.Location = new Point(0, 619);
+            bottomNavigationBar2.Name = "bottomNavigationBar2";
+            bottomNavigationBar2.Size = new Size(1200, 106);
+            bottomNavigationBar2.TabIndex = 0;
             // 
             // RecentPage
             // 
@@ -45,14 +46,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(bottomNavigationBar1);
+            Controls.Add(bottomNavigationBar2);
             Name = "RecentPage";
             Text = "RecentPage";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private BottomNavigationBar bottomNavigationBar1;
+        private BottomNavigationBar bottomNavigationBar2;
     }
 }
