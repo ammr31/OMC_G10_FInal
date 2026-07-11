@@ -16,26 +16,6 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-
-
-        private void btnregister_Click(object sender, EventArgs e)
-        {
-            Form? currentForm = this.FindForm();
-
-            if (currentForm is RegistrationForm)
-            {
-                return;
-            }
-
-            RegistrationForm newForm = new RegistrationForm();
-            newForm.Show();
-
-            if (currentForm != null)
-            {
-                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
-            }
-        }
-
         private void btnlogin_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -46,6 +26,24 @@ namespace OMC_G10_Final
             }
 
             ProfilePage newForm = new ProfilePage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
+        private void btnregister_Click_1(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is RegistrationForm)
+            {
+                return;
+            }
+
+            RegistrationForm newForm = new RegistrationForm();
             newForm.Show();
 
             if (currentForm != null)

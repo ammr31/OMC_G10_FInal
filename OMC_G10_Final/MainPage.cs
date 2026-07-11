@@ -12,37 +12,6 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-        private void btnMedicine_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDailyNeeds_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCall_Click(object sender, EventArgs e)
-        {
-            if (panel2.Visible == true)
-            {
-                panel2.Visible = false;
-                pictureBox4.Visible = true;
-                label6.Visible = true;
-                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
-
-            }
-            else
-            {
-                panel2.Visible = true;
-                pictureBox4.Visible = false;
-                label6.Visible = false;
-                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
-
-            }
-        }
-
-
 
         private void SwitchAccessibility_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
         {
@@ -160,32 +129,6 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnMessage_Click_1(object sender, EventArgs e)
-        {
-            if (panelchat.Visible == false)
-            {
-                panelchat.Visible = true;    // show the chat UI
-                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
-
-
-
-                txtchatinput.Focus();
-            }
-            else
-            {
-                panelchat.Visible = false;
-                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\bubble-chat.png");
-
-
-            }
-
-            // Optional: greet the user when chat opens, only once
-            if (flowlayoutchat.Controls.Count == 0)
-            {
-                AddMessage("Hi! How can I help you today?", isUser: false);
-            }
-        }
-
         private void btnMedicine_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -221,5 +164,54 @@ namespace OMC_G10_Final
                 currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
             }
         }
+
+        private void btnCall_Click_1(object sender, EventArgs e)
+        {
+            if (panel2.Visible == true)
+            {
+                panel2.Visible = false;
+                pictureBox4.Visible = true;
+                label6.Visible = true;
+                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
+
+            }
+            else
+            {
+                panel2.Visible = true;
+                pictureBox4.Visible = false;
+                label6.Visible = false;
+                btnCall.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\telephone-call.png");
+
+            }
+
+        }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            if (panelchat.Visible == false)
+            {
+                panelchat.Visible = true;    // show the chat UI
+                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
+
+
+
+                txtchatinput.Focus();
+            }
+            else
+            {
+                panelchat.Visible = false;
+                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\bubble-chat.png");
+
+
+            }
+
+            // Optional: greet the user when chat opens, only once
+            if (flowlayoutchat.Controls.Count == 0)
+            {
+                AddMessage("Hi! How can I help you today?", isUser: false);
+            }
+        }
+
+
     }
 }

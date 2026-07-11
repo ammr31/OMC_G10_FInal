@@ -31,10 +31,10 @@
             pictureBox1 = new PictureBox();
             label1 = new AntdUI.Label();
             label2 = new AntdUI.Label();
-            btnregister = new AntdUI.Button();
             txtemail = new AntdUI.Input();
             txtpassword = new AntdUI.Input();
             btnlogin = new AntdUI.ButtonShadow();
+            btnregister = new AntdUI.ButtonShadow();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -69,28 +69,14 @@
             label2.ForeColor = Color.FromArgb(245, 247, 231);
             label2.Location = new Point(307, 467);
             label2.Name = "label2";
+            label2.Shadow = 1;
+            label2.ShadowColor = SystemColors.ActiveCaptionText;
+            label2.ShadowOffsetX = 4;
+            label2.ShadowOffsetY = 4;
+            label2.ShadowOpacity = 0.4F;
             label2.Size = new Size(185, 48);
             label2.TabIndex = 2;
             label2.Text = "Password :";
-            // 
-            // btnregister
-            // 
-            btnregister.BackActive = Color.FromArgb(255, 220, 248);
-            btnregister.BackColor = Color.FromArgb(255, 220, 248);
-            btnregister.BackHover = Color.FromArgb(222, 158, 209);
-            btnregister.BorderWidth = 3F;
-            btnregister.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnregister.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnregister.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnregister.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnregister.ForeColor = Color.FromArgb(107, 78, 57);
-            btnregister.Location = new Point(637, 565);
-            btnregister.Name = "btnregister";
-            btnregister.Shape = AntdUI.TShape.Round;
-            btnregister.Size = new Size(264, 79);
-            btnregister.TabIndex = 33;
-            btnregister.Text = "Register";
-            btnregister.Click += btnregister_Click;
             // 
             // txtemail
             // 
@@ -133,16 +119,38 @@
             btnlogin.Text = "Log In";
             btnlogin.Click += btnlogin_Click_1;
             // 
+            // btnregister
+            // 
+            btnregister.BackActive = Color.FromArgb(255, 220, 248);
+            btnregister.BackColor = Color.FromArgb(255, 220, 248);
+            btnregister.BackHover = Color.FromArgb(222, 158, 209);
+            btnregister.BorderWidth = 3F;
+            btnregister.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnregister.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnregister.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            btnregister.ForeColor = Color.FromArgb(107, 78, 57);
+            btnregister.Location = new Point(640, 570);
+            btnregister.Name = "btnregister";
+            btnregister.ShadowColor = SystemColors.ActiveCaptionText;
+            btnregister.ShadowOffsetX = 4;
+            btnregister.ShadowOffsetY = 4;
+            btnregister.ShadowOpacity = 0.6F;
+            btnregister.Shape = AntdUI.TShape.Round;
+            btnregister.Size = new Size(264, 74);
+            btnregister.TabIndex = 39;
+            btnregister.Text = "Register";
+            btnregister.Click += this.btnregister_Click_1;
+            // 
             // loginpage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(btnregister);
             Controls.Add(btnlogin);
             Controls.Add(txtpassword);
             Controls.Add(txtemail);
-            Controls.Add(btnregister);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -157,9 +165,9 @@
         private PictureBox pictureBox1;
         private AntdUI.Label label1;
         private AntdUI.Label label2;
-        private AntdUI.Button btnregister;
         private AntdUI.Input txtemail;
         private AntdUI.Input txtpassword;
         private AntdUI.ButtonShadow btnlogin;
+        private AntdUI.ButtonShadow btnregister;
     }
 }
