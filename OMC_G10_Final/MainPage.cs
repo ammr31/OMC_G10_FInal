@@ -214,6 +214,7 @@ namespace OMC_G10_Final
             lstQuestion.Items.Add("Where is the daily needs list?");
             lstQuestion.Items.Add("What can you help me with?");
             lstQuestion.Items.Add("Hello! Hi");
+        }
         private void btnMedicine_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
