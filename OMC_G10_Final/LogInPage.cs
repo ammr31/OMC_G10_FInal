@@ -15,6 +15,24 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is MainPage)
+            {
+                return;
+            }
+
+            MainPage newForm = new MainPage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -29,7 +47,7 @@ namespace OMC_G10_Final
 
             if (currentForm != null)
             {
-                currentForm.Hide(); // Prevents the application from terminating
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
             }
         }
 
@@ -47,18 +65,8 @@ namespace OMC_G10_Final
 
             if (currentForm != null)
             {
-                currentForm.Hide(); // Prevents the application from terminating
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
             }
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Form? currentForm = this.FindForm();
-            MainPage newForm = new MainPage();
-            newForm.Show();
-            currentForm.Hide(); // Prevents the application from terminating
-
-        }
-
     }
 }
