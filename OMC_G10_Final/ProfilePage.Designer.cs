@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilePage));
             bottomNavigationBar1 = new BottomNavigationBar();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            btnSupplierPage = new AntdUI.Button();
-            btnAdminPage = new AntdUI.Button();
             txtName = new AntdUI.Input();
             txtPhoneNumber = new AntdUI.Input();
             txtEmail = new AntdUI.Input();
@@ -44,6 +37,13 @@
             radfemale = new AntdUI.Radio();
             slctusercategory = new AntdUI.Select();
             pageHeader1 = new AntdUI.PageHeader();
+            btnSupplierPage = new AntdUI.ButtonShadow();
+            label1 = new AntdUI.Label();
+            label2 = new AntdUI.Label();
+            label5 = new AntdUI.Label();
+            label7 = new AntdUI.Label();
+            label3 = new AntdUI.Label();
+            buttonShadow2 = new AntdUI.ButtonShadow();
             SuspendLayout();
             // 
             // bottomNavigationBar1
@@ -55,90 +55,10 @@
             bottomNavigationBar1.Size = new Size(1200, 106);
             bottomNavigationBar1.TabIndex = 0;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(245, 247, 231);
-            label2.Location = new Point(90, 219);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 31);
-            label2.TabIndex = 3;
-            label2.Text = "NAME : ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(245, 247, 231);
-            label3.Location = new Point(90, 379);
-            label3.Name = "label3";
-            label3.Size = new Size(158, 31);
-            label3.TabIndex = 4;
-            label3.Text = "GENDER : ";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(245, 247, 231);
-            label4.Location = new Point(90, 333);
-            label4.Name = "label4";
-            label4.Size = new Size(261, 31);
-            label4.TabIndex = 5;
-            label4.Text = "PHONE NUMBER :";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(245, 247, 231);
-            label5.Location = new Point(90, 274);
-            label5.Name = "label5";
-            label5.Size = new Size(135, 31);
-            label5.TabIndex = 6;
-            label5.Text = "E-MAIL :";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(245, 247, 231);
-            label6.Location = new Point(830, 264);
-            label6.Name = "label6";
-            label6.Size = new Size(267, 31);
-            label6.TabIndex = 12;
-            label6.Text = "USER CATEGORY :";
-            // 
-            // btnSupplierPage
-            // 
-            btnSupplierPage.BackgroundImageLayout = AntdUI.TFit.Cover;
-            btnSupplierPage.BackHover = SystemColors.ActiveBorder;
-            btnSupplierPage.Icon = (Image)resources.GetObject("btnSupplierPage.Icon");
-            btnSupplierPage.IconRatio = 3F;
-            btnSupplierPage.Location = new Point(920, 12);
-            btnSupplierPage.Name = "btnSupplierPage";
-            btnSupplierPage.Shape = AntdUI.TShape.Circle;
-            btnSupplierPage.Size = new Size(129, 116);
-            btnSupplierPage.TabIndex = 14;
-            btnSupplierPage.TextAlign = ContentAlignment.TopCenter;
-            btnSupplierPage.Click += btnSupplierPage_Click;
-            // 
-            // btnAdminPage
-            // 
-            btnAdminPage.BackHover = SystemColors.ActiveBorder;
-            btnAdminPage.Icon = (Image)resources.GetObject("btnAdminPage.Icon");
-            btnAdminPage.IconRatio = 3F;
-            btnAdminPage.Location = new Point(1055, 12);
-            btnAdminPage.Name = "btnAdminPage";
-            btnAdminPage.Shape = AntdUI.TShape.Circle;
-            btnAdminPage.Size = new Size(133, 116);
-            btnAdminPage.TabIndex = 15;
-            // 
             // txtName
             // 
             txtName.Font = new Font("Verdana", 10.8F);
-            txtName.Location = new Point(218, 214);
+            txtName.Location = new Point(206, 205);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
             txtName.PrefixText = "";
@@ -211,12 +131,129 @@
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick;
             // 
+            // btnSupplierPage
+            // 
+            btnSupplierPage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            btnSupplierPage.Icon = Properties.Resources.supplier;
+            btnSupplierPage.IconRatio = 1F;
+            btnSupplierPage.IconSize = new Size(60, 60);
+            btnSupplierPage.Location = new Point(932, 12);
+            btnSupplierPage.Name = "btnSupplierPage";
+            btnSupplierPage.ShadowColor = SystemColors.ActiveCaptionText;
+            btnSupplierPage.ShadowOffsetX = 4;
+            btnSupplierPage.ShadowOffsetY = 4;
+            btnSupplierPage.ShadowOpacity = 0.4F;
+            btnSupplierPage.Shape = AntdUI.TShape.Round;
+            btnSupplierPage.Size = new Size(117, 116);
+            btnSupplierPage.TabIndex = 24;
+            btnSupplierPage.Text = "buttonShadow1";
+            btnSupplierPage.Click += btnSupplierPage_Click_1;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(245, 247, 231);
+            label1.Location = new Point(90, 214);
+            label1.Name = "label1";
+            label1.Shadow = 1;
+            label1.ShadowColor = SystemColors.ActiveCaptionText;
+            label1.ShadowOffsetX = 4;
+            label1.ShadowOffsetY = 4;
+            label1.ShadowOpacity = 0.4F;
+            label1.Size = new Size(123, 31);
+            label1.TabIndex = 25;
+            label1.Text = "NAME :";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(245, 247, 231);
+            label2.Location = new Point(90, 278);
+            label2.Name = "label2";
+            label2.Shadow = 1;
+            label2.ShadowColor = SystemColors.ActiveCaptionText;
+            label2.ShadowOffsetX = 4;
+            label2.ShadowOffsetY = 4;
+            label2.ShadowOpacity = 0.4F;
+            label2.Size = new Size(123, 31);
+            label2.TabIndex = 26;
+            label2.Text = "E-MAIL :";
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(245, 247, 231);
+            label5.Location = new Point(90, 332);
+            label5.Name = "label5";
+            label5.Shadow = 1;
+            label5.ShadowColor = SystemColors.ActiveCaptionText;
+            label5.ShadowOffsetX = 4;
+            label5.ShadowOffsetY = 4;
+            label5.ShadowOpacity = 0.4F;
+            label5.Size = new Size(256, 31);
+            label5.TabIndex = 27;
+            label5.Text = "PHONE NUMBER :";
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(245, 247, 231);
+            label7.Location = new Point(90, 379);
+            label7.Name = "label7";
+            label7.Shadow = 1;
+            label7.ShadowColor = SystemColors.ActiveCaptionText;
+            label7.ShadowOffsetX = 4;
+            label7.ShadowOffsetY = 4;
+            label7.ShadowOpacity = 0.4F;
+            label7.Size = new Size(145, 31);
+            label7.TabIndex = 28;
+            label7.Text = "GENDER :";
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(245, 247, 231);
+            label3.Location = new Point(830, 269);
+            label3.Name = "label3";
+            label3.Shadow = 1;
+            label3.ShadowColor = SystemColors.ActiveCaptionText;
+            label3.ShadowOffsetX = 4;
+            label3.ShadowOffsetY = 4;
+            label3.ShadowOpacity = 0.4F;
+            label3.Size = new Size(256, 31);
+            label3.TabIndex = 29;
+            label3.Text = "USER CATEGORY :";
+            // 
+            // buttonShadow2
+            // 
+            buttonShadow2.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
+            buttonShadow2.Icon = (Image)resources.GetObject("buttonShadow2.Icon");
+            buttonShadow2.IconRatio = 1F;
+            buttonShadow2.IconSize = new Size(55, 55);
+            buttonShadow2.Location = new Point(1055, 12);
+            buttonShadow2.Name = "buttonShadow2";
+            buttonShadow2.ShadowColor = SystemColors.ActiveCaptionText;
+            buttonShadow2.ShadowOffsetX = 4;
+            buttonShadow2.ShadowOffsetY = 4;
+            buttonShadow2.ShadowOpacity = 0.4F;
+            buttonShadow2.Shape = AntdUI.TShape.Round;
+            buttonShadow2.Size = new Size(117, 116);
+            buttonShadow2.TabIndex = 30;
+            buttonShadow2.Text = "buttonShadow2";
+            // 
             // ProfilePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(buttonShadow2);
+            Controls.Add(label3);
+            Controls.Add(label7);
+            Controls.Add(label5);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnSupplierPage);
             Controls.Add(pageHeader1);
             Controls.Add(slctusercategory);
             Controls.Add(radfemale);
@@ -224,13 +261,6 @@
             Controls.Add(txtEmail);
             Controls.Add(txtPhoneNumber);
             Controls.Add(txtName);
-            Controls.Add(btnAdminPage);
-            Controls.Add(btnSupplierPage);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(bottomNavigationBar1);
             Name = "ProfilePage";
             Text = "ProfilePage";
@@ -241,13 +271,6 @@
         #endregion
 
         private BottomNavigationBar bottomNavigationBar1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private AntdUI.Button btnSupplierPage;
-        private AntdUI.Button btnAdminPage;
         private AntdUI.Input txtName;
         private AntdUI.Input txtPhoneNumber;
         private AntdUI.Input txtEmail;
@@ -255,5 +278,12 @@
         private AntdUI.Radio radfemale;
         private AntdUI.Select slctusercategory;
         private AntdUI.PageHeader pageHeader1;
+        private AntdUI.ButtonShadow btnSupplierPage;
+        private AntdUI.Label label1;
+        private AntdUI.Label label2;
+        private AntdUI.Label label5;
+        private AntdUI.Label label7;
+        private AntdUI.Label label3;
+        private AntdUI.ButtonShadow buttonShadow2;
     }
 }
