@@ -36,16 +36,18 @@ namespace OMC_G10_Final
             this.Hide();
         }
 
-        private void btnAdminPage_Click(object sender, EventArgs e)
+
+
+        private void pageHeader1_BackClick(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is SupplierPage)
+            if (currentForm is MainPage)
             {
                 return;
             }
             // Open the Mobility Form
-            SupplierPage newForm = new SupplierPage();
+            MainPage newForm = new MainPage();
             newForm.Show();
 
             // Hide the current MainPage so it doesn't stay visible behind it
