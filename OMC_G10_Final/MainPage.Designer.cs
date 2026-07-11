@@ -40,12 +40,11 @@
             pictureBox1 = new PictureBox();
             label4 = new AntdUI.Label();
             label3 = new AntdUI.Label();
-            btnDailyNeeds = new AntdUI.Button();
-            btnMedicine = new AntdUI.Button();
             label6 = new Label();
             pictureBox4 = new PictureBox();
             panel2 = new Panel();
-            btnMessage = new AntdUI.Button();
+            btnDailyNeeds = new AntdUI.ButtonShadow();
+            btnMedicine = new AntdUI.ButtonShadow();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panelchat = new Panel();
             lstQuestion = new ListBox();
@@ -195,44 +194,6 @@
             label3.Text = "Category";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnDailyNeeds
-            // 
-            btnDailyNeeds.BackActive = Color.FromArgb(255, 220, 248);
-            btnDailyNeeds.BackColor = Color.FromArgb(255, 220, 248);
-            btnDailyNeeds.BackHover = Color.FromArgb(222, 158, 209);
-            btnDailyNeeds.BorderWidth = 3F;
-            btnDailyNeeds.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnDailyNeeds.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnDailyNeeds.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnDailyNeeds.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDailyNeeds.ForeColor = Color.FromArgb(107, 78, 57);
-            btnDailyNeeds.Location = new Point(301, 311);
-            btnDailyNeeds.Name = "btnDailyNeeds";
-            btnDailyNeeds.Shape = AntdUI.TShape.Round;
-            btnDailyNeeds.Size = new Size(264, 79);
-            btnDailyNeeds.TabIndex = 32;
-            btnDailyNeeds.Text = "Daily Needs";
-            btnDailyNeeds.Click += btnDailyNeeds_Click_1;
-            // 
-            // btnMedicine
-            // 
-            btnMedicine.BackActive = Color.FromArgb(255, 220, 248);
-            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
-            btnMedicine.BackHover = Color.FromArgb(222, 158, 209);
-            btnMedicine.BorderWidth = 3F;
-            btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
-            btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.DisplayStyle = AntdUI.TButtonDisplayStyle.Text;
-            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
-            btnMedicine.Location = new Point(0, 313);
-            btnMedicine.Name = "btnMedicine";
-            btnMedicine.Shape = AntdUI.TShape.Round;
-            btnMedicine.Size = new Size(264, 79);
-            btnMedicine.TabIndex = 31;
-            btnMedicine.Text = "Medicine";
-            btnMedicine.Click += btnMedicine_Click_1;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -257,33 +218,61 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnDailyNeeds);
+            panel2.Controls.Add(btnMedicine);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(btnMedicine);
-            panel2.Controls.Add(btnDailyNeeds);
             panel2.Location = new Point(321, 177);
             panel2.Name = "panel2";
             panel2.Size = new Size(566, 401);
             panel2.TabIndex = 36;
             // 
-            // btnMessage
+            // btnDailyNeeds
             // 
-            btnMessage.BackActive = Color.FromArgb(245, 247, 231);
-            btnMessage.BackColor = Color.FromArgb(245, 247, 231);
-            btnMessage.DefaultBack = Color.FromArgb(245, 247, 231);
-            btnMessage.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
-            btnMessage.Icon = Properties.Resources.bubble_chat;
-            btnMessage.IconRatio = 1F;
-            btnMessage.IconSize = new Size(80, 80);
-            btnMessage.Location = new Point(143, 3);
-            btnMessage.Name = "btnMessage";
-            btnMessage.Size = new Size(140, 117);
-            btnMessage.TabIndex = 12;
-            btnMessage.Text = "button2";
-            btnMessage.Click += btnMessage_Click_1;
+            btnDailyNeeds.BackActive = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.BackColor = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.BackHover = Color.FromArgb(222, 158, 209);
+            btnDailyNeeds.BorderWidth = 3F;
+            btnDailyNeeds.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnDailyNeeds.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnDailyNeeds.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            btnDailyNeeds.ForeColor = Color.FromArgb(107, 78, 57);
+            btnDailyNeeds.Location = new Point(299, 311);
+            btnDailyNeeds.Name = "btnDailyNeeds";
+            btnDailyNeeds.ShadowColor = SystemColors.ActiveCaptionText;
+            btnDailyNeeds.ShadowOffsetX = 4;
+            btnDailyNeeds.ShadowOffsetY = 4;
+            btnDailyNeeds.ShadowOpacity = 0.6F;
+            btnDailyNeeds.Shape = AntdUI.TShape.Round;
+            btnDailyNeeds.Size = new Size(264, 79);
+            btnDailyNeeds.TabIndex = 39;
+            btnDailyNeeds.Text = "Daily Needs";
+            btnDailyNeeds.Click += btnDailyNeeds_Click;
+            // 
+            // btnMedicine
+            // 
+            btnMedicine.BackActive = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackColor = Color.FromArgb(255, 220, 248);
+            btnMedicine.BackHover = Color.FromArgb(222, 158, 209);
+            btnMedicine.BorderWidth = 3F;
+            btnMedicine.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnMedicine.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            btnMedicine.ForeColor = Color.FromArgb(107, 78, 57);
+            btnMedicine.Location = new Point(0, 311);
+            btnMedicine.Name = "btnMedicine";
+            btnMedicine.ShadowColor = SystemColors.ActiveCaptionText;
+            btnMedicine.ShadowOffsetX = 4;
+            btnMedicine.ShadowOffsetY = 4;
+            btnMedicine.ShadowOpacity = 0.6F;
+            btnMedicine.Shape = AntdUI.TShape.Round;
+            btnMedicine.Size = new Size(264, 79);
+            btnMedicine.TabIndex = 38;
+            btnMedicine.Text = "Medicine";
+            btnMedicine.Click += btnMedicine_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -333,6 +322,17 @@
             flowlayoutchat.Size = new Size(334, 214);
             flowlayoutchat.TabIndex = 3;
             // 
+            // txtchatinput
+            // 
+            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(20, 340);
+            txtchatinput.Multiline = true;
+            txtchatinput.Name = "txtchatinput";
+            txtchatinput.Size = new Size(261, 40);
+            txtchatinput.TabIndex = 1;
+            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
+            // 
             // btnsend
             // 
             btnsend.DisplayStyle = AntdUI.TButtonDisplayStyle.Image;
@@ -348,14 +348,44 @@
             // 
             // txtchatinput
             // 
-            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(20, 340);
-            txtchatinput.Multiline = true;
-            txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(261, 40);
-            txtchatinput.TabIndex = 1;
-            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
+            // label1
+            // 
+            label1.Font = new Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(107, 78, 57);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(667, 78);
+            label1.TabIndex = 0;
+            label1.Text = "Accessibility Mode";
+            // 
+            // SwitchAccessibility
+            // 
+            SwitchAccessibility.Fill = Color.FromArgb(138, 167, 66);
+            SwitchAccessibility.FillHover = Color.Green;
+            SwitchAccessibility.Location = new Point(650, 33);
+            SwitchAccessibility.Name = "SwitchAccessibility";
+            SwitchAccessibility.Size = new Size(125, 58);
+            SwitchAccessibility.TabIndex = 2;
+            SwitchAccessibility.CheckedChanged += SwitchAccessibility_CheckedChanged;
+            // 
+            // panel3
+            // 
+            panel3.Back = Color.FromArgb(245, 247, 231);
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(SwitchAccessibility);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(label2);
+            panel3.Location = new Point(23, 33);
+            panel3.Name = "panel3";
+            panel3.Shadow = 4;
+            panel3.ShadowColor = SystemColors.ActiveCaptionText;
+            panel3.ShadowOffsetX = 4;
+            panel3.ShadowOffsetY = 4;
+            panel3.ShadowOpacity = 0.4F;
+            panel3.Size = new Size(793, 123);
+            panel3.TabIndex = 10;
+            panel3.Text = "panel3";
             // 
             // MainPage
             // 
@@ -374,8 +404,6 @@
             Name = "MainPage";
             Text = "MainPage";
             Load += MainPage_Load;
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -403,8 +431,6 @@
         private PictureBox pictureBox1;
         private AntdUI.Label label4;
         private AntdUI.Label label3;
-        private AntdUI.Button btnDailyNeeds;
-        private AntdUI.Button btnMedicine;
         private Label label6;
         private PictureBox pictureBox4;
         private Panel panel2;
@@ -415,5 +441,7 @@
         private TextBox txtchatinput;
         private FlowLayoutPanel flowlayoutchat;
         private ListBox lstQuestion;
+        private AntdUI.ButtonShadow btnDailyNeeds;
+        private AntdUI.ButtonShadow btnMedicine;
     }
 }
