@@ -46,6 +46,7 @@
             label8 = new Label();
             label7 = new Label();
             label2 = new Label();
+            bottomNavigationBar1 = new BottomNavigationBar();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBox2.SuspendLayout();
@@ -65,7 +66,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(58, 87);
+            groupBox1.Location = new Point(58, 60);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(503, 516);
             groupBox1.TabIndex = 0;
@@ -150,7 +151,6 @@
             label3.Size = new Size(179, 20);
             label3.TabIndex = 1;
             label3.Text = "Update Product Image : ";
-            label3.Click += label3_Click;
             // 
             // label1
             // 
@@ -162,7 +162,6 @@
             label1.Size = new Size(399, 41);
             label1.TabIndex = 0;
             label1.Text = "ADD NEW PRODUCT";
-            label1.Click += label1_Click;
             // 
             // groupBox2
             // 
@@ -173,7 +172,7 @@
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label2);
-            groupBox2.Location = new Point(632, 87);
+            groupBox2.Location = new Point(642, 60);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(503, 516);
             groupBox2.TabIndex = 1;
@@ -238,12 +237,22 @@
             label2.TabIndex = 1;
             label2.Text = "RESTOCK PRODUCT";
             // 
+            // bottomNavigationBar1
+            // 
+            bottomNavigationBar1.AutoSize = true;
+            bottomNavigationBar1.Dock = DockStyle.Bottom;
+            bottomNavigationBar1.Location = new Point(0, 619);
+            bottomNavigationBar1.Name = "bottomNavigationBar1";
+            bottomNavigationBar1.Size = new Size(1200, 106);
+            bottomNavigationBar1.TabIndex = 0;
+            // 
             // SupplierPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(bottomNavigationBar1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "SupplierPage";
@@ -255,6 +264,7 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -277,5 +287,6 @@
         private ComboBox comboBox1;
         private NumericUpDown numericUpDown2;
         private Button btnSave;
+        private BottomNavigationBar bottomNavigationBar1;
     }
 }

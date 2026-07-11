@@ -67,7 +67,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -216,7 +215,6 @@
             btnAdminPage.Shape = AntdUI.TShape.Circle;
             btnAdminPage.Size = new Size(94, 89);
             btnAdminPage.TabIndex = 15;
-            btnAdminPage.Click += btnAdminPage_Click;
             // 
             // ProfilePage
             // 

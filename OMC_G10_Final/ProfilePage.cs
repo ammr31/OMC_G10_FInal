@@ -40,7 +40,7 @@ namespace OMC_G10_Final
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is reg)
+            if (currentForm is SupplierPage)
             {
                 return;
             }
