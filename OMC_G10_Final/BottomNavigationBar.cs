@@ -75,12 +75,12 @@ namespace OMC_G10_Final
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is LogInPage)
+            if (currentForm is SupplierPage)
             {
                 return;
             }
 
-            LogInPage newForm = new LogInPage();
+            SupplierPage newForm = new SupplierPage();
             newForm.Show();
 
             if (currentForm != null)

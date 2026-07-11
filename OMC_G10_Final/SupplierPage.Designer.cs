@@ -237,6 +237,15 @@
             label2.TabIndex = 1;
             label2.Text = "RESTOCK PRODUCT";
             // 
+            // bottomNavigationBar1
+            // 
+            bottomNavigationBar1.AutoSize = true;
+            bottomNavigationBar1.Dock = DockStyle.Bottom;
+            bottomNavigationBar1.Location = new Point(0, 619);
+            bottomNavigationBar1.Name = "bottomNavigationBar1";
+            bottomNavigationBar1.Size = new Size(1200, 106);
+            bottomNavigationBar1.TabIndex = 0;
+            // 
             // SupplierPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
