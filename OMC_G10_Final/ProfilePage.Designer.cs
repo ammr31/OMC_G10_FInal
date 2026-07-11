@@ -130,6 +130,7 @@
             pageHeader1.UseForeColorDrawIcons = true;
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick;
+            pageHeader1.Click += pageHeader1_Click;
             // 
             // btnSupplierPage
             // 

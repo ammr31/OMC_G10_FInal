@@ -35,6 +35,7 @@
             txtpassword = new AntdUI.Input();
             btnlogin = new AntdUI.ButtonShadow();
             btnregister = new AntdUI.ButtonShadow();
+            pageHeader1 = new AntdUI.PageHeader();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -139,7 +140,24 @@
             btnregister.Size = new Size(264, 74);
             btnregister.TabIndex = 39;
             btnregister.Text = "Register";
-            btnregister.Click += this.btnregister_Click_1;
+            btnregister.Click += btnregister_Click_1;
+            // 
+            // pageHeader1
+            // 
+            pageHeader1.Font = new Font("Verdana", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pageHeader1.ForeColor = Color.FromArgb(245, 247, 231);
+            pageHeader1.Icon = Properties.Resources.profilepink1;
+            pageHeader1.IconRatio = 1F;
+            pageHeader1.IconSvg = "";
+            pageHeader1.Location = new Point(12, 12);
+            pageHeader1.Name = "pageHeader1";
+            pageHeader1.ShowBack = true;
+            pageHeader1.Size = new Size(171, 94);
+            pageHeader1.TabIndex = 40;
+            pageHeader1.Text = "Back";
+            pageHeader1.UseForeColorDrawIcons = true;
+            pageHeader1.UseSystemStyleColor = true;
+            pageHeader1.BackClick += pageHeader1_BackClick;
             // 
             // loginpage
             // 
@@ -147,6 +165,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(pageHeader1);
             Controls.Add(btnregister);
             Controls.Add(btnlogin);
             Controls.Add(txtpassword);
@@ -169,5 +188,6 @@
         private AntdUI.Input txtpassword;
         private AntdUI.ButtonShadow btnlogin;
         private AntdUI.ButtonShadow btnregister;
+        private AntdUI.PageHeader pageHeader1;
     }
 }

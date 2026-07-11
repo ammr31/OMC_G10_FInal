@@ -50,5 +50,10 @@ namespace OMC_G10_Final
             // Hide the current MainPage so it doesn't stay visible behind it
             this.Hide();
         }
+
+        private void pageHeader1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
