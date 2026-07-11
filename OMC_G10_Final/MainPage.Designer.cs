@@ -43,6 +43,7 @@
             btnCall = new AntdUI.ButtonShadow();
             btnMessage = new AntdUI.ButtonShadow();
             panelchat = new Panel();
+            lstQuestion = new ListBox();
             flowlayoutchat = new FlowLayoutPanel();
             txtchatinput = new TextBox();
             btnsend = new AntdUI.Button();
@@ -256,14 +257,24 @@
             panelchat.AutoScroll = true;
             panelchat.BackColor = Color.FromArgb(245, 247, 231);
             panelchat.BorderStyle = BorderStyle.FixedSingle;
+            panelchat.Controls.Add(lstQuestion);
             panelchat.Controls.Add(flowlayoutchat);
             panelchat.Controls.Add(txtchatinput);
-            panelchat.Controls.Add(btnsend);
-            panelchat.Location = new Point(903, 177);
+            panelchat.Location = new Point(814, 177);
             panelchat.Name = "panelchat";
-            panelchat.Size = new Size(285, 398);
+            panelchat.Size = new Size(374, 398);
             panelchat.TabIndex = 38;
             panelchat.Visible = false;
+            // 
+            // lstQuestion
+            // 
+            lstQuestion.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lstQuestion.FormattingEnabled = true;
+            lstQuestion.Location = new Point(20, 251);
+            lstQuestion.Name = "lstQuestion";
+            lstQuestion.Size = new Size(334, 64);
+            lstQuestion.TabIndex = 34;
+            lstQuestion.SelectedIndexChanged += lstQuestion_SelectedIndexChanged;
             // 
             // flowlayoutchat
             // 
@@ -272,8 +283,11 @@
             flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
             flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             flowlayoutchat.Location = new Point(19, 15);
+            flowlayoutchat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            flowlayoutchat.Location = new Point(20, 17);
+            flowlayoutchat.Margin = new Padding(3, 3, 10, 3);
             flowlayoutchat.Name = "flowlayoutchat";
-            flowlayoutchat.Size = new Size(246, 282);
+            flowlayoutchat.Size = new Size(334, 214);
             flowlayoutchat.TabIndex = 3;
             // 
             // txtchatinput
@@ -295,7 +309,7 @@
             btnsend.IconSize = new Size(40, 40);
             btnsend.Location = new Point(208, 310);
             btnsend.Name = "btnsend";
-            btnsend.Size = new Size(73, 68);
+            btnsend.Size = new Size(67, 68);
             btnsend.TabIndex = 2;
             btnsend.Text = "button1";
             btnsend.Click += btnsend_Click;
@@ -358,6 +372,14 @@
             panel3.Size = new Size(793, 123);
             panel3.TabIndex = 10;
             panel3.Text = "panel3";
+            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
+            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtchatinput.Location = new Point(20, 340);
+            txtchatinput.Multiline = true;
+            txtchatinput.Name = "txtchatinput";
+            txtchatinput.Size = new Size(261, 40);
+            txtchatinput.TabIndex = 1;
+            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
             // MainPage
             // 
@@ -375,6 +397,9 @@
             Controls.Add(bottomNavigationBar2);
             Name = "MainPage";
             Text = "MainPage";
+            Load += MainPage_Load;
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -415,5 +440,6 @@
         private AntdUI.Panel panel3;
         private AntdUI.ButtonShadow btnCall;
         private AntdUI.ButtonShadow btnMessage;
+        private ListBox lstQuestion;
     }
 }
