@@ -73,7 +73,6 @@ namespace OMC_G10_Final
 
         private void btnProfilePage_Click(object sender, EventArgs e)
         {
-
             Form? currentForm = this.FindForm();
 
             if (currentForm is LoginPage)
