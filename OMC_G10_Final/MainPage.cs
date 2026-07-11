@@ -78,26 +78,7 @@ namespace OMC_G10_Final
             flowlayoutchat.ScrollControlIntoView(wrapper); // auto-scroll to newest message
         }
 
-        private void btnsend_Click(object sender, EventArgs e)
-        {
-            string userText = txtchatinput.Text.Trim();
-            if (string.IsNullOrEmpty(userText)) return;
 
-            AddMessage(userText, isUser: true);
-            txtchatinput.Clear();
-
-            string reply = GetAutoReply(userText);
-
-            // Optional: small delay to feel more natural
-            Timer replyDelay = new Timer { Interval = 600 };
-            replyDelay.Tick += (s, args) =>
-            {
-                AddMessage(reply, isUser: false);
-                replyDelay.Stop();
-                replyDelay.Dispose();
-            };
-            replyDelay.Start();
-        }
         private string GetAutoReply(string input)
         {
             string msg = input.ToLower();
@@ -125,35 +106,10 @@ namespace OMC_G10_Final
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // stops the "ding" sound / newline
-                btnsend_Click(sender, e);
+                btnsend_Click_1(sender, e);
             }
         }
 
-        private void btnMessage_Click_1(object sender, EventArgs e)
-        {
-            if (panelchat.Visible == false)
-            {
-                panelchat.Visible = true;    // show the chat UI
-                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\back.png");
-
-
-
-                txtchatinput.Focus();
-            }
-            else
-            {
-                panelchat.Visible = false;
-                btnMessage.Icon = Image.FromFile(@"C:\Users\User\source\repos\OMC_G10_Final\Images\bubble-chat.png");
-
-
-            }
-
-            // Optional: greet the user when chat opens, only once
-            if (flowlayoutchat.Controls.Count == 0)
-            {
-                AddMessage("Hi! How can I help you today?", isUser: false);
-            }
-        }
 
         private void lstQuestion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -185,10 +141,7 @@ namespace OMC_G10_Final
             lstQuestion.Items.Add("Hello! Hi");
         }
 
-        private void btnDailyNeeds_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnCall_Click_1(object sender, EventArgs e)
         {
@@ -237,6 +190,61 @@ namespace OMC_G10_Final
             }
         }
 
+        private void btnsend_Click_1(object sender, EventArgs e)
+        {
+            string userText = txtchatinput.Text.Trim();
+            if (string.IsNullOrEmpty(userText)) return;
 
+            AddMessage(userText, isUser: true);
+            txtchatinput.Clear();
+
+            string reply = GetAutoReply(userText);
+
+            // Optional: small delay to feel more natural
+            Timer replyDelay = new Timer { Interval = 600 };
+            replyDelay.Tick += (s, args) =>
+            {
+                AddMessage(reply, isUser: false);
+                replyDelay.Stop();
+                replyDelay.Dispose();
+            };
+            replyDelay.Start();
+        }
+
+        private void btnMedicine_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is MedecinePage)
+            {
+                return;
+            }
+
+            MedecinePage newForm = new MedecinePage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
+
+        private void btnDailyNeeds_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is DailyNeedsPage)
+            {
+                return;
+            }
+
+            DailyNeedsPage newForm = new DailyNeedsPage();
+            newForm.Show();
+
+            if (currentForm != null)
+            {
+                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+            }
+        }
     }
 }
