@@ -186,6 +186,34 @@ namespace OMC_G10_Final
             }
         }
 
+        private void lstQuestion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstQuestion.SelectedItem != null)
+            {
+                string soalanDipilih = lstQuestion.SelectedItem.ToString();
+
+                AddMessage(soalanDipilih, isUser: true);
+                string reply = GetAutoReply(soalanDipilih);
+
+                Timer replyDelay = new Timer { Interval = 600 };
+                replyDelay.Tick += (s, args) =>
+                {
+                    AddMessage(reply, isUser: false);
+                    replyDelay.Stop();
+                    replyDelay.Dispose();
+                };
+                replyDelay.Start();
+
+                lstQuestion.SelectedIndex = -1;
+            }
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+            lstQuestion.Items.Add("I need help with my medicine");
+            lstQuestion.Items.Add("Where is the daily needs list?");
+            lstQuestion.Items.Add("What can you help me with?");
+            lstQuestion.Items.Add("Hello! Hi");
         private void btnMedicine_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
