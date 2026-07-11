@@ -19,25 +19,6 @@ namespace OMC_G10_Final
         {
 
         }
-
-        private void btnSupplierPage_Click(object sender, EventArgs e)
-        {
-            Form? currentForm = this.FindForm();
-
-            if (currentForm is SupplierPage)
-            {
-                return;
-            }
-            // Open the Mobility Form
-            SupplierPage newForm = new SupplierPage();
-            newForm.Show();
-
-            // Hide the current MainPage so it doesn't stay visible behind it
-            this.Hide();
-        }
-
-
-
         private void pageHeader1_BackClick(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -48,6 +29,22 @@ namespace OMC_G10_Final
             }
             // Open the Mobility Form
             MainPage newForm = new MainPage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
+        }
+
+        private void btnSupplierPage_Click_1(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is SupplierPage)
+            {
+                return;
+            }
+            // Open the Mobility Form
+            SupplierPage newForm = new SupplierPage();
             newForm.Show();
 
             // Hide the current MainPage so it doesn't stay visible behind it

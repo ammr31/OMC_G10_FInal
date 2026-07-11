@@ -241,13 +241,13 @@ namespace OMC_G10_Final
                 this.StartPosition = FormStartPosition.CenterScreen;
                 this.MaximizeBox = false;
                 this.MinimizeBox = false;
-                this.Size = new Size(320, 150);
+                this.Size = new Size(640, 300);
 
                 Label lbl = new Label
                 {
                     Text = message,
                     ForeColor = Color.White,
-                    Font = new Font("Segoe UI", 10),
+                    Font = new Font("Verdana", 10, FontStyle.Bold),
                     AutoSize = false,
                     TextAlign = ContentAlignment.MiddleCenter,
                     Dock = DockStyle.Top,
@@ -257,6 +257,7 @@ namespace OMC_G10_Final
                 Button btnOk = new Button
                 {
                     Text = "OK",
+                    Font = new Font("Verdana", 10, FontStyle.Bold),
                     DialogResult = DialogResult.OK,
                     Size = new Size(80, 30),
                     BackColor = Color.White,
