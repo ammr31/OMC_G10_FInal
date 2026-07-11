@@ -250,7 +250,6 @@
             btnDailyNeeds.Size = new Size(264, 79);
             btnDailyNeeds.TabIndex = 39;
             btnDailyNeeds.Text = "Daily Needs";
-            btnDailyNeeds.Click += btnDailyNeeds_Click;
             // 
             // btnMedicine
             // 
@@ -272,7 +271,6 @@
             btnMedicine.Size = new Size(264, 79);
             btnMedicine.TabIndex = 38;
             btnMedicine.Text = "Medicine";
-            btnMedicine.Click += btnMedicine_Click;
             // 
             // flowLayoutPanel1
             // 
