@@ -109,7 +109,7 @@
             // slctusercategory
             // 
             slctusercategory.Font = new Font("Verdana", 10.8F);
-            slctusercategory.Items.AddRange(new object[] { "Deaf ", "Elderly" });
+            slctusercategory.Items.AddRange(new object[] { "Deaf ", "Elderly", "Others" });
             slctusercategory.Location = new Point(830, 298);
             slctusercategory.Name = "slctusercategory";
             slctusercategory.PlaceholderText = "User Category";

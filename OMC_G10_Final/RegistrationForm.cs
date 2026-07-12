@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Text;
 using System.Windows.Forms;
 
@@ -19,12 +20,11 @@ namespace OMC_G10_Final
         {
             groupBox1 = new GroupBox();
             btnSubmitRegistration = new Button();
-            txtLicenceNum = new TextBox();
             txtBusinessEmail = new TextBox();
             txtBusinessContactNum = new TextBox();
             txtBusinessAddress = new TextBox();
-            txtBusinessRegistrationNumberSSM = new TextBox();
-            txtBusinessname = new TextBox();
+            txtSSM = new TextBox();
+            txtBusinessName = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -33,19 +33,20 @@ namespace OMC_G10_Final
             label2 = new Label();
             label1 = new Label();
             pageHeader1 = new AntdUI.PageHeader();
+            cboType = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(245, 247, 231);
+            groupBox1.Controls.Add(cboType);
             groupBox1.Controls.Add(btnSubmitRegistration);
-            groupBox1.Controls.Add(txtLicenceNum);
             groupBox1.Controls.Add(txtBusinessEmail);
             groupBox1.Controls.Add(txtBusinessContactNum);
             groupBox1.Controls.Add(txtBusinessAddress);
-            groupBox1.Controls.Add(txtBusinessRegistrationNumberSSM);
-            groupBox1.Controls.Add(txtBusinessname);
+            groupBox1.Controls.Add(txtSSM);
+            groupBox1.Controls.Add(txtBusinessName);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -71,16 +72,6 @@ namespace OMC_G10_Final
             btnSubmitRegistration.UseVisualStyleBackColor = false;
             btnSubmitRegistration.Click += btnSubmitRegistration_Click;
             // 
-            // txtLicenceNum
-            // 
-            txtLicenceNum.ForeColor = Color.Gray;
-            txtLicenceNum.Location = new Point(397, 362);
-            txtLicenceNum.Name = "txtLicenceNum";
-            txtLicenceNum.Size = new Size(440, 27);
-            txtLicenceNum.TabIndex = 12;
-            txtLicenceNum.Text = "(for hospital only)";
-            txtLicenceNum.TextAlign = HorizontalAlignment.Center;
-            // 
             // txtBusinessEmail
             // 
             txtBusinessEmail.Location = new Point(397, 319);
@@ -102,19 +93,19 @@ namespace OMC_G10_Final
             txtBusinessAddress.Size = new Size(440, 27);
             txtBusinessAddress.TabIndex = 9;
             // 
-            // txtBusinessRegistrationNumberSSM
+            // txtSSM
             // 
-            txtBusinessRegistrationNumberSSM.Location = new Point(397, 195);
-            txtBusinessRegistrationNumberSSM.Name = "txtBusinessRegistrationNumberSSM";
-            txtBusinessRegistrationNumberSSM.Size = new Size(440, 27);
-            txtBusinessRegistrationNumberSSM.TabIndex = 8;
+            txtSSM.Location = new Point(397, 195);
+            txtSSM.Name = "txtSSM";
+            txtSSM.Size = new Size(440, 27);
+            txtSSM.TabIndex = 8;
             // 
-            // txtBusinessname
+            // txtBusinessName
             // 
-            txtBusinessname.Location = new Point(397, 158);
-            txtBusinessname.Name = "txtBusinessname";
-            txtBusinessname.Size = new Size(440, 27);
-            txtBusinessname.TabIndex = 7;
+            txtBusinessName.Location = new Point(397, 158);
+            txtBusinessName.Name = "txtBusinessName";
+            txtBusinessName.Size = new Size(440, 27);
+            txtBusinessName.TabIndex = 7;
             // 
             // label7
             // 
@@ -122,9 +113,9 @@ namespace OMC_G10_Final
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(108, 365);
             label7.Name = "label7";
-            label7.Size = new Size(235, 20);
+            label7.Size = new Size(54, 20);
             label7.TabIndex = 6;
-            label7.Text = "Licence / Registration Number : ";
+            label7.Text = "Type : ";
             // 
             // label6
             // 
@@ -204,6 +195,15 @@ namespace OMC_G10_Final
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick;
             // 
+            // cboType
+            // 
+            cboType.FormattingEnabled = true;
+            cboType.Items.AddRange(new object[] { "Hospital", "Clinic", "Medical Supplier" });
+            cboType.Location = new Point(397, 362);
+            cboType.Name = "cboType";
+            cboType.Size = new Size(440, 28);
+            cboType.TabIndex = 14;
+            // 
             // RegistrationForm
             // 
             BackColor = Color.FromArgb(108, 117, 82);
@@ -227,13 +227,13 @@ namespace OMC_G10_Final
         private Label label3;
         private Label label2;
         private Button btnSubmitRegistration;
-        private TextBox txtLicenceNum;
         private TextBox txtBusinessEmail;
         private TextBox txtBusinessContactNum;
         private TextBox txtBusinessAddress;
-        private TextBox txtBusinessRegistrationNumberSSM;
+        private TextBox txtSSM;
         private AntdUI.PageHeader pageHeader1;
-        private TextBox txtBusinessname;
+        private ComboBox cboType;
+        private TextBox txtBusinessName;
 
         private void btnSubmitRegistration_Click(object sender, EventArgs e)
         {
@@ -244,13 +244,76 @@ namespace OMC_G10_Final
                 return;
             }
 
-            CustomMessageBox.Show("Account has been created.");
-
             ProfilePage newForm = new ProfilePage();
             newForm.Show();
 
             this.Hide();
+
+            // input
+            string businessName = txtBusinessName.Text.Trim();
+            string ssmNumber = txtSSM.Text.Trim();
+            string businessAddress = txtBusinessAddress.Text.Trim();
+            string contactNumber = txtBusinessContactNum.Text.Trim();
+            string userEmail = txtBusinessEmail.Text.Trim();
+
+            string type = cboType.SelectedItem != null ? cboType.SelectedItem.ToString() : "";
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            // validate empty inputs
+            if (string.IsNullOrEmpty(businessName) &&
+                string.IsNullOrEmpty(ssmNumber) &&
+                string.IsNullOrEmpty(businessAddress) &&
+                string.IsNullOrEmpty(contactNumber) &&
+                string.IsNullOrEmpty(userEmail) &&
+                string.IsNullOrEmpty(type))
+            {
+                MessageBox.Show("Please fill out all fields on the registration form.", "Missing Information.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // validate SSM number (must be exactly 12 digits)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(ssmNumber, @"^\d{12}$"))
+            {
+                MessageBox.Show("Business Registration Number (SSM) must contain exactly 12 numbers.", "Invalid SSM Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // validate contact number (must have dash (-))
+            if (!contactNumber.Contains("-"))
+            {
+                MessageBox.Show("Business Contact Number must contain a dash (e.g., 012-3456789).", "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // validate email format
+            if (!System.Text.RegularExpressions.Regex.IsMatch(userEmail, emailPattern))
+            {
+                MessageBox.Show("Business Email Address doesn't follow the format. Please enter the correct email.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // generate 10-character secure password
+            string generatedPassword = GenerateRandomPassword(10);
+
+            // success popup
+            MessageBox.Show($"You are now a registered supplier!\n\n" +
+                $"Business : {businessName}\n" +
+                $"Your Password is : {generatedPassword}\n\n" +
+                $"Please save this password. You will use it everytime you want to log in.",
+                "Registration Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+            // secure password generator
+           private string GenerateRandomPassword(int length)
+        {
+            const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+
+            while (0 < length--)
+            {
+                res.Append(validChars[rnd.Next(validChars.Length)]);
+            }
+            return res.ToString();
+        }
+        
         public partial class CustomMessageBox : Form
         {
             public CustomMessageBox(string message, string title = "Message")
