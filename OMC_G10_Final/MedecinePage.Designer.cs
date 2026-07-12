@@ -56,6 +56,8 @@
             ClientSize = new Size(1200, 725);
             Controls.Add(bottomNavigationBar2);
             Name = "MedecinePage";
+            Text = "MedecinePages";
+            Load += MedecinePage_Load;
             ResumeLayout(false);
             PerformLayout();
 

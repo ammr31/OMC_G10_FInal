@@ -44,11 +44,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
             Controls.Add(bottomNavigationBar2);
             Name = "RecentPage";
             Text = "RecentPage";
+            Load += RecentPage_Load;
+            VisibleChanged += RecentPage_VisibleChanged_1;
             ResumeLayout(false);
             PerformLayout();
         }
