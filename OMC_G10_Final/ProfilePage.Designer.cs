@@ -44,7 +44,9 @@
             label7 = new AntdUI.Label();
             label3 = new AntdUI.Label();
             buttonShadow2 = new AntdUI.ButtonShadow();
-            btnSave = new AntdUI.Button();
+            btnsave = new AntdUI.ButtonShadow();
+            label4 = new AntdUI.Label();
+            input1 = new AntdUI.Input();
             SuspendLayout();
             // 
             // bottomNavigationBar1
@@ -59,7 +61,7 @@
             // txtName
             // 
             txtName.Font = new Font("Verdana", 10.8F);
-            txtName.Location = new Point(206, 205);
+            txtName.Location = new Point(218, 123);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
             txtName.PrefixText = "";
@@ -69,7 +71,7 @@
             // txtPhoneNumber
             // 
             txtPhoneNumber.Font = new Font("Verdana", 10.8F);
-            txtPhoneNumber.Location = new Point(357, 325);
+            txtPhoneNumber.Location = new Point(357, 234);
             txtPhoneNumber.Name = "txtPhoneNumber";
             txtPhoneNumber.PlaceholderText = "Phone Number";
             txtPhoneNumber.PrefixText = "";
@@ -79,7 +81,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Verdana", 10.8F);
-            txtEmail.Location = new Point(231, 269);
+            txtEmail.Location = new Point(231, 178);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
             txtEmail.PrefixText = "";
@@ -155,7 +157,7 @@
             // 
             label1.Font = new Font("Verdana", 15F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(245, 247, 231);
-            label1.Location = new Point(90, 214);
+            label1.Location = new Point(90, 131);
             label1.Name = "label1";
             label1.Shadow = 1;
             label1.ShadowColor = SystemColors.ActiveCaptionText;
@@ -170,7 +172,7 @@
             // 
             label2.Font = new Font("Verdana", 15F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(245, 247, 231);
-            label2.Location = new Point(90, 278);
+            label2.Location = new Point(90, 187);
             label2.Name = "label2";
             label2.Shadow = 1;
             label2.ShadowColor = SystemColors.ActiveCaptionText;
@@ -185,7 +187,7 @@
             // 
             label5.Font = new Font("Verdana", 15F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(245, 247, 231);
-            label5.Location = new Point(90, 332);
+            label5.Location = new Point(90, 241);
             label5.Name = "label5";
             label5.Shadow = 1;
             label5.ShadowColor = SystemColors.ActiveCaptionText;
@@ -243,14 +245,52 @@
             buttonShadow2.TabIndex = 30;
             buttonShadow2.Text = "buttonShadow2";
             // 
-            // btnSave
+            // btnsave
             // 
-            btnSave.Font = new Font("Verdana", 15F, FontStyle.Bold);
-            btnSave.Location = new Point(878, 350);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(171, 50);
-            btnSave.TabIndex = 31;
-            btnSave.Text = "SAVE";
+            btnsave.BackActive = Color.FromArgb(255, 220, 248);
+            btnsave.BackColor = Color.FromArgb(255, 220, 248);
+            btnsave.BackHover = Color.FromArgb(222, 158, 209);
+            btnsave.BorderWidth = 3F;
+            btnsave.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnsave.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnsave.Font = new Font("Verdana", 16.2F, FontStyle.Bold);
+            btnsave.ForeColor = Color.FromArgb(107, 78, 57);
+            btnsave.Location = new Point(455, 452);
+            btnsave.Name = "btnsave";
+            btnsave.ShadowColor = SystemColors.ActiveCaptionText;
+            btnsave.ShadowOffsetX = 4;
+            btnsave.ShadowOffsetY = 4;
+            btnsave.ShadowOpacity = 0.6F;
+            btnsave.Shape = AntdUI.TShape.Round;
+            btnsave.Size = new Size(264, 74);
+            btnsave.TabIndex = 38;
+            btnsave.Text = "Save";
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(245, 247, 231);
+            label4.Location = new Point(90, 298);
+            label4.Name = "label4";
+            label4.Shadow = 1;
+            label4.ShadowColor = SystemColors.ActiveCaptionText;
+            label4.ShadowOffsetX = 4;
+            label4.ShadowOffsetY = 4;
+            label4.ShadowOpacity = 0.4F;
+            label4.Size = new Size(160, 31);
+            label4.TabIndex = 39;
+            label4.Text = "ADDRESS : ";
+            // 
+            // input1
+            // 
+            input1.Font = new Font("Verdana", 10.8F);
+            input1.Location = new Point(256, 288);
+            input1.Multiline = true;
+            input1.Name = "input1";
+            input1.PlaceholderText = "Address";
+            input1.PrefixText = "";
+            input1.Size = new Size(463, 85);
+            input1.TabIndex = 40;
             // 
             // ProfilePage
             // 
@@ -258,7 +298,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
-            Controls.Add(btnSave);
+            Controls.Add(input1);
+            Controls.Add(label4);
+            Controls.Add(btnsave);
             Controls.Add(buttonShadow2);
             Controls.Add(label3);
             Controls.Add(label7);
@@ -297,6 +339,8 @@
         private AntdUI.Label label7;
         private AntdUI.Label label3;
         private AntdUI.ButtonShadow buttonShadow2;
-        private AntdUI.Button btnSave;
+        private AntdUI.ButtonShadow btnsave;
+        private AntdUI.Label label4;
+        private AntdUI.Input input1;
     }
 }

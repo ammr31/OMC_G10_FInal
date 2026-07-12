@@ -40,15 +40,16 @@
             bottomNavigationBar1.Size = new Size(1200, 106);
             bottomNavigationBar1.TabIndex = 0;
             // 
-            // HearingPage
+            // DailyNeedsPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
             Controls.Add(bottomNavigationBar1);
-            Name = "HearingPage";
-            Text = "HearingPage";
+            Name = "DailyNeedsPage";
+            Text = "DailyNeedsPage";
+            Load += DailyNeedsPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
