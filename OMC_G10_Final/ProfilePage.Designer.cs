@@ -44,6 +44,7 @@
             label7 = new AntdUI.Label();
             label3 = new AntdUI.Label();
             buttonShadow2 = new AntdUI.ButtonShadow();
+            btnSave = new AntdUI.Button();
             SuspendLayout();
             // 
             // bottomNavigationBar1
@@ -106,7 +107,7 @@
             // slctusercategory
             // 
             slctusercategory.Font = new Font("Verdana", 10.8F);
-            slctusercategory.Items.AddRange(new object[] { "Deaf ", "Elderly" });
+            slctusercategory.Items.AddRange(new object[] { "Deaf ", "Elderly", "Others" });
             slctusercategory.Location = new Point(830, 298);
             slctusercategory.Name = "slctusercategory";
             slctusercategory.PlaceholderText = "User Category";
@@ -242,12 +243,22 @@
             buttonShadow2.TabIndex = 30;
             buttonShadow2.Text = "buttonShadow2";
             // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Verdana", 15F, FontStyle.Bold);
+            btnSave.Location = new Point(878, 350);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(171, 50);
+            btnSave.TabIndex = 31;
+            btnSave.Text = "SAVE";
+            // 
             // ProfilePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(btnSave);
             Controls.Add(buttonShadow2);
             Controls.Add(label3);
             Controls.Add(label7);
@@ -286,5 +297,6 @@
         private AntdUI.Label label7;
         private AntdUI.Label label3;
         private AntdUI.ButtonShadow buttonShadow2;
+        private AntdUI.Button btnSave;
     }
 }
