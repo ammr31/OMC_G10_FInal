@@ -44,6 +44,7 @@ namespace OMC_G10_Final
             currentProduct = product;
             productnamedisplay.Text = product.Name;
             productpricedisplay.Text = product.Price.ToString("C");
+            detailsdisplay.Text = product.Details;
 
             if (!string.IsNullOrEmpty(product.ImagePath) && File.Exists(product.ImagePath))
                 pictureBox1.Image = Image.FromFile(product.ImagePath);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -33,9 +34,9 @@ namespace OMC_G10_Final
             this.Controls.Add(flowProducts);
             flowProducts.BringToFront();
 
-
             LoadProducts();
         }
+
         private void ResizeAllCards()
         {
             int usableWidth = flowProducts.ClientSize.Width - flowProducts.Padding.Horizontal - 25;
@@ -54,8 +55,7 @@ namespace OMC_G10_Final
             foreach (var product in products)
             {
                 var card = new ProductCard();
-                card.SetProduct(product); // not card.SetProduct(product.Name, product.Price, product.ImagePath)
-                                          // card.AddToCartClicked += (s, e) => AddToCart(product);
+                card.SetProduct(product);
                 card.CardClicked += (s, clickedProduct) =>
                 {
                     ProductDetailPage detailPage = new ProductDetailPage(clickedProduct, this);
@@ -75,18 +75,42 @@ namespace OMC_G10_Final
 
         private List<Product> GetMedicineFromDatabase()
         {
-            // TODO: replace with real query, e.g.:
-            // SELECT Id, Name, Price, ImagePath FROM Medicine
-            var products = new List<Product>
+            var products = new List<Product>();
+
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
             {
-                new Product { Id = 1, Name = "Paracetamol 500mg", Price = 5.90m, ImagePath = "",Category = "Medicine"  },
-                new Product { Id = 2, Name = "Cough Syrup 100ml", Price = 8.50m, ImagePath = "",Category = "Medicine"  },
-                new Product { Id = 3, Name = "Rechargeable Hearing Aids", Price = 49.99m, ImagePath = "",Category = "Medicine"  },
-                new Product { Id = 4, Name = "Hearing Aids Auxiliary Headphones", Price = 31.90m, ImagePath = "",Category = "Medicine"  }
-            };
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductID, ProductName, PriceRM, ImagePath, CategoryName, [Details] FROM Products WHERE CategoryName = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", "Medicine");
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                products.Add(new Product
+                                {
+                                    Id = reader["ProductID"].ToString(),
+                                    Name = reader["ProductName"].ToString(),
+                                    Price = Convert.ToDecimal(reader["PriceRM"]),
+                                    ImagePath = reader["ImagePath"].ToString(),
+                                    Category = reader["CategoryName"].ToString(),
+                                    Details = reader["Details"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading medicine products: {ex.Message}");
+                }
+            }
 
             return products;
         }
     }
 }
-

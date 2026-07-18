@@ -75,7 +75,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Verdana", 18F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(107, 78, 57);
-            label2.Location = new Point(342, 19);
+            label2.Location = new Point(342, 8);
             label2.Name = "label2";
             label2.Size = new Size(143, 39);
             label2.TabIndex = 41;
@@ -84,7 +84,7 @@
             // detailsdisplay
             // 
             detailsdisplay.BackColor = Color.Transparent;
-            detailsdisplay.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            detailsdisplay.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             detailsdisplay.Location = new Point(491, 19);
             detailsdisplay.Name = "detailsdisplay";
             detailsdisplay.Size = new Size(308, 161);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,8 +22,8 @@ namespace OMC_G10_Final
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true,
-                FlowDirection = FlowDirection.TopDown,  // stack top to bottom
-                WrapContents = false,                    // no wrapping into columns
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false,
                 BackColor = ColorTranslator.FromHtml("#6B7A52"),
                 Padding = new Padding(20)
             };
@@ -30,12 +31,8 @@ namespace OMC_G10_Final
             this.Controls.Add(flowProducts);
             flowProducts.BringToFront();
 
-
-
             LoadProducts();
         }
-
-
 
         private void LoadProducts()
         {
@@ -49,8 +46,7 @@ namespace OMC_G10_Final
             foreach (var product in products)
             {
                 var card = new ProductCard();
-                card.SetProduct(product); // not card.SetProduct(product.Name, product.Price, product.ImagePath)
-                                          // card.AddToCartClicked += (s, e) => AddToCart(product);
+                card.SetProduct(product);
                 card.CardClicked += (s, clickedProduct) =>
                 {
                     ProductDetailPage detailPage = new ProductDetailPage(clickedProduct, this);
@@ -70,15 +66,40 @@ namespace OMC_G10_Final
 
         private List<Product> GetProductsFromDatabase()
         {
-            var products = new List<Product>
+            var products = new List<Product>();
+
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
             {
-                new Product { Id = 1, Name = "Milk 1L", Price = 3.50m, ImagePath = "", Category = "DailyNeeds" },
-                new Product { Id = 2, Name = "Bread Loaf", Price = 2.20m, ImagePath = "", Category = "DailyNeeds" },
-                new Product { Id = 3, Name = "Eggs (12pc)", Price = 4.00m, ImagePath = "", Category = "DailyNeeds" },
-                new Product { Id = 4, Name = "Rice 5kg", Price = 12.90m, ImagePath = "", Category = "DailyNeeds" },
-                new Product { Id = 5, Name = "Cooking Oil 1L", Price = 6.50m, ImagePath = "", Category = "DailyNeeds" },
-                new Product { Id = 6, Name = "Sugar 1kg", Price = 2.80m, ImagePath = "", Category = "DailyNeeds" }
-            };
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductID, ProductName, PriceRM, ImagePath, CategoryName, [Details] FROM Products WHERE CategoryName = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", "Daily Needs"); // exact match incl. space
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                products.Add(new Product
+                                {
+                                    Id = reader["ProductID"].ToString(),
+                                    Name = reader["ProductName"].ToString(),
+                                    Price = Convert.ToDecimal(reader["PriceRM"]),
+                                    ImagePath = reader["ImagePath"].ToString(),
+                                    Category = reader["CategoryName"].ToString(),
+                                    Details = reader["Details"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading products: {ex.Message}");
+                }
+            }
 
             return products;
         }
