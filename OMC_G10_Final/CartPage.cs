@@ -81,6 +81,14 @@ namespace OMC_G10_Final
 
         private void CartPage_Load_1(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Session.CurrentUserId))
+            {
+                MainPage main = new MainPage();
+                main.Show();
+                this.Close();
+                return;
+            }
+
             SetupPanel();
             LoadCartItems();
         }

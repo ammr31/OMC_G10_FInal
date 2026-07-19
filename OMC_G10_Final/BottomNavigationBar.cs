@@ -15,7 +15,6 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-
         private void btnHomePage_Click_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -30,13 +29,12 @@ namespace OMC_G10_Final
 
             if (currentForm != null)
             {
-                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+                currentForm.Close(); // was Hide()
             }
         }
 
         private void btnRecentPage_Click(object sender, EventArgs e)
         {
-
             Form? currentForm = this.FindForm();
 
             if (currentForm is RecentPage)
@@ -49,7 +47,7 @@ namespace OMC_G10_Final
 
             if (currentForm != null)
             {
-                currentForm.Hide(); // Prevents the application from terminating
+                currentForm.Close(); // was Hide()
             }
         }
 
@@ -57,17 +55,23 @@ namespace OMC_G10_Final
         {
             Form? currentForm = this.FindForm();
 
+            if (string.IsNullOrEmpty(Session.CurrentUserId))
+            {
+                MessageBox.Show("No user is logged in.");
+                return;
+            }
+
             if (currentForm is CartPage)
             {
                 return;
             }
 
-            CartPage newForm = new CartPage();
-            newForm.Show();
+            CartPage cartPage = new CartPage();
+            cartPage.Show();
 
             if (currentForm != null)
             {
-                currentForm.Hide(); // Prevents the application from terminating
+                currentForm.Close(); // fixed: was "this.Hide()" which hid the wrong thing
             }
         }
 
@@ -77,7 +81,6 @@ namespace OMC_G10_Final
 
             if (!string.IsNullOrEmpty(Session.CurrentUserId))
             {
-                // Already logged in — go straight to ProfilePage
                 if (currentForm is ProfilePage)
                 {
                     return;
@@ -88,12 +91,11 @@ namespace OMC_G10_Final
 
                 if (currentForm != null)
                 {
-                    currentForm.Hide();
+                    currentForm.Close(); // was Hide()
                 }
             }
             else
             {
-                // Not logged in — go to loginpage
                 if (currentForm is loginpage)
                 {
                     return;
@@ -104,7 +106,7 @@ namespace OMC_G10_Final
 
                 if (currentForm != null)
                 {
-                    currentForm.Hide();
+                    currentForm.Close(); // was Hide()
                 }
             }
         }

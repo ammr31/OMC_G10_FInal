@@ -88,7 +88,6 @@
             txtemail.PlaceholderText = "Email";
             txtemail.Size = new Size(356, 51);
             txtemail.TabIndex = 35;
-            txtemail.Text = "farid1mut@gmail.com";
             // 
             // txtpassword
             // 
@@ -99,7 +98,6 @@
             txtpassword.PlaceholderText = "Password";
             txtpassword.Size = new Size(356, 51);
             txtpassword.TabIndex = 36;
-            txtpassword.Text = "123456789";
             // 
             // btnlogin
             // 

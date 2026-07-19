@@ -44,11 +44,11 @@
             rdonlinebanking = new AntdUI.Radio();
             rdcard = new AntdUI.Radio();
             panel4 = new AntdUI.Panel();
+            DPexpirydate = new DateTimePicker();
             checkbox1 = new AntdUI.Checkbox();
             label9 = new AntdUI.Label();
             txtCW = new AntdUI.Input();
             label8 = new AntdUI.Label();
-            DPexpirydate = new AntdUI.DatePicker();
             label7 = new AntdUI.Label();
             txtnameoncard = new AntdUI.Input();
             txtcardnumber = new AntdUI.Input();
@@ -229,11 +229,11 @@
             // panel4
             // 
             panel4.Back = Color.FromArgb(255, 220, 248);
+            panel4.Controls.Add(DPexpirydate);
             panel4.Controls.Add(checkbox1);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(txtCW);
             panel4.Controls.Add(label8);
-            panel4.Controls.Add(DPexpirydate);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(txtnameoncard);
             panel4.Controls.Add(txtcardnumber);
@@ -244,6 +244,16 @@
             panel4.Size = new Size(484, 484);
             panel4.TabIndex = 0;
             panel4.Text = "panel4";
+            // 
+            // DPexpirydate
+            // 
+            DPexpirydate.CustomFormat = "MM/yy";
+            DPexpirydate.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DPexpirydate.Format = DateTimePickerFormat.Custom;
+            DPexpirydate.Location = new Point(167, 128);
+            DPexpirydate.Name = "DPexpirydate";
+            DPexpirydate.Size = new Size(162, 28);
+            DPexpirydate.TabIndex = 10;
             // 
             // checkbox1
             // 
@@ -285,15 +295,6 @@
             label8.Size = new Size(43, 29);
             label8.TabIndex = 6;
             label8.Text = "CW:";
-            // 
-            // DPexpirydate
-            // 
-            DPexpirydate.BorderWidth = 2F;
-            DPexpirydate.Format = "MM-YY";
-            DPexpirydate.Location = new Point(159, 113);
-            DPexpirydate.Name = "DPexpirydate";
-            DPexpirydate.Size = new Size(170, 43);
-            DPexpirydate.TabIndex = 5;
             // 
             // label7
             // 
@@ -410,7 +411,6 @@
         private AntdUI.Label label5;
         private AntdUI.Input txtCW;
         private AntdUI.Label label8;
-        private AntdUI.DatePicker DPexpirydate;
         private AntdUI.Label label7;
         private AntdUI.Input txtnameoncard;
         private AntdUI.Input txtcardnumber;
@@ -418,5 +418,6 @@
         private AntdUI.Checkbox checkbox1;
         private AntdUI.Label label9;
         private AntdUI.ButtonShadow btnproceed;
+        private DateTimePicker DPexpirydate;
     }
 }
