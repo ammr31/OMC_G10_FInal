@@ -46,9 +46,15 @@ namespace OMC_G10_Final
             productpricedisplay.Text = product.Price.ToString("C");
             detailsdisplay.Text = product.Details;
 
-            if (!string.IsNullOrEmpty(product.ImagePath) && File.Exists(product.ImagePath))
-                pictureBox1.Image = Image.FromFile(product.ImagePath);
+            if (!string.IsNullOrEmpty(product.ImagePath))
+            {
+                // Take only the filename, regardless of what's stored in the database
+                string fileNameOnly = Path.GetFileName(product.ImagePath);
+                string fullImagePath = Path.Combine(Application.StartupPath, "ProductImages", fileNameOnly);
 
+                if (File.Exists(fullImagePath))
+                    pictureBox1.Image = Image.FromFile(fullImagePath);
+            }
             this.Cursor = Cursors.Hand;
         }
 
@@ -60,7 +66,23 @@ namespace OMC_G10_Final
         private void btnaddtocart_Click(object sender, EventArgs e)
         {
             if (currentProduct != null)
-                MessageBox.Show($"{currentProduct.Name} added to cart!");
+            {
+                if (string.IsNullOrEmpty(Session.CurrentUserId))
+                {
+                    MessageBox.Show("Please log in to add items to your cart.");
+                    return;
+                }
+
+                bool success = DatabaseHelper.AddToCart(
+                    Session.CurrentUserId,
+                    currentProduct.Id,
+                    currentProduct.Name,
+                    currentProduct.Price,
+                    1);
+
+                if (success)
+                    MessageBox.Show($"{currentProduct.Name} added to cart!");
+            }
 
             AddToCartClicked?.Invoke(this, EventArgs.Empty);
         }

@@ -75,17 +75,37 @@ namespace OMC_G10_Final
         {
             Form? currentForm = this.FindForm();
 
-            if (currentForm is loginpage)
+            if (!string.IsNullOrEmpty(Session.CurrentUserId))
             {
-                return;
+                // Already logged in — go straight to ProfilePage
+                if (currentForm is ProfilePage)
+                {
+                    return;
+                }
+
+                ProfilePage newForm = new ProfilePage();
+                newForm.Show();
+
+                if (currentForm != null)
+                {
+                    currentForm.Hide();
+                }
             }
-
-            loginpage newForm = new loginpage();
-            newForm.Show();
-
-            if (currentForm != null)
+            else
             {
-                currentForm.Hide(); // Prevents the application from terminating
+                // Not logged in — go to loginpage
+                if (currentForm is loginpage)
+                {
+                    return;
+                }
+
+                loginpage newForm = new loginpage();
+                newForm.Show();
+
+                if (currentForm != null)
+                {
+                    currentForm.Hide();
+                }
             }
         }
     }

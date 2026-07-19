@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
@@ -26,12 +27,133 @@ namespace OMC_G10_Final
                 return;
             }
 
-            ProfilePage newForm = new ProfilePage();
-            newForm.Show();
+            string email = txtemail.Text?.Trim() ?? string.Empty;       // replace with your actual textbox name
+            string password = txtpassword.Text?.Trim() ?? string.Empty; // replace with your actual textbox name
 
-            if (currentForm != null)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+                CustomMessageBox.Show("Please enter both email and password.");
+                return;
+            }
+
+            // Try Admin first
+            if (AuthenticateAdmin(email, password))
+            {
+                ProfilePage newForm = new ProfilePage(); // swap for an admin dashboard if you have one
+                newForm.Show();
+                if (currentForm != null) currentForm.Hide();
+                return;
+            }
+
+            // Then try normal Users
+            if (AuthenticateUser(email, password))
+            {
+                ProfilePage newForm = new ProfilePage();
+                newForm.Show();
+                if (currentForm != null) currentForm.Hide();
+                return;
+            }
+
+            CustomMessageBox.Show("Invalid email or password.");
+        }
+
+        private bool AuthenticateAdmin(string email, string password)
+        {
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT [AdminID], [Password] FROM [Admin] WHERE [Email] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedPassword = reader["Password"].ToString();
+                                string adminId = reader["AdminID"].ToString();
+
+                                if (storedPassword == password)
+                                {
+                                    Session.CurrentUserId = adminId; // <-- add this
+                                    Session.IsAdmin = true;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"Admin login error: {ex.Message}");
+                }
+            }
+
+            return false;
+        }
+
+        private bool AuthenticateUser(string email, string password)
+        {
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT [UserID], [Password] FROM [Users] WHERE [Email] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedPassword = reader["Password"].ToString();
+                                string userId = reader["UserID"].ToString();
+
+                                if (storedPassword == password)
+                                {
+                                    Session.CurrentUserId = userId; // <-- add this
+                                    Session.IsAdmin = false;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"User login error: {ex.Message}");
+                }
+            }
+
+            return false;
+        }
+
+        private void UpdateAdminLastLogin(string adminId)
+        {
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE [Admin] SET [LastLogin] = ? WHERE [AdminID] = ?";
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@LastLogin", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@AdminID", adminId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+                    // non-critical, don't block login if this fails
+                }
             }
         }
 
@@ -108,7 +230,9 @@ namespace OMC_G10_Final
             }
         }
 
-        private void btnregister_Click_1(object sender, EventArgs e)
+
+
+        private void btnregister_Click(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -140,7 +264,7 @@ namespace OMC_G10_Final
             }
         }
 
-        private void pageHeader1_BackClick(object sender, EventArgs e)
+        private void pageHeader1_BackClick_1(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -154,6 +278,18 @@ namespace OMC_G10_Final
 
             // Hide the current MainPage so it doesn't stay visible behind it
             this.Hide();
+        }
+
+        private void checkbox1_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
+        {
+            if (e.Value) // shows password when checked
+            {
+                txtpassword.PasswordChar = '\0'; // '\0' reveals the actual characters
+            }
+            else
+            {
+                txtpassword.PasswordChar = '*'; // masks it again when unchecked
+            }
         }
     }
 }

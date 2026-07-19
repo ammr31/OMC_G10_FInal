@@ -36,6 +36,7 @@
             btnlogin = new AntdUI.ButtonShadow();
             btnregister = new AntdUI.ButtonShadow();
             pageHeader1 = new AntdUI.PageHeader();
+            checkbox1 = new AntdUI.Checkbox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -87,6 +88,7 @@
             txtemail.PlaceholderText = "Email";
             txtemail.Size = new Size(356, 51);
             txtemail.TabIndex = 35;
+            txtemail.Text = "farid1mut@gmail.com";
             // 
             // txtpassword
             // 
@@ -97,6 +99,7 @@
             txtpassword.PlaceholderText = "Password";
             txtpassword.Size = new Size(356, 51);
             txtpassword.TabIndex = 36;
+            txtpassword.Text = "123456789";
             // 
             // btnlogin
             // 
@@ -140,7 +143,7 @@
             btnregister.Size = new Size(264, 74);
             btnregister.TabIndex = 39;
             btnregister.Text = "Register";
-            btnregister.Click += btnregister_Click_1;
+            btnregister.Click += btnregister_Click;
             // 
             // pageHeader1
             // 
@@ -157,7 +160,18 @@
             pageHeader1.Text = "Back";
             pageHeader1.UseForeColorDrawIcons = true;
             pageHeader1.UseSystemStyleColor = true;
-            pageHeader1.BackClick += pageHeader1_BackClick;
+            pageHeader1.BackClick += pageHeader1_BackClick_1;
+            // 
+            // checkbox1
+            // 
+            checkbox1.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkbox1.ForeColor = Color.FromArgb(245, 247, 231);
+            checkbox1.Location = new Point(506, 524);
+            checkbox1.Name = "checkbox1";
+            checkbox1.Size = new Size(199, 35);
+            checkbox1.TabIndex = 41;
+            checkbox1.Text = "Show Password";
+            checkbox1.CheckedChanged += checkbox1_CheckedChanged;
             // 
             // loginpage
             // 
@@ -165,6 +179,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(checkbox1);
             Controls.Add(pageHeader1);
             Controls.Add(btnregister);
             Controls.Add(btnlogin);
@@ -189,5 +204,6 @@
         private AntdUI.ButtonShadow btnlogin;
         private AntdUI.ButtonShadow btnregister;
         private AntdUI.PageHeader pageHeader1;
+        private AntdUI.Checkbox checkbox1;
     }
 }

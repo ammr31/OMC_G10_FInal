@@ -37,12 +37,12 @@
             label2 = new AntdUI.Label();
             detailsdisplay = new AntdUI.Label();
             pictureBox1 = new PictureBox();
-            panel2 = new AntdUI.Panel();
+            reviewpanel = new AntdUI.Panel();
             label3 = new AntdUI.Label();
             btnback = new AntdUI.ButtonShadow();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            reviewpanel.SuspendLayout();
             SuspendLayout();
             // 
             // bottomNavigationBar1
@@ -168,18 +168,18 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // panel2
+            // reviewpanel
             // 
-            panel2.AutoScroll = true;
-            panel2.Back = Color.FromArgb(245, 247, 231);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(534, 368);
-            panel2.Name = "panel2";
-            panel2.Shadow = 4;
-            panel2.ShadowColor = SystemColors.ActiveCaptionText;
-            panel2.Size = new Size(635, 245);
-            panel2.TabIndex = 42;
-            panel2.Text = "panel2";
+            reviewpanel.AutoScroll = true;
+            reviewpanel.Back = Color.FromArgb(245, 247, 231);
+            reviewpanel.Controls.Add(label3);
+            reviewpanel.Location = new Point(534, 368);
+            reviewpanel.Name = "reviewpanel";
+            reviewpanel.Shadow = 4;
+            reviewpanel.ShadowColor = SystemColors.ActiveCaptionText;
+            reviewpanel.Size = new Size(635, 245);
+            reviewpanel.TabIndex = 42;
+            reviewpanel.Text = "panel2";
             // 
             // label3
             // 
@@ -223,7 +223,7 @@
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
             Controls.Add(btnback);
-            Controls.Add(panel2);
+            Controls.Add(reviewpanel);
             Controls.Add(label2);
             Controls.Add(detailsdisplay);
             Controls.Add(label1);
@@ -235,7 +235,7 @@
             Load += ProductDetailPage_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
+            reviewpanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,7 +251,7 @@
         private AntdUI.Label productpricedisplay;
         private AntdUI.Label productnamedisplay;
         private PictureBox pictureBox1;
-        private AntdUI.Panel panel2;
+        private AntdUI.Panel reviewpanel;
         private AntdUI.Label label3;
         private AntdUI.ButtonShadow btnback;
     }

@@ -15,10 +15,7 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
         private void pageHeader1_BackClick(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
@@ -43,7 +40,11 @@ namespace OMC_G10_Final
             {
                 return;
             }
-            // Open the Mobility Form
+            if (!Session.IsAdmin)
+            {
+                MessageBox.Show("Access denied. This page is for administrators only.");
+                return;
+            }
             SupplierPage newForm = new SupplierPage();
             newForm.Show();
 
@@ -51,9 +52,140 @@ namespace OMC_G10_Final
             this.Hide();
         }
 
-        private void pageHeader1_Click(object sender, EventArgs e)
+        private void btnadminpage_Click(object sender, EventArgs e)
         {
+            Form? currentForm = this.FindForm();
 
+            if (currentForm is adminpage)
+            {
+                return;
+            }
+
+            if (!Session.IsAdmin)
+            {
+                MessageBox.Show("Access denied. This page is for administrators only.");
+                return;
+            }
+
+            adminpage newForm = new adminpage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
+        }
+
+        private void ProfilePage_Load(object sender, EventArgs e)
+        {
+            LoadProfile();
+        }
+        private void LoadProfile()
+        {
+            if (string.IsNullOrEmpty(Session.CurrentUserId))
+            {
+                MessageBox.Show("No user is currently logged in.");
+                return;
+            }
+
+            if (Session.IsAdmin)
+            {
+                LoadAdminProfile();
+            }
+            else
+            {
+                LoadUserProfile();
+            }
+        }
+
+        private void LoadUserProfile()
+        {
+            DataRow user = DatabaseHelper.GetUserById(Session.CurrentUserId);
+
+            if (user == null)
+            {
+                MessageBox.Show("User not found.");
+                return;
+            }
+
+            txtName.Text = user["Name"].ToString();
+            txtEmail.Text = user["Email"].ToString();
+            txtPhoneNumber.Text = user["PhoneNumber"].ToString();
+            txtaddress.Text = user.Table.Columns.Contains("Address") ? user["Address"].ToString() : "";
+
+            string gender = user["Gender"].ToString();
+            if (gender == "Male") radMale.Checked = true;
+            else if (gender == "Female") radfemale.Checked = true;
+
+            string category = user["UserCategory"].ToString();
+            int categoryIndex = -1;
+            for (int i = 0; i < slctusercategory.Items.Count; i++)
+            {
+                if (slctusercategory.Items[i].ToString() == category)
+                {
+                    categoryIndex = i;
+                    break;
+                }
+            }
+
+            if (categoryIndex >= 0)
+                slctusercategory.SelectedIndex = categoryIndex;
+        }
+
+        private void LoadAdminProfile()
+        {
+            DataRow admin = DatabaseHelper.GetAdminById(Session.CurrentUserId);
+
+            if (admin == null)
+            {
+                MessageBox.Show("Admin record not found.");
+                return;
+            }
+
+            txtName.Text = admin["Name"].ToString();
+            txtEmail.Text = admin["Email"].ToString();
+
+            // Admin table has no PhoneNumber/Address/Gender/UserCategory,
+            // so disable or hide the fields that don't apply
+            txtPhoneNumber.Text = "";
+            txtaddress.Text = "";
+            txtPhoneNumber.Enabled = false;
+            txtaddress.Enabled = false;
+            radMale.Enabled = false;
+            radfemale.Enabled = false;
+            slctusercategory.Enabled = false;
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text?.Trim() ?? "";
+            string email = txtEmail.Text?.Trim() ?? "";
+            string phone = txtPhoneNumber.Text?.Trim() ?? "";
+            string address = txtaddress.Text?.Trim() ?? "";
+            string gender = radMale.Checked ? "Male" : radfemale.Checked ? "Female" : "";
+            string category = slctusercategory.Text?.Trim() ?? "";
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Name and Email are required.");
+                return;
+            }
+
+            bool success = DatabaseHelper.UpdateUserProfile(
+                Session.CurrentUserId, name, email, phone, address, gender, category);
+
+            if (success)
+                MessageBox.Show("Profile updated successfully.");
+            else
+                MessageBox.Show("Failed to update profile.");
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            Session.CurrentUserId = null;
+            Session.IsAdmin = false;
+
+            loginpage newForm = new loginpage();
+            newForm.Show();
+            this.Hide();
         }
     }
 }

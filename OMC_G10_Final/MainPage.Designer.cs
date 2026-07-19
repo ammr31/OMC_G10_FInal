@@ -43,9 +43,9 @@
             btnCall = new AntdUI.ButtonShadow();
             btnMessage = new AntdUI.ButtonShadow();
             panelchat = new Panel();
-            lstQuestion = new ListBox();
-            flowlayoutchat = new FlowLayoutPanel();
-            txtchatinput = new TextBox();
+            flowlayoutchat = new AntdUI.In.FlowLayoutPanel();
+            dpdChoooseQuestion = new AntdUI.Dropdown();
+            slctQuestionCategory = new AntdUI.Select();
             btnsend = new AntdUI.Button();
             label2 = new Label();
             pictureBox2 = new PictureBox();
@@ -257,49 +257,49 @@
             panelchat.AutoScroll = true;
             panelchat.BackColor = Color.FromArgb(245, 247, 231);
             panelchat.BorderStyle = BorderStyle.FixedSingle;
-            panelchat.Controls.Add(lstQuestion);
             panelchat.Controls.Add(flowlayoutchat);
-            panelchat.Controls.Add(txtchatinput);
+            panelchat.Controls.Add(dpdChoooseQuestion);
+            panelchat.Controls.Add(slctQuestionCategory);
             panelchat.Location = new Point(814, 177);
             panelchat.Name = "panelchat";
             panelchat.Size = new Size(374, 398);
             panelchat.TabIndex = 38;
             panelchat.Visible = false;
             // 
-            // lstQuestion
-            // 
-            lstQuestion.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lstQuestion.FormattingEnabled = true;
-            lstQuestion.Location = new Point(20, 251);
-            lstQuestion.Name = "lstQuestion";
-            lstQuestion.Size = new Size(334, 64);
-            lstQuestion.TabIndex = 34;
-            lstQuestion.SelectedIndexChanged += lstQuestion_SelectedIndexChanged;
-            // 
             // flowlayoutchat
             // 
             flowlayoutchat.AutoScroll = true;
             flowlayoutchat.BackColor = Color.White;
-            flowlayoutchat.BorderStyle = BorderStyle.FixedSingle;
-            flowlayoutchat.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            flowlayoutchat.Location = new Point(19, 15);
-            flowlayoutchat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            flowlayoutchat.Location = new Point(20, 17);
-            flowlayoutchat.Margin = new Padding(3, 3, 10, 3);
+            flowlayoutchat.Location = new Point(18, 6);
             flowlayoutchat.Name = "flowlayoutchat";
-            flowlayoutchat.Size = new Size(334, 214);
-            flowlayoutchat.TabIndex = 3;
+            flowlayoutchat.Size = new Size(336, 276);
+            flowlayoutchat.TabIndex = 38;
             // 
-            // txtchatinput
+            // dpdChoooseQuestion
             // 
-            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(19, 310);
-            txtchatinput.Multiline = true;
-            txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(183, 66);
-            txtchatinput.TabIndex = 1;
-            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
+            dpdChoooseQuestion.BorderWidth = 2F;
+            dpdChoooseQuestion.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dpdChoooseQuestion.ForeActive = SystemColors.ActiveCaptionText;
+            dpdChoooseQuestion.ForeColor = SystemColors.ActiveBorder;
+            dpdChoooseQuestion.Location = new Point(20, 340);
+            dpdChoooseQuestion.Name = "dpdChoooseQuestion";
+            dpdChoooseQuestion.Size = new Size(334, 46);
+            dpdChoooseQuestion.TabIndex = 36;
+            dpdChoooseQuestion.Text = "Choose Question";
+            dpdChoooseQuestion.SelectedValueChanged += dpdChoooseQuestion_SelectedValueChanged;
+            // 
+            // slctQuestionCategory
+            // 
+            slctQuestionCategory.BorderWidth = 2F;
+            slctQuestionCategory.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            slctQuestionCategory.ForeColor = SystemColors.ActiveBorder;
+            slctQuestionCategory.Location = new Point(20, 288);
+            slctQuestionCategory.Name = "slctQuestionCategory";
+            slctQuestionCategory.PlaceholderText = "Select Question Category";
+            slctQuestionCategory.Size = new Size(334, 46);
+            slctQuestionCategory.TabIndex = 35;
+            slctQuestionCategory.TextAlign = HorizontalAlignment.Center;
+            slctQuestionCategory.SelectedIndexChanged += slctQuestionCategory_SelectedIndexChanged;
             // 
             // btnsend
             // 
@@ -312,7 +312,6 @@
             btnsend.Size = new Size(67, 68);
             btnsend.TabIndex = 2;
             btnsend.Text = "button1";
-            btnsend.Click += btnsend_Click;
             // 
             // label2
             // 
@@ -372,14 +371,6 @@
             panel3.Size = new Size(793, 123);
             panel3.TabIndex = 10;
             panel3.Text = "panel3";
-            txtchatinput.BorderStyle = BorderStyle.FixedSingle;
-            txtchatinput.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtchatinput.Location = new Point(20, 340);
-            txtchatinput.Multiline = true;
-            txtchatinput.Name = "txtchatinput";
-            txtchatinput.Size = new Size(261, 40);
-            txtchatinput.TabIndex = 1;
-            txtchatinput.KeyDown += txtchatinput_KeyDown_1;
             // 
             // MainPage
             // 
@@ -398,15 +389,12 @@
             Name = "MainPage";
             Text = "MainPage";
             Load += MainPage_Load;
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panelchat.ResumeLayout(false);
-            panelchat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -431,8 +419,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panelchat;
         private AntdUI.Button btnsend;
-        private TextBox txtchatinput;
-        private FlowLayoutPanel flowlayoutchat;
         private Label label2;
         private PictureBox pictureBox2;
         private Label label1;
@@ -440,6 +426,8 @@
         private AntdUI.Panel panel3;
         private AntdUI.ButtonShadow btnCall;
         private AntdUI.ButtonShadow btnMessage;
-        private ListBox lstQuestion;
+        private AntdUI.Select slctQuestionCategory;
+        private AntdUI.Dropdown dpdChoooseQuestion;
+        private AntdUI.In.FlowLayoutPanel flowlayoutchat;
     }
 }
