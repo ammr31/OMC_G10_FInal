@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Text;
 using System.Windows.Forms;
 
@@ -119,6 +120,7 @@ namespace OMC_G10_Final
             btnSubmitRegistration = new Button();
             label1 = new Label();
             pageHeader1 = new AntdUI.PageHeader();
+            cboType = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -308,6 +310,15 @@ namespace OMC_G10_Final
             pageHeader1.UseForeColorDrawIcons = true;
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick_1;
+            // 
+            // cboType
+            // 
+            cboType.FormattingEnabled = true;
+            cboType.Items.AddRange(new object[] { "Hospital", "Clinic", "Medical Supplier" });
+            cboType.Location = new Point(397, 362);
+            cboType.Name = "cboType";
+            cboType.Size = new Size(440, 28);
+            cboType.TabIndex = 14;
             // 
             // RegistrationForm
             // 
