@@ -262,5 +262,29 @@ namespace OMC_G10_Final
 
             dpdChoooseQuestion.SelectedValue = null; // reset so the same question can be picked again later
         }
+
+        private void radmobility_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
+        {
+            if (e.Value)
+            {
+                Session.AccessibilityFilter = "Mobility";
+            }
+            else if (Session.AccessibilityFilter == "Mobility")
+            {
+                Session.AccessibilityFilter = null;
+            }
+        }
+
+        private void radhearing_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
+        {
+            if (e.Value)
+            {
+                Session.AccessibilityFilter = "Hearing";
+            }
+            else if (Session.AccessibilityFilter == "Hearing")
+            {
+                Session.AccessibilityFilter = null;
+            }
+        }
     }
 }

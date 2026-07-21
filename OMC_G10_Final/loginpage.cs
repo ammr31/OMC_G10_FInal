@@ -27,8 +27,8 @@ namespace OMC_G10_Final
                 return;
             }
 
-            string email = txtemail.Text?.Trim() ?? string.Empty;       // replace with your actual textbox name
-            string password = txtpassword.Text?.Trim() ?? string.Empty; // replace with your actual textbox name
+            string email = txtemail.Text?.Trim() ?? string.Empty;
+            string password = txtpassword.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
@@ -36,10 +36,33 @@ namespace OMC_G10_Final
                 return;
             }
 
+            if (!IsValidEmailFormat(email))
+            {
+                CustomMessageBox.Show("Please enter a valid email address (must contain '@' and '.').");
+                return;
+            }
+
+            if (!IsValidPasswordFormat(password))
+            {
+                CustomMessageBox.Show("Password must contain at least one capital letter, one small letter and one number and to have atleast 8 characters.");
+                return;
+            }
+
+            Session.IsSupplier = false; // reset before checking
+
             // Try Admin first
             if (AuthenticateAdmin(email, password))
             {
-                ProfilePage newForm = new ProfilePage(); // swap for an admin dashboard if you have one
+                ProfilePage newForm = new ProfilePage();
+                newForm.Show();
+                if (currentForm != null) currentForm.Hide();
+                return;
+            }
+
+            // Then try Suppliers
+            if (AuthenticateSupplier(email, password))
+            {
+                ProfilePage newForm = new ProfilePage();
                 newForm.Show();
                 if (currentForm != null) currentForm.Hide();
                 return;
@@ -56,7 +79,6 @@ namespace OMC_G10_Final
 
             CustomMessageBox.Show("Invalid email or password.");
         }
-
         private bool AuthenticateAdmin(string email, string password)
         {
             using (OleDbConnection conn = DatabaseHelper.GetConnection())
@@ -160,10 +182,12 @@ namespace OMC_G10_Final
         public class RegisterChoiceForm : Form
         {
             public bool RegisterAsSupplier { get; private set; } = false;
+            public bool RegisterAsAdmin { get; private set; } = false;
             public bool ChoiceMade { get; private set; } = false;
 
             private Button btnUser;
             private Button btnSupplier;
+            private Button btnAdmin;
 
             public RegisterChoiceForm()
             {
@@ -186,20 +210,27 @@ namespace OMC_G10_Final
                     Height = 80
                 };
 
+                int btnWidth = 170;
+                int btnHeight = 50;
+                int spacing = 15;
+                int totalWidth = (btnWidth * 3) + (spacing * 2);
+                int startX = (this.ClientSize.Width - totalWidth) / 2;
+
                 btnUser = new Button
                 {
                     Text = "Register as Supplier",
-                    Font = new Font("Verdana", 10, FontStyle.Bold),
-                    Size = new Size(250, 40),
+                    Font = new Font("Verdana", 9, FontStyle.Bold),
+                    Size = new Size(btnWidth, btnHeight),
                     BackColor = Color.White,
                     ForeColor = Color.FromArgb(108, 117, 82),
                     FlatStyle = FlatStyle.Flat,
+                    Location = new Point(startX, 120)
                 };
                 btnUser.FlatAppearance.BorderSize = 0;
-                btnUser.Location = new Point((this.ClientSize.Width / 2) - btnUser.Width - 15, 120);
                 btnUser.Click += (s, e) =>
                 {
                     RegisterAsSupplier = false;
+                    RegisterAsAdmin = false;
                     ChoiceMade = true;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -208,17 +239,38 @@ namespace OMC_G10_Final
                 btnSupplier = new Button
                 {
                     Text = "Register as User",
-                    Font = new Font("Verdana", 10, FontStyle.Bold),
-                    Size = new Size(250, 40),
+                    Font = new Font("Verdana", 9, FontStyle.Bold),
+                    Size = new Size(btnWidth, btnHeight),
                     BackColor = Color.White,
                     ForeColor = Color.FromArgb(108, 117, 82),
                     FlatStyle = FlatStyle.Flat,
+                    Location = new Point(startX + btnWidth + spacing, 120)
                 };
                 btnSupplier.FlatAppearance.BorderSize = 0;
-                btnSupplier.Location = new Point((this.ClientSize.Width / 2) + 15, 120);
                 btnSupplier.Click += (s, e) =>
                 {
                     RegisterAsSupplier = true;
+                    RegisterAsAdmin = false;
+                    ChoiceMade = true;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                };
+
+                btnAdmin = new Button
+                {
+                    Text = "Register as Admin",
+                    Font = new Font("Verdana", 9, FontStyle.Bold),
+                    Size = new Size(btnWidth, btnHeight),
+                    BackColor = Color.White,
+                    ForeColor = Color.FromArgb(108, 117, 82),
+                    FlatStyle = FlatStyle.Flat,
+                    Location = new Point(startX + (btnWidth + spacing) * 2, 120)
+                };
+                btnAdmin.FlatAppearance.BorderSize = 0;
+                btnAdmin.Click += (s, e) =>
+                {
+                    RegisterAsSupplier = false;
+                    RegisterAsAdmin = true;
                     ChoiceMade = true;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -227,7 +279,54 @@ namespace OMC_G10_Final
                 this.Controls.Add(lbl);
                 this.Controls.Add(btnUser);
                 this.Controls.Add(btnSupplier);
+                this.Controls.Add(btnAdmin);
             }
+        }
+        private bool AuthenticateSupplier(string email, string password)
+        {
+            using (OleDbConnection conn = DatabaseHelper.GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT [SupplierID], [Password], [Status] FROM [Suppliers] WHERE [BusinessEmail] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@BusinessEmail", email);
+
+                        using (OleDbDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedPassword = reader["Password"].ToString();
+                                string supplierId = reader["SupplierID"].ToString();
+                                string status = reader["Status"].ToString();
+
+                                if (status != "Active")
+                                {
+                                    CustomMessageBox.Show("This supplier account is inactive. Please contact admin.");
+                                    return false;
+                                }
+
+                                if (storedPassword == password)
+                                {
+                                    Session.CurrentUserId = supplierId;
+                                    Session.IsAdmin = false;
+                                    Session.IsSupplier = true;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"Supplier login error: {ex.Message}");
+                }
+            }
+
+            return false;
         }
 
 
@@ -247,24 +346,67 @@ namespace OMC_G10_Final
 
                 if (result != DialogResult.OK || !choiceForm.ChoiceMade)
                 {
-                    // User closed the popup without choosing
                     return;
                 }
 
-                Form newForm = choiceForm.RegisterAsSupplier
-                    ? new registrationformuser()
-                    : new RegistrationForm();
+                Form newForm;
+                if (choiceForm.RegisterAsAdmin)
+                {
+                    newForm = new registrationformuser(true); // admin mode
+                }
+                else if (choiceForm.RegisterAsSupplier)
+                {
+                    newForm = new registrationformuser();
+                }
+                else
+                {
+                    newForm = new RegistrationForm();
+                }
 
                 newForm.Show();
 
                 if (currentForm != null)
                 {
-                    currentForm.Hide(); // Use Hide instead of Close so the application loop stays alive
+                    currentForm.Hide();
                 }
             }
         }
 
-        private void pageHeader1_BackClick_1(object sender, EventArgs e)
+
+
+        private void checkbox1_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
+        {
+            if (e.Value) // shows password when checked
+            {
+                txtpassword.PasswordChar = '\0'; // '\0' reveals the actual characters
+            }
+            else
+            {
+                txtpassword.PasswordChar = '*'; // masks it again when unchecked
+            }
+        }
+        private bool IsValidEmailFormat(string email)
+        {
+            return email.Contains("@") && email.Contains(".");
+        }
+
+        private bool IsValidPasswordFormat(string password)
+        {
+            bool hasUpper = false;
+            bool hasLower = false;
+            bool hasDigit = false;
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c)) hasUpper = true;
+                if (char.IsLower(c)) hasLower = true;
+                if (char.IsDigit(c)) hasDigit = true;
+            }
+
+            return hasUpper && hasLower && hasDigit && password.Length >= 8;
+        }
+
+        private void pageHeader1_BackClick(object sender, EventArgs e)
         {
             Form? currentForm = this.FindForm();
 
@@ -278,18 +420,6 @@ namespace OMC_G10_Final
 
             // Hide the current MainPage so it doesn't stay visible behind it
             this.Hide();
-        }
-
-        private void checkbox1_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
-        {
-            if (e.Value) // shows password when checked
-            {
-                txtpassword.PasswordChar = '\0'; // '\0' reveals the actual characters
-            }
-            else
-            {
-                txtpassword.PasswordChar = '*'; // masks it again when unchecked
-            }
         }
     }
 }

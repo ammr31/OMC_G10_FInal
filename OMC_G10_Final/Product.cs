@@ -6,4 +6,5 @@
     public string ImagePath { get; set; }
     public string Category { get; set; }
     public string Details { get; set; }   // new — maps to Details column in Access
+    public string AccessibilityName { get; set; }
 }

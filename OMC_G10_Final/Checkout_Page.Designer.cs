@@ -38,8 +38,8 @@
             Totaldisplay = new AntdUI.Label();
             label3 = new AntdUI.Label();
             panel3 = new AntdUI.Panel();
-            label4 = new AntdUI.Label();
             rdcod = new AntdUI.Radio();
+            label4 = new AntdUI.Label();
             rdewallet = new AntdUI.Radio();
             rdonlinebanking = new AntdUI.Radio();
             rdcard = new AntdUI.Radio();
@@ -165,8 +165,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(label4);
             panel3.Controls.Add(rdcod);
+            panel3.Controls.Add(label4);
             panel3.Controls.Add(rdewallet);
             panel3.Controls.Add(rdonlinebanking);
             panel3.Controls.Add(rdcard);
@@ -175,6 +175,16 @@
             panel3.Size = new Size(595, 216);
             panel3.TabIndex = 3;
             panel3.Text = "panel3";
+            // 
+            // rdcod
+            // 
+            rdcod.BackColor = Color.Transparent;
+            rdcod.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            rdcod.Location = new Point(297, 117);
+            rdcod.Name = "rdcod";
+            rdcod.Size = new Size(276, 42);
+            rdcod.TabIndex = 5;
+            rdcod.Text = "Cash On Delivery";
             // 
             // label4
             // 
@@ -185,16 +195,6 @@
             label4.Size = new Size(301, 29);
             label4.TabIndex = 4;
             label4.Text = "Payment Method";
-            // 
-            // rdcod
-            // 
-            rdcod.BackColor = Color.Transparent;
-            rdcod.Font = new Font("Verdana", 12F, FontStyle.Bold);
-            rdcod.Location = new Point(297, 117);
-            rdcod.Name = "rdcod";
-            rdcod.Size = new Size(276, 42);
-            rdcod.TabIndex = 3;
-            rdcod.Text = "Cash on delivery";
             // 
             // rdewallet
             // 
@@ -282,7 +282,7 @@
             txtCW.Location = new Point(159, 162);
             txtCW.Name = "txtCW";
             txtCW.PasswordChar = '*';
-            txtCW.PlaceholderText = "CW";
+            txtCW.PlaceholderText = "Ex: 123";
             txtCW.Size = new Size(170, 49);
             txtCW.TabIndex = 7;
             // 
@@ -290,11 +290,11 @@
             // 
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(110, 172);
+            label8.Location = new Point(103, 172);
             label8.Name = "label8";
-            label8.Size = new Size(43, 29);
+            label8.Size = new Size(50, 29);
             label8.TabIndex = 6;
-            label8.Text = "CW:";
+            label8.Text = "CVV:";
             // 
             // label7
             // 
@@ -312,7 +312,7 @@
             txtnameoncard.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtnameoncard.Location = new Point(159, 58);
             txtnameoncard.Name = "txtnameoncard";
-            txtnameoncard.PlaceholderText = "Name on card";
+            txtnameoncard.PlaceholderText = "Ex: CIMB Bank";
             txtnameoncard.Size = new Size(322, 49);
             txtnameoncard.TabIndex = 3;
             // 
@@ -322,7 +322,7 @@
             txtcardnumber.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtcardnumber.Location = new Point(159, 14);
             txtcardnumber.Name = "txtcardnumber";
-            txtcardnumber.PlaceholderText = "Card Number";
+            txtcardnumber.PlaceholderText = "Ex: 1234123412341234";
             txtcardnumber.Size = new Size(322, 49);
             txtcardnumber.TabIndex = 2;
             // 
@@ -334,7 +334,7 @@
             label6.Name = "label6";
             label6.Size = new Size(142, 29);
             label6.TabIndex = 1;
-            label6.Text = "Name on card:";
+            label6.Text = "Bank Name:";
             // 
             // label5
             // 
@@ -402,7 +402,6 @@
         private AntdUI.Label Totaldisplay;
         private AntdUI.Label label3;
         private AntdUI.Panel panel3;
-        private AntdUI.Radio rdcod;
         private AntdUI.Radio rdewallet;
         private AntdUI.Radio rdonlinebanking;
         private AntdUI.Radio rdcard;
@@ -419,5 +418,6 @@
         private AntdUI.Label label9;
         private AntdUI.ButtonShadow btnproceed;
         private DateTimePicker DPexpirydate;
+        private AntdUI.Radio rdcod;
     }
 }

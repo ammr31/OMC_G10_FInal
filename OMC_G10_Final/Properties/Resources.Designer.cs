@@ -113,6 +113,16 @@ namespace OMC_G10_Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CARE_CART_USER_GUIDE1 {
+            get {
+                object obj = ResourceManager.GetObject("CARE CART USER GUIDE1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carecart {
             get {
                 object obj = ResourceManager.GetObject("carecart", resourceCulture);
@@ -126,6 +136,46 @@ namespace OMC_G10_Final.Properties {
         internal static System.Drawing.Bitmap carecart1 {
             get {
                 object obj = ResourceManager.GetObject("carecart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carecart2 {
+            get {
+                object obj = ResourceManager.GetObject("carecart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carecart3 {
+            get {
+                object obj = ResourceManager.GetObject("carecart3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carecart4 {
+            get {
+                object obj = ResourceManager.GetObject("carecart4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carecart5 {
+            get {
+                object obj = ResourceManager.GetObject("carecart5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

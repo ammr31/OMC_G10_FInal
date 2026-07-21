@@ -40,15 +40,14 @@ namespace OMC_G10_Final
             {
                 return;
             }
-            if (!Session.IsAdmin)
+            if (!Session.IsAdmin && !Session.IsSupplier)
             {
-                MessageBox.Show("Access denied. This page is for administrators only.");
+                MessageBox.Show("Access denied. This page is for suppliers and administrators only.");
                 return;
             }
             SupplierPage newForm = new SupplierPage();
             newForm.Show();
 
-            // Hide the current MainPage so it doesn't stay visible behind it
             this.Hide();
         }
 
@@ -90,10 +89,43 @@ namespace OMC_G10_Final
             {
                 LoadAdminProfile();
             }
+            else if (Session.IsSupplier)
+            {
+                LoadSupplierProfile();
+            }
             else
             {
                 LoadUserProfile();
             }
+        }
+
+        private void LoadSupplierProfile()
+        {
+            DataRow supplier = DatabaseHelper.GetSupplierById(Session.CurrentUserId);
+
+            if (supplier == null)
+            {
+                MessageBox.Show("Supplier record not found.");
+                return;
+            }
+
+            txtName.Text = supplier["BusinessName"].ToString();
+            txtEmail.Text = supplier["BusinessEmail"].ToString();
+            txtPhoneNumber.Text = supplier["BusinessContactNumber"].ToString();
+            txtaddress.Text = supplier["BusinessAddress"].ToString();
+
+            // Suppliers don't have Gender/UserCategory - clear and disable
+            radMale.Checked = false;
+            radfemale.Checked = false;
+
+            // Disable every field - display only for suppliers
+            txtName.Enabled = false;
+            txtEmail.Enabled = false;
+            txtPhoneNumber.Enabled = false;
+            txtaddress.Enabled = false;
+            radMale.Enabled = false;
+            radfemale.Enabled = false;
+            slctusercategory.Enabled = false;
         }
 
         private void LoadUserProfile()
@@ -156,6 +188,32 @@ namespace OMC_G10_Final
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            if (Session.IsSupplier)
+            {
+                MessageBox.Show("Supplier details can't be edited here. Contact customer support to manage your business info.");
+                return;
+            }
+            if (Session.IsAdmin)
+            {
+                string adminName = txtName.Text?.Trim() ?? "";
+                string adminEmail = txtEmail.Text?.Trim() ?? "";
+
+                if (string.IsNullOrEmpty(adminName) || string.IsNullOrEmpty(adminEmail))
+                {
+                    MessageBox.Show("Name and Email are required.");
+                    return;
+                }
+
+                bool adminSuccess = DatabaseHelper.UpdateAdminProfile(Session.CurrentUserId, adminName, adminEmail);
+
+                if (adminSuccess)
+                    MessageBox.Show("Profile updated successfully.");
+                else
+                    MessageBox.Show("Failed to update profile.");
+
+                return;
+            }
+
             string name = txtName.Text?.Trim() ?? "";
             string email = txtEmail.Text?.Trim() ?? "";
             string phone = txtPhoneNumber.Text?.Trim() ?? "";
@@ -182,6 +240,7 @@ namespace OMC_G10_Final
         {
             Session.CurrentUserId = null;
             Session.IsAdmin = false;
+            Session.IsSupplier = false;
 
             loginpage newForm = new loginpage();
             newForm.Show();

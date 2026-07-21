@@ -91,6 +91,7 @@
             btndelete.Size = new Size(148, 38);
             btndelete.TabIndex = 1;
             btndelete.Text = "Delete";
+            btndelete.Click += btndelete_Click;
             // 
             // btnedit
             // 
@@ -102,6 +103,7 @@
             btnedit.Size = new Size(148, 36);
             btnedit.TabIndex = 0;
             btnedit.Text = "Edit";
+            btnedit.Click += btnedit_Click;
             // 
             // QuestionRow
             // 

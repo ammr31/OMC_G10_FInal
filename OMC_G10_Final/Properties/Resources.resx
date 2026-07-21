@@ -127,9 +127,6 @@
   <data name="Brown_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Brown_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wheelchair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wheelchair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +135,9 @@
   </data>
   <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carecart5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carecart5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carecart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carecart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +181,9 @@
   <data name="home3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="profilepink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profilepink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CARE CART USER GUIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CARE CART USER GUIDE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,14 +199,17 @@
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="profilepink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profilepink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wheelchair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wheelchair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wheelchair2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wheelchair2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wheelchair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wheelchair1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carecart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carecart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="green_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bubble-chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bubble-chat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,13 +217,22 @@
   <data name="placeholderQR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\placeholderQR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wheelchair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wheelchair1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="recent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recent1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carecart4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carecart4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carecart3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carecart3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CARE CART USER GUIDE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CARE CART USER GUIDE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

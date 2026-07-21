@@ -132,5 +132,33 @@ namespace OMC_G10_Final
             else
                 MessageBox.Show("Failed to add to cart.");
         }
+
+        private void btnaddreview_Click(object sender, EventArgs e)
+        {
+            if (product == null) return;
+
+            if (string.IsNullOrEmpty(Session.CurrentUserId))
+            {
+                CustomMessageBox.Show("Please log in to write a review.");
+                return;
+            }
+
+            bool hasPurchased = DatabaseHelper.HasUserPurchasedProduct(Session.CurrentUserId, product.Id);
+
+            if (!hasPurchased)
+            {
+                CustomMessageBox.Show("You can only review products you've purchased.");
+                return;
+            }
+
+            using (AddReviewPage addReviewForm = new AddReviewPage(product, Session.CurrentUserId))
+            {
+                if (addReviewForm.ShowDialog() == DialogResult.OK)
+                {
+                    reviewpanel.Controls.Clear();
+                    LoadCustomerReviews();
+                }
+            }
+        }
     }
 }

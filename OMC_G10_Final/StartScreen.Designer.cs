@@ -65,7 +65,7 @@
             btnuserguidelines.Shape = AntdUI.TShape.Round;
             btnuserguidelines.Size = new Size(339, 84);
             btnuserguidelines.TabIndex = 39;
-            btnuserguidelines.Text = "User guidelines";
+            btnuserguidelines.Text = "User Guidelines";
             btnuserguidelines.Click += btnuserguidelines_Click;
             // 
             // StartScreen

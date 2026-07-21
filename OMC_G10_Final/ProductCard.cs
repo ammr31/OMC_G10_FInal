@@ -43,7 +43,7 @@ namespace OMC_G10_Final
         {
             currentProduct = product;
             productnamedisplay.Text = product.Name;
-            productpricedisplay.Text = product.Price.ToString("C");
+            productpricedisplay.Text = "RM " + product.Price.ToString("0.00");
             detailsdisplay.Text = product.Details;
 
             if (!string.IsNullOrEmpty(product.ImagePath))

@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             bottomNavigationBar2 = new BottomNavigationBar();
-            pictureBox3 = new PictureBox();
             label5 = new AntdUI.Label();
-            pictureBox1 = new PictureBox();
             label4 = new AntdUI.Label();
             label3 = new AntdUI.Label();
             btnDailyNeeds = new AntdUI.Button();
@@ -39,6 +37,8 @@
             label6 = new Label();
             pictureBox4 = new PictureBox();
             panel2 = new Panel();
+            radhearing = new AntdUI.Radio();
+            radmobility = new AntdUI.Radio();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnCall = new AntdUI.ButtonShadow();
             btnMessage = new AntdUI.ButtonShadow();
@@ -52,8 +52,6 @@
             label1 = new Label();
             SwitchAccessibility = new AntdUI.Switch();
             panel3 = new AntdUI.Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -71,16 +69,6 @@
             bottomNavigationBar2.Size = new Size(1200, 106);
             bottomNavigationBar2.TabIndex = 0;
             // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.deafness;
-            pictureBox3.Location = new Point(352, 16);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(135, 120);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 29;
-            pictureBox3.TabStop = false;
-            // 
             // label5
             // 
             label5.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -96,16 +84,6 @@
             label5.TabIndex = 33;
             label5.Text = "HEARING";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.wheelchair2;
-            pictureBox1.Location = new Point(74, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 28;
-            pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -197,9 +175,9 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(radhearing);
+            panel2.Controls.Add(radmobility);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(btnMedicine);
@@ -208,6 +186,30 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(566, 401);
             panel2.TabIndex = 36;
+            // 
+            // radhearing
+            // 
+            radhearing.BackgroundImage = Properties.Resources.deafness;
+            radhearing.BackgroundImageLayout = ImageLayout.Stretch;
+            radhearing.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radhearing.Location = new Point(351, 16);
+            radhearing.Name = "radhearing";
+            radhearing.Size = new Size(144, 120);
+            radhearing.TabIndex = 35;
+            radhearing.Text = "";
+            radhearing.CheckedChanged += radhearing_CheckedChanged;
+            // 
+            // radmobility
+            // 
+            radmobility.BackgroundImage = Properties.Resources.wheelchair2;
+            radmobility.BackgroundImageLayout = ImageLayout.Stretch;
+            radmobility.Font = new Font("Segoe UI", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radmobility.Location = new Point(67, 16);
+            radmobility.Name = "radmobility";
+            radmobility.Size = new Size(144, 120);
+            radmobility.TabIndex = 34;
+            radmobility.Text = "";
+            radmobility.CheckedChanged += radmobility_CheckedChanged;
             // 
             // flowLayoutPanel1
             // 
@@ -389,8 +391,6 @@
             Name = "MainPage";
             Text = "MainPage";
             Load += MainPage_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -406,9 +406,7 @@
         private BottomNavigationBar bottomNavigationBar1;
         private CheckBox checkBox1;
         private BottomNavigationBar bottomNavigationBar2;
-        private PictureBox pictureBox3;
         private AntdUI.Label label5;
-        private PictureBox pictureBox1;
         private AntdUI.Label label4;
         private AntdUI.Label label3;
         private AntdUI.Button btnDailyNeeds;
@@ -429,5 +427,9 @@
         private AntdUI.Select slctQuestionCategory;
         private AntdUI.Dropdown dpdChoooseQuestion;
         private AntdUI.In.FlowLayoutPanel flowlayoutchat;
+        private AntdUI.Radio radhearing;
+        private AntdUI.Radio radmobility;
+        private AntdUI.Button togglemobility;
+        private AntdUI.Checkbox checkbox2;
     }
 }

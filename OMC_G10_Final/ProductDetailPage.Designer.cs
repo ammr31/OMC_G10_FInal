@@ -40,6 +40,7 @@
             reviewpanel = new AntdUI.Panel();
             label3 = new AntdUI.Label();
             btnback = new AntdUI.ButtonShadow();
+            btnaddreview = new AntdUI.ButtonShadow();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             reviewpanel.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             panel1.Back = Color.FromArgb(245, 247, 231);
             panel1.BackExtend = "";
+            panel1.Controls.Add(btnaddreview);
             panel1.Controls.Add(btnaddtocart);
             panel1.Controls.Add(productpricedisplay);
             panel1.Controls.Add(productnamedisplay);
@@ -216,6 +218,28 @@
             btnback.TabIndex = 43;
             btnback.Click += btnback_Click_1;
             // 
+            // btnaddreview
+            // 
+            btnaddreview.BackActive = Color.FromArgb(255, 220, 248);
+            btnaddreview.BackColor = Color.FromArgb(255, 220, 248);
+            btnaddreview.BackHover = Color.FromArgb(222, 158, 209);
+            btnaddreview.BorderWidth = 3F;
+            btnaddreview.DefaultBack = Color.FromArgb(255, 220, 248);
+            btnaddreview.DefaultBorderColor = Color.FromArgb(107, 78, 57);
+            btnaddreview.Font = new Font("Verdana", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddreview.ForeColor = Color.FromArgb(107, 78, 57);
+            btnaddreview.Location = new Point(612, 132);
+            btnaddreview.Name = "btnaddreview";
+            btnaddreview.ShadowColor = SystemColors.ActiveCaptionText;
+            btnaddreview.ShadowOffsetX = 4;
+            btnaddreview.ShadowOffsetY = 4;
+            btnaddreview.ShadowOpacity = 0.6F;
+            btnaddreview.Shape = AntdUI.TShape.Round;
+            btnaddreview.Size = new Size(213, 66);
+            btnaddreview.TabIndex = 40;
+            btnaddreview.Text = "Add Review";
+            btnaddreview.Click += btnaddreview_Click;
+            // 
             // ProductDetailPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -254,5 +278,6 @@
         private AntdUI.Panel reviewpanel;
         private AntdUI.Label label3;
         private AntdUI.ButtonShadow btnback;
+        private AntdUI.ButtonShadow btnaddreview;
     }
 }

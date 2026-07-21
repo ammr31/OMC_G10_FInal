@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            lblAdminPasswordNotice = new Label();
             slctIDType = new AntdUI.Select();
             slctUserCategory = new AntdUI.Select();
             slctGender = new AntdUI.Select();
@@ -53,6 +54,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(245, 247, 231);
+            groupBox1.Controls.Add(lblAdminPasswordNotice);
             groupBox1.Controls.Add(slctIDType);
             groupBox1.Controls.Add(slctUserCategory);
             groupBox1.Controls.Add(slctGender);
@@ -75,6 +77,17 @@
             groupBox1.Size = new Size(913, 701);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
+            // 
+            // lblAdminPasswordNotice
+            // 
+            lblAdminPasswordNotice.Font = new Font("Verdana", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdminPasswordNotice.Location = new Point(84, 513);
+            lblAdminPasswordNotice.Name = "lblAdminPasswordNotice";
+            lblAdminPasswordNotice.Size = new Size(743, 68);
+            lblAdminPasswordNotice.TabIndex = 33;
+            lblAdminPasswordNotice.Text = "Password will be set automatically for admin accounts to Admin12345_";
+            lblAdminPasswordNotice.TextAlign = ContentAlignment.TopCenter;
+            lblAdminPasswordNotice.Visible = false;
             // 
             // slctIDType
             // 
@@ -171,7 +184,7 @@
             txtEmail.Location = new Point(285, 288);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderColor = SystemColors.ActiveBorder;
-            txtEmail.PlaceholderText = "Email";
+            txtEmail.PlaceholderText = "Ex: example@gmail.com";
             txtEmail.Size = new Size(586, 51);
             txtEmail.TabIndex = 21;
             // 
@@ -204,7 +217,7 @@
             txtpassword.ForeColor = SystemColors.ControlText;
             txtpassword.Location = new Point(285, 402);
             txtpassword.Name = "txtpassword";
-            txtpassword.PlaceholderText = "Password";
+            txtpassword.PlaceholderText = "Ex: 1234abcd";
             txtpassword.Size = new Size(586, 51);
             txtpassword.TabIndex = 18;
             // 
@@ -216,7 +229,7 @@
             txtContactNum.Location = new Point(285, 231);
             txtContactNum.Name = "txtContactNum";
             txtContactNum.PlaceholderColor = SystemColors.ActiveBorder;
-            txtContactNum.PlaceholderText = "Phone Number";
+            txtContactNum.PlaceholderText = "Ex: 012-3456789";
             txtContactNum.Size = new Size(586, 51);
             txtContactNum.TabIndex = 17;
             // 
@@ -308,5 +321,6 @@
         private AntdUI.Select slctIDType;
         private AntdUI.Select slctUserCategory;
         private AntdUI.Select slctGender;
+        private Label lblAdminPasswordNotice;
     }
 }

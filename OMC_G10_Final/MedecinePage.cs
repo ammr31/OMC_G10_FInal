@@ -82,10 +82,22 @@ namespace OMC_G10_Final
                 try
                 {
                     conn.Open();
-                    string query = "SELECT ProductID, ProductName, PriceRM, ImagePath, CategoryName, [Details] FROM Products WHERE CategoryName = ?";
+
+                    string query = "SELECT ProductID, ProductName, PriceRM, ImagePath, CategoryName, [Details], AccessibilityName FROM Products WHERE CategoryName = ?";
+
+                    if (!string.IsNullOrEmpty(Session.AccessibilityFilter))
+                    {
+                        query += " AND AccessibilityName = ?";
+                    }
+
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@CategoryName", "Medicine");
+
+                        if (!string.IsNullOrEmpty(Session.AccessibilityFilter))
+                        {
+                            cmd.Parameters.AddWithValue("@AccessibilityName", Session.AccessibilityFilter);
+                        }
 
                         using (OleDbDataReader reader = cmd.ExecuteReader())
                         {
@@ -98,7 +110,8 @@ namespace OMC_G10_Final
                                     Price = Convert.ToDecimal(reader["PriceRM"]),
                                     ImagePath = reader["ImagePath"].ToString(),
                                     Category = reader["CategoryName"].ToString(),
-                                    Details = reader["Details"].ToString()
+                                    Details = reader["Details"].ToString(),
+                                    AccessibilityName = reader["AccessibilityName"].ToString()
                                 });
                             }
                         }

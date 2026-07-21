@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            txtproductimage = new AntdUI.Input();
+            label11 = new Label();
+            slctAccessibility = new AntdUI.Select();
+            btnbrowse = new AntdUI.Button();
             txtproductname = new AntdUI.Input();
             txtproductprice = new AntdUI.Input();
             txtproductdetails = new AntdUI.Input();
@@ -52,6 +54,7 @@
             label2 = new Label();
             pageHeader1 = new AntdUI.PageHeader();
             cmbChooseProduct = new AntdUI.Select();
+            openFileDialog1 = new OpenFileDialog();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -59,7 +62,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(245, 247, 231);
-            groupBox1.Controls.Add(txtproductimage);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(slctAccessibility);
+            groupBox1.Controls.Add(btnbrowse);
             groupBox1.Controls.Add(txtproductname);
             groupBox1.Controls.Add(txtproductprice);
             groupBox1.Controls.Add(txtproductdetails);
@@ -73,30 +78,51 @@
             groupBox1.Controls.Add(btnSubmit);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(77, 91);
+            groupBox1.Location = new Point(48, 91);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(606, 555);
+            groupBox1.Size = new Size(635, 555);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
-            // txtproductimage
+            // label11
             // 
-            txtproductimage.BorderWidth = 2F;
-            txtproductimage.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtproductimage.ForeColor = SystemColors.ControlText;
-            txtproductimage.Location = new Point(193, 151);
-            txtproductimage.Name = "txtproductimage";
-            txtproductimage.PlaceholderColor = SystemColors.ActiveBorder;
-            txtproductimage.PlaceholderText = "Product Image";
-            txtproductimage.Size = new Size(407, 47);
-            txtproductimage.TabIndex = 53;
+            label11.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(10, 384);
+            label11.Name = "label11";
+            label11.Size = new Size(216, 29);
+            label11.TabIndex = 55;
+            label11.Text = "Product Accessibility:";
+            // 
+            // slctAccessibility
+            // 
+            slctAccessibility.BorderWidth = 2F;
+            slctAccessibility.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
+            slctAccessibility.Items.AddRange(new object[] { "Medecine", "Daily Needs" });
+            slctAccessibility.Location = new Point(222, 375);
+            slctAccessibility.Name = "slctAccessibility";
+            slctAccessibility.PlaceholderText = "Choose Accessibility";
+            slctAccessibility.Size = new Size(298, 47);
+            slctAccessibility.TabIndex = 54;
+            // 
+            // btnbrowse
+            // 
+            btnbrowse.BorderWidth = 2F;
+            btnbrowse.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
+            btnbrowse.ForeActive = SystemColors.ActiveBorder;
+            btnbrowse.ForeColor = SystemColors.ActiveBorder;
+            btnbrowse.Location = new Point(222, 117);
+            btnbrowse.Name = "btnbrowse";
+            btnbrowse.Size = new Size(137, 47);
+            btnbrowse.TabIndex = 53;
+            btnbrowse.Text = "Browse";
+            btnbrowse.Click += btnbrowse_Click;
             // 
             // txtproductname
             // 
             txtproductname.BorderWidth = 2F;
             txtproductname.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtproductname.ForeColor = SystemColors.ControlText;
-            txtproductname.Location = new Point(193, 111);
+            txtproductname.Location = new Point(222, 77);
             txtproductname.Name = "txtproductname";
             txtproductname.PlaceholderColor = SystemColors.ActiveBorder;
             txtproductname.PlaceholderText = "Product Name";
@@ -108,7 +134,7 @@
             txtproductprice.BorderWidth = 2F;
             txtproductprice.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtproductprice.ForeColor = SystemColors.ControlText;
-            txtproductprice.Location = new Point(193, 193);
+            txtproductprice.Location = new Point(222, 159);
             txtproductprice.Name = "txtproductprice";
             txtproductprice.PlaceholderColor = SystemColors.ActiveBorder;
             txtproductprice.PlaceholderText = "Product Price";
@@ -120,7 +146,7 @@
             txtproductdetails.BorderWidth = 2F;
             txtproductdetails.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtproductdetails.ForeColor = SystemColors.ControlText;
-            txtproductdetails.Location = new Point(193, 234);
+            txtproductdetails.Location = new Point(222, 200);
             txtproductdetails.Multiline = true;
             txtproductdetails.Name = "txtproductdetails";
             txtproductdetails.PlaceholderColor = SystemColors.ActiveBorder;
@@ -131,7 +157,7 @@
             // label10
             // 
             label10.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(10, 377);
+            label10.Location = new Point(37, 352);
             label10.Name = "label10";
             label10.Size = new Size(189, 29);
             label10.TabIndex = 49;
@@ -142,7 +168,7 @@
             slctCategory.BorderWidth = 2F;
             slctCategory.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
             slctCategory.Items.AddRange(new object[] { "Medecine", "Daily Needs" });
-            slctCategory.Location = new Point(193, 368);
+            slctCategory.Location = new Point(222, 334);
             slctCategory.Name = "slctCategory";
             slctCategory.PlaceholderText = "Choose Category";
             slctCategory.Size = new Size(298, 47);
@@ -151,7 +177,7 @@
             // label9
             // 
             label9.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(17, 336);
+            label9.Location = new Point(44, 311);
             label9.Name = "label9";
             label9.Size = new Size(179, 29);
             label9.TabIndex = 26;
@@ -162,7 +188,7 @@
             txtQuantityAdd.BorderWidth = 2F;
             txtQuantityAdd.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtQuantityAdd.ForeColor = SystemColors.ControlText;
-            txtQuantityAdd.Location = new Point(193, 327);
+            txtQuantityAdd.Location = new Point(222, 293);
             txtQuantityAdd.Name = "txtQuantityAdd";
             txtQuantityAdd.PlaceholderColor = SystemColors.ActiveBorder;
             txtQuantityAdd.PlaceholderText = "Product Quantity";
@@ -173,7 +199,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(30, 247);
+            label6.Location = new Point(57, 222);
             label6.Name = "label6";
             label6.Size = new Size(162, 20);
             label6.TabIndex = 24;
@@ -183,7 +209,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(49, 203);
+            label5.Location = new Point(76, 178);
             label5.Name = "label5";
             label5.Size = new Size(143, 20);
             label5.TabIndex = 22;
@@ -193,7 +219,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(35, 160);
+            label4.Location = new Point(62, 135);
             label4.Name = "label4";
             label4.Size = new Size(157, 20);
             label4.TabIndex = 20;
@@ -210,12 +236,13 @@
             btnSubmit.TabIndex = 9;
             btnSubmit.Text = "SUBMIT";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click_1;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(42, 124);
+            label3.Location = new Point(69, 99);
             label3.Name = "label3";
             label3.Size = new Size(150, 20);
             label3.TabIndex = 1;
@@ -258,6 +285,7 @@
             btnsave.TabIndex = 54;
             btnsave.Text = "SAVE";
             btnsave.UseVisualStyleBackColor = false;
+            btnsave.Click += btnsave_Click_1;
             // 
             // txtquantityrestock
             // 
@@ -273,9 +301,9 @@
             // 
             // slctproduct
             // 
+            slctproduct.AutoScroll = true;
             slctproduct.BorderWidth = 2F;
             slctproduct.Font = new Font("Verdana", 10.2F, FontStyle.Bold);
-            slctproduct.Items.AddRange(new object[] { "Medecine", "Daily Needs" });
             slctproduct.Location = new Point(170, 151);
             slctproduct.Name = "slctproduct";
             slctproduct.PlaceholderText = "Choose Product";
@@ -299,7 +327,7 @@
             label7.Name = "label7";
             label7.Size = new Size(165, 20);
             label7.TabIndex = 45;
-            label7.Text = "Choose Prodcut:";
+            label7.Text = "Choose Product:";
             // 
             // label2
             // 
@@ -338,6 +366,10 @@
             cmbChooseProduct.PlaceholderText = "Choose Product";
             cmbChooseProduct.Size = new Size(298, 47);
             cmbChooseProduct.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // SupplierPage
             // 
@@ -383,12 +415,15 @@
         private AntdUI.Select cmbChooseProduct;
         private Label label10;
         private AntdUI.Select slctCategory;
-        private AntdUI.Input txtproductimage;
         private AntdUI.Input txtproductname;
         private AntdUI.Input txtproductprice;
         private AntdUI.Input txtproductdetails;
         private AntdUI.Input txtquantityrestock;
         private AntdUI.Select slctproduct;
         private Button btnsave;
+        private AntdUI.Button btnbrowse;
+        private OpenFileDialog openFileDialog1;
+        private Label label11;
+        private AntdUI.Select slctAccessibility;
     }
 }

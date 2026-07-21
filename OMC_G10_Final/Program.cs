@@ -1,17 +1,42 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+
 namespace OMC_G10_Final
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            Application.AddMessageFilter(new GlobalKeyFilter());
             Application.Run(new StartScreen());
         }
+    }
+
+    public class GlobalKeyFilter : IMessageFilter
+    {
+        private const int WM_KEYDOWN = 0x0100;
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg == WM_KEYDOWN)
+            {
+                Keys key = (Keys)m.WParam.ToInt32();
+                if (key == Keys.Oemtilde)
+                {
+                    Control? focused = Control.FromHandle(GetFocus());
+                    if (focused is TextBox || focused is ComboBox)
+                        return false; // let typing "n" work normally in text fields
+
+                    NotificationManager.Show();
+                }
+            }
+            return false;
+        }
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetFocus();
     }
 }

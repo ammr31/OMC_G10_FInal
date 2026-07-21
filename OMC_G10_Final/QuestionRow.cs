@@ -111,5 +111,15 @@ namespace OMC_G10_Final
                 }
             }
         }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            EditQuestion();
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            DeleteQuestion();
+        }
     }
 }

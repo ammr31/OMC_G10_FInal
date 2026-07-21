@@ -16,6 +16,36 @@ namespace OMC_G10_Final
             InitializeComponent();
         }
 
+        private bool IsValidEmailFormat(string email)
+        {
+            return email.Contains("@") && email.Contains(".") &&
+                   email.IndexOf("@") < email.LastIndexOf(".") &&
+                   email.IndexOf("@") > 0;
+        }
+
+        private bool IsValidPhoneFormat(string phone)
+        {
+            // Allows digits, spaces, dashes, and an optional leading +
+            // Requires at least 7 digits total (reasonable minimum for a business line)
+            int digitCount = 0;
+            foreach (char c in phone)
+            {
+                if (char.IsDigit(c)) digitCount++;
+                else if (c != ' ' && c != '-' && c != '+') return false;
+            }
+            return digitCount >= 7;
+        }
+
+        private bool IsValidSSMFormat(string ssm)
+        {
+            // SSM registration numbers are numeric-only in your sample data (e.g. 202612468934)
+            // Require a reasonable minimum length to catch obvious junk input
+            foreach (char c in ssm)
+            {
+                if (!char.IsDigit(c)) return false;
+            }
+            return ssm.Length >= 8;
+        }
 
 
         private bool EmailAlreadyExists(string email)
@@ -50,7 +80,7 @@ namespace OMC_G10_Final
                 {
                     conn.Open();
                     string newSupplierId = GenerateNextSupplierId(conn);
-                    string password = $"Partner#Access{newSupplierId}"; // e.g. Partner#AccessS05
+                    string password = $"Partner#Access63"; // e.g. Partner#AccessS05
 
                     string query = @"INSERT INTO [Suppliers] 
                         ([SupplierID], [BusinessName], [SSMRegNumber], [BusinessAddress], [BusinessContactNumber], [BusinessEmail], [Type], [Status], [Password], [RegisteredDate]) 
@@ -119,12 +149,14 @@ namespace OMC_G10_Final
             btnSubmitRegistration = new Button();
             label1 = new Label();
             pageHeader1 = new AntdUI.PageHeader();
+            label8 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(245, 247, 231);
+            groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -219,7 +251,7 @@ namespace OMC_G10_Final
             txtBusinessAddress.Multiline = true;
             txtBusinessAddress.Name = "txtBusinessAddress";
             txtBusinessAddress.PlaceholderColor = SystemColors.ActiveBorder;
-            txtBusinessAddress.PlaceholderText = "Business Addess";
+            txtBusinessAddress.PlaceholderText = "Business Address";
             txtBusinessAddress.Size = new Size(556, 105);
             txtBusinessAddress.TabIndex = 21;
             // 
@@ -230,7 +262,7 @@ namespace OMC_G10_Final
             txtBusinessContact.ForeColor = SystemColors.ControlText;
             txtBusinessContact.Location = new Point(400, 342);
             txtBusinessContact.Name = "txtBusinessContact";
-            txtBusinessContact.PlaceholderText = "Business Contact";
+            txtBusinessContact.PlaceholderText = "Ex: 012-3456789";
             txtBusinessContact.Size = new Size(556, 51);
             txtBusinessContact.TabIndex = 19;
             // 
@@ -241,7 +273,7 @@ namespace OMC_G10_Final
             txtBusinessEmail.ForeColor = SystemColors.ControlText;
             txtBusinessEmail.Location = new Point(400, 399);
             txtBusinessEmail.Name = "txtBusinessEmail";
-            txtBusinessEmail.PlaceholderText = "Business Email";
+            txtBusinessEmail.PlaceholderText = "Ex: example@gmail.com";
             txtBusinessEmail.Size = new Size(556, 51);
             txtBusinessEmail.TabIndex = 18;
             // 
@@ -253,7 +285,7 @@ namespace OMC_G10_Final
             txtSSMRegNumber.Location = new Point(400, 174);
             txtSSMRegNumber.Name = "txtSSMRegNumber";
             txtSSMRegNumber.PlaceholderColor = SystemColors.ActiveBorder;
-            txtSSMRegNumber.PlaceholderText = "SSM Registration Number";
+            txtSSMRegNumber.PlaceholderText = "Ex: 202401000123";
             txtSSMRegNumber.Size = new Size(556, 51);
             txtSSMRegNumber.TabIndex = 17;
             // 
@@ -309,6 +341,15 @@ namespace OMC_G10_Final
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick_1;
             // 
+            // label8
+            // 
+            label8.Font = new Font("Verdana", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(207, 523);
+            label8.Name = "label8";
+            label8.Size = new Size(667, 41);
+            label8.TabIndex = 37;
+            label8.Text = "Password has been autoset to Partner#Access63";
+            // 
             // RegistrationForm
             // 
             BackColor = Color.FromArgb(108, 117, 82);
@@ -333,7 +374,6 @@ namespace OMC_G10_Final
                 return;
             }
 
-            // Replace these with your actual textbox/control names
             string businessName = txtBusinessName.Text?.Trim() ?? string.Empty;
             string ssmRegNumber = txtSSMRegNumber.Text?.Trim() ?? string.Empty;
             string businessAddress = txtBusinessAddress.Text?.Trim() ?? string.Empty;
@@ -341,9 +381,29 @@ namespace OMC_G10_Final
             string businessEmail = txtBusinessEmail.Text?.Trim() ?? string.Empty;
             string type = cmbType.Text?.Trim() ?? string.Empty;
 
-            if (string.IsNullOrEmpty(businessName) || string.IsNullOrEmpty(businessEmail) || string.IsNullOrEmpty(ssmRegNumber))
+            if (string.IsNullOrEmpty(businessName) || string.IsNullOrEmpty(businessEmail) ||
+                string.IsNullOrEmpty(ssmRegNumber) || string.IsNullOrEmpty(businessContact) ||
+                string.IsNullOrEmpty(businessAddress) || string.IsNullOrEmpty(type))
             {
                 CustomMessageBox.Show("Please fill in all required fields.");
+                return;
+            }
+
+            if (!IsValidEmailFormat(businessEmail))
+            {
+                CustomMessageBox.Show("Please enter a valid business email address.");
+                return;
+            }
+
+            if (!IsValidPhoneFormat(businessContact))
+            {
+                CustomMessageBox.Show("Please enter a valid contact number (at least 7 digits).");
+                return;
+            }
+
+            if (!IsValidSSMFormat(ssmRegNumber))
+            {
+                CustomMessageBox.Show("SSM Registration Number must be numeric and at least 8 digits.");
                 return;
             }
 
@@ -363,12 +423,12 @@ namespace OMC_G10_Final
 
             CustomMessageBox.Show("Account has been created.");
 
-            ProfilePage newForm = new ProfilePage();
+
+            loginpage newForm = new loginpage();
             newForm.Show();
 
             this.Hide();
         }
-
         private GroupBox groupBox1;
         private AntdUI.Select cmbType;
         private AntdUI.Input txtBusinessAddress;
@@ -384,6 +444,7 @@ namespace OMC_G10_Final
         private Label label3;
         private Label label2;
         private AntdUI.PageHeader pageHeader1;
+        private Label label8;
         private Label label1;
 
         private void pageHeader1_BackClick_1(object sender, EventArgs e)

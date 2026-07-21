@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             pageHeader1 = new AntdUI.PageHeader();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.CARE_CART_USER_GUIDE;
-            pictureBox1.Location = new Point(296, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(564, 718);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // pageHeader1
             // 
@@ -60,6 +50,16 @@
             pageHeader1.UseSystemStyleColor = true;
             pageHeader1.BackClick += pageHeader1_BackClick;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.CARE_CART_USER_GUIDE1;
+            pictureBox1.Location = new Point(296, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(564, 718);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // ImageViewerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -75,8 +75,7 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private AntdUI.PageHeader pageHeader1;
+        private PictureBox pictureBox1;
     }
 }

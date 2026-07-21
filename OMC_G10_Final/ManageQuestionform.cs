@@ -70,5 +70,21 @@ namespace OMC_G10_Final
             // Hide the current MainPage so it doesn't stay visible behind it
             this.Hide();
         }
+
+        private void btnaddnewquestion_Click(object sender, EventArgs e)
+        {
+            Form? currentForm = this.FindForm();
+
+            if (currentForm is Addnewquestionpage)
+            {
+                return;
+            }
+            // Open the Mobility Form
+            Addnewquestionpage newForm = new Addnewquestionpage();
+            newForm.Show();
+
+            // Hide the current MainPage so it doesn't stay visible behind it
+            this.Hide();
+        }
     }
 }

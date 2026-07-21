@@ -66,22 +66,36 @@ namespace OMC_G10_Final
         {
             using (OleDbConnection conn = GetConnection())
             {
-                try
+                conn.Open();
+                using (OleDbTransaction transaction = conn.BeginTransaction())
                 {
-                    conn.Open();
-                    string query = "DELETE FROM [Suppliers] WHERE [SupplierID] = ?";
-
-                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    try
                     {
-                        cmd.Parameters.Add("@SupplierID", OleDbType.VarWChar).Value = supplierId;
-                        cmd.ExecuteNonQuery();
+                        // Delete all products belonging to this supplier first
+                        string deleteProductsQuery = "DELETE FROM [Products] WHERE [SupplierID] = ?";
+                        using (OleDbCommand deleteProductsCmd = new OleDbCommand(deleteProductsQuery, conn, transaction))
+                        {
+                            deleteProductsCmd.Parameters.Add("@SupplierID", OleDbType.VarWChar).Value = supplierId;
+                            deleteProductsCmd.ExecuteNonQuery();
+                        }
+
+                        // Then delete the supplier
+                        string deleteSupplierQuery = "DELETE FROM [Suppliers] WHERE [SupplierID] = ?";
+                        using (OleDbCommand deleteSupplierCmd = new OleDbCommand(deleteSupplierQuery, conn, transaction))
+                        {
+                            deleteSupplierCmd.Parameters.Add("@SupplierID", OleDbType.VarWChar).Value = supplierId;
+                            deleteSupplierCmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
                         return true;
                     }
-                }
-                catch (Exception ex)
-                {
-                    CustomMessageBox.Show($"Error deleting supplier: {ex.Message}");
-                    return false;
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        CustomMessageBox.Show($"Error deleting supplier: {ex.Message}");
+                        return false;
+                    }
                 }
             }
         }
@@ -260,6 +274,35 @@ namespace OMC_G10_Final
                 }
             }
         }
+
+        public static bool UpdateAdminProfile(string adminId, string name, string email)
+        {
+            using (OleDbConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"UPDATE [Admin] 
+                        SET [Name] = ?, [Email] = ? 
+                        WHERE [AdminID] = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@Name", OleDbType.VarWChar).Value = name;
+                        cmd.Parameters.Add("@Email", OleDbType.VarWChar).Value = email;
+                        cmd.Parameters.Add("@AdminID", OleDbType.VarWChar).Value = adminId;
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"Error updating admin profile: {ex.Message}");
+                    return false;
+                }
+            }
+        }
         public static DataRow GetAdminById(string adminId)
         {
             using (OleDbConnection conn = GetConnection())
@@ -330,7 +373,9 @@ namespace OMC_G10_Final
         }
 
         public static bool AddNewProduct(string supplierId, string productName, string imagePath,
-                                          decimal price, string details, int quantity, string categoryId, string categoryName)
+                                          decimal price, string details, int quantity,
+                                          string categoryId, string categoryName,
+                                          string accessibilityId, string accessibilityName)
         {
             using (OleDbConnection conn = GetConnection())
             {
@@ -340,8 +385,8 @@ namespace OMC_G10_Final
                     string newProductId = GenerateNextProductId(conn);
 
                     string query = @"INSERT INTO [Products] 
-                ([ProductID], [SupplierID], [ProductName], [PriceRM], [Details], [StockQuantity], [ImagePath], [CategoryID], [CategoryName], [AvgRating], [NumOfReviews]) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0)";
+        ([ProductID], [SupplierID], [ProductName], [PriceRM], [Details], [StockQuantity], [ImagePath], [CategoryID], [CategoryName], [AccessibilityID], [AccessibilityName], [AvgRating], [NumOfReviews]) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0)";
 
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
@@ -354,6 +399,8 @@ namespace OMC_G10_Final
                         cmd.Parameters.Add("@ImagePath", OleDbType.VarWChar).Value = imagePath;
                         cmd.Parameters.Add("@CategoryID", OleDbType.VarWChar).Value = categoryId;
                         cmd.Parameters.Add("@CategoryName", OleDbType.VarWChar).Value = categoryName;
+                        cmd.Parameters.Add("@AccessibilityID", OleDbType.VarWChar).Value = accessibilityId;
+                        cmd.Parameters.Add("@AccessibilityName", OleDbType.VarWChar).Value = accessibilityName;
 
                         cmd.ExecuteNonQuery();
                         return true;
@@ -367,6 +414,27 @@ namespace OMC_G10_Final
             }
         }
 
+        public static Dictionary<string, string> GetAccessibilityNameToIdMap()
+        {
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            using (OleDbConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT [AccessibilityID], [AccessibilityName] FROM [Accessibility]";
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string name = reader["AccessibilityName"].ToString();
+                        string id = reader["AccessibilityID"].ToString();
+                        if (!map.ContainsKey(name))
+                            map.Add(name, id);
+                    }
+                }
+            }
+            return map;
+        }
         private static string GenerateNextProductId(OleDbConnection conn)
         {
             string query = "SELECT [ProductID] FROM [Products] ORDER BY [ProductID] DESC";
@@ -791,6 +859,176 @@ namespace OMC_G10_Final
                 }
             }
             return table;
+        }
+        public static bool HasUserPurchasedProduct(string userId, string productId)
+        {
+            using (OleDbConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM [Order_Items] WHERE [UserID] = ? AND [ProductID] = ?";
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.Add("@UserID", OleDbType.VarWChar).Value = userId;
+                    cmd.Parameters.Add("@ProductID", OleDbType.VarWChar).Value = productId;
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+        private static string GenerateNextReviewId(OleDbConnection conn)
+        {
+            string query = "SELECT [ReviewID] FROM [Reviews]";
+            int maxNum = 0;
+
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string idStr = reader["ReviewID"].ToString();
+                    if (idStr.Length > 2)
+                    {
+                        string numPart = idStr.Substring(2);
+                        if (int.TryParse(numPart, out int num))
+                        {
+                            if (num > maxNum) maxNum = num;
+                        }
+                    }
+                }
+            }
+
+            int nextNum = maxNum + 1;
+            return "RV" + nextNum.ToString("D2"); // RV03, RV04, RV05...
+        }
+
+        public static bool AddReview(string productId, string userId, int rating, string reviewText)
+        {
+            using (OleDbConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string reviewId = GenerateNextReviewId(conn);
+
+                    string query = @"INSERT INTO [Reviews] ([ReviewID], [ProductID], [UserID], [Rating], [ReviewText], [ReviewDate]) 
+                             VALUES (?, ?, ?, ?, ?, ?)";
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@ReviewID", OleDbType.VarWChar).Value = reviewId;
+                        cmd.Parameters.Add("@ProductID", OleDbType.VarWChar).Value = productId;
+                        cmd.Parameters.Add("@UserID", OleDbType.VarWChar).Value = userId;
+                        cmd.Parameters.Add("@Rating", OleDbType.Integer).Value = rating;
+                        cmd.Parameters.Add("@ReviewText", OleDbType.VarWChar).Value = reviewText;
+                        cmd.Parameters.Add("@ReviewDate", OleDbType.Date).Value = DateTime.Now;
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"Error adding review: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+        public static DataRow GetSupplierById(string supplierId)
+        {
+            using (OleDbConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM [Suppliers] WHERE [SupplierID] = ?";
+                using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                {
+                    cmd.Parameters.Add("@SupplierID", OleDbType.VarWChar).Value = supplierId;
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                    {
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+                        return table.Rows.Count > 0 ? table.Rows[0] : null;
+                    }
+                }
+            }
+        }
+        public static DataTable GetProductsByAccessibility(string? accessibilityName)
+        {
+            DataTable table = new DataTable();
+            using (OleDbConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query;
+                OleDbCommand cmd;
+
+                if (string.IsNullOrEmpty(accessibilityName))
+                {
+                    query = "SELECT * FROM [Products]";
+                    cmd = new OleDbCommand(query, conn);
+                }
+                else
+                {
+                    query = "SELECT * FROM [Products] WHERE [AccessibilityName] = ?";
+                    cmd = new OleDbCommand(query, conn);
+                    cmd.Parameters.Add("@AccessibilityName", OleDbType.VarWChar).Value = accessibilityName;
+                }
+
+                using (cmd)
+                using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                {
+                    adapter.Fill(table);
+                }
+            }
+            return table;
+        }
+        public static bool AddFAQQuestion(string question, string category, string answer)
+        {
+            using (OleDbConnection conn = GetConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    string newQuestionId = GenerateNextFAQId(conn);
+
+                    string query = @"INSERT INTO [FAQ_Chatbot] 
+                ([QuestionID], [Question], [Type], [Answer]) 
+                VALUES (?, ?, ?, ?)";
+
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@QuestionID", OleDbType.VarWChar).Value = newQuestionId;
+                        cmd.Parameters.Add("@Question", OleDbType.VarWChar).Value = question;
+                        cmd.Parameters.Add("@Type", OleDbType.VarWChar).Value = category;
+                        cmd.Parameters.Add("@Answer", OleDbType.VarWChar).Value = answer;
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomMessageBox.Show($"Error adding question: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        private static string GenerateNextFAQId(OleDbConnection conn)
+        {
+            // Generates FQ10, FQ11, etc. based on existing max QuestionID (matches FQ01-FQ09 already in the table)
+            string query = "SELECT [QuestionID] FROM [FAQ_Chatbot] ORDER BY [QuestionID] DESC";
+            int maxNum = 0;
+
+            using (OleDbCommand cmd = new OleDbCommand(query, conn))
+            using (OleDbDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    string lastId = reader["QuestionID"].ToString(); // e.g. "FQ09"
+                    string numPart = lastId.Substring(2);              // "09"
+                    int.TryParse(numPart, out maxNum);
+                }
+            }
+
+            int nextNum = maxNum + 1;
+            return "FQ" + nextNum.ToString("D2"); // FQ10, FQ11...
         }
     }
 

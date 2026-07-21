@@ -131,7 +131,7 @@ namespace OMC_G10_Final
                 subtotal += Convert.ToDecimal(row["LineTotalRM"]);
             }
 
-            decimal shipping = 20.60m; // TODO: replace with real shipping calculation if you have one
+            decimal shipping = 7.00m;
             decimal total = subtotal + shipping;
 
             Checkout_Page checkoutForm = new Checkout_Page(selectedItems, subtotal, shipping, total);

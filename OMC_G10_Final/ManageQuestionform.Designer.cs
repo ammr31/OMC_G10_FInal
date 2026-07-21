@@ -33,6 +33,7 @@
             label1 = new AntdUI.Label();
             label3 = new AntdUI.Label();
             label4 = new AntdUI.Label();
+            btnaddnewquestion = new AntdUI.ButtonShadow();
             SuspendLayout();
             // 
             // pageHeader1
@@ -94,12 +95,31 @@
             label4.Text = "Action";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnaddnewquestion
+            // 
+            btnaddnewquestion.BorderWidth = 2F;
+            btnaddnewquestion.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnaddnewquestion.ForeColor = Color.FromArgb(107, 78, 57);
+            btnaddnewquestion.Icon = Properties.Resources.Brown_add;
+            btnaddnewquestion.IconRatio = 1F;
+            btnaddnewquestion.IconSize = new Size(50, 25);
+            btnaddnewquestion.Location = new Point(895, 114);
+            btnaddnewquestion.Name = "btnaddnewquestion";
+            btnaddnewquestion.ShadowOffsetX = 4;
+            btnaddnewquestion.ShadowOffsetY = 4;
+            btnaddnewquestion.ShadowOpacity = 0.5F;
+            btnaddnewquestion.Size = new Size(264, 51);
+            btnaddnewquestion.TabIndex = 17;
+            btnaddnewquestion.Text = "Add New Question";
+            btnaddnewquestion.Click += btnaddnewquestion_Click;
+            // 
             // ManageQuestionform
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(108, 117, 82);
             ClientSize = new Size(1200, 725);
+            Controls.Add(btnaddnewquestion);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -118,5 +138,6 @@
         private AntdUI.Label label1;
         private AntdUI.Label label3;
         private AntdUI.Label label4;
+        private AntdUI.ButtonShadow btnaddnewquestion;
     }
 }

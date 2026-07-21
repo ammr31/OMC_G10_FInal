@@ -158,7 +158,7 @@
             pageHeader1.Text = "Back";
             pageHeader1.UseForeColorDrawIcons = true;
             pageHeader1.UseSystemStyleColor = true;
-            pageHeader1.BackClick += pageHeader1_BackClick_1;
+            pageHeader1.BackClick += pageHeader1_BackClick;
             // 
             // checkbox1
             // 
